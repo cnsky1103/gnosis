@@ -1,0 +1,423 @@
+🆕 发现新角色: narrator [narrator_standard]
+{
+  "new_characters": [
+    {
+      "name": "温水佳树",
+      "gender": "female",
+      "voice_archetype": "young_sweet_female"
+    }
+  ],
+  "script": [
+    {
+      "text": "从车站前的精文馆书店回来的路上。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "我从有轨电车的红色车厢中走下车站，耀眼的阳光使我低下了头。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "尽管已经是8月下旬，但是夏天的酷热感丝毫没有要褪去的迹象。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "我穿过斑马线，手中书皮的触感让我不禁心神荡漾起来。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "没错，我总算买到了期待已久的把我叫作飞机场的家伙给我踩屎去吧最新卷。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "这本书是以欧派的大小来决定阶级，以反乌托邦为舞台的热血超能力战斗小说。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "在上一卷的结尾，主角的闺蜜绮罗里酱的欧派成长到了C cup，并且成为主角的敌人。让人十分在意后续。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "温水和彦，一年C班，石蕗高中文艺部的一员。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "正值暑假，今天平稳祥和。时针才刚转到11点的位置。我得赶紧回家，在有冷气的房间里好好享受书的封面和彩插才行——。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "身后的知了叫个不停，我回到了家，刚进玄关处就听到清澈的声音。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "欢迎回家哥哥大人！",
+      "speaker": "温水佳树",
+      "emotion": "happy",
+      "type": "dialogue"
+    },
+    {
+      "text": "冲我跑来的是小我两岁的妹妹，温水佳树。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "虽然有点兄控显得美中不足，但是个天真可爱的妹妹。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "她身上穿着的是牛仔连衣裙，今天还在乌黑的长发上戴了大大的发带。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "怎么了吗，这么着急。",
+      "speaker": "温水和彦",
+      "emotion": "neutral",
+      "type": "dialogue"
+    },
+    {
+      "text": "哥哥大人！不好了！出大事了！",
+      "speaker": "温水佳树",
+      "emotion": "excited",
+      "type": "dialogue"
+    },
+    {
+      "text": "佳树手上拿着挂历，兴奋地活蹦乱跳。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "有紧急状况？还有为什么拿着这么个玩意。",
+      "speaker": "温水和彦",
+      "emotion": "neutral",
+      "type": "dialogue"
+    },
+    {
+      "text": "因为因为！面试的安排得赶紧定下来才行！不如就现在吧！？",
+      "speaker": "温水佳树",
+      "emotion": "excited",
+      "type": "dialogue"
+    },
+    {
+      "text": "完全没听懂她在说什么。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "thought"
+    },
+    {
+      "text": "我知道了佳树，你先冷静一下。冷静下来了再跟哥哥说说是什么回事吧。",
+      "speaker": "温水和彦",
+      "emotion": "neutral",
+      "type": "dialogue"
+    },
+    {
+      "text": "好的，佳树冷静下来啦！佳树在准备午饭的时候她突然来访了！对了、午饭是昨天吃剩的咖喱！",
+      "speaker": "温水佳树",
+      "emotion": "excited",
+      "type": "dialogue"
+    },
+    {
+      "text": "嗯，完全没冷静下来啊。姑且我知道午饭要吃什么了。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "thought"
+    },
+    {
+      "text": "这样啊，隔夜的咖喱也挺美味呢。有谁来了吗？",
+      "speaker": "温水和彦",
+      "emotion": "neutral",
+      "type": "dialogue"
+    },
+    {
+      "text": "是啊！然而佳树却在客人面前穿成这样！佳树要去换衣服了，所以客人就拜托哥哥大人了。",
+      "speaker": "温水佳树",
+      "emotion": "excited",
+      "type": "dialogue"
+    },
+    {
+      "text": "额、喂。",
+      "speaker": "温水和彦",
+      "emotion": "neutral",
+      "type": "dialogue"
+    },
+    {
+      "text": "客人我已经领进客厅了！",
+      "speaker": "温水佳树",
+      "emotion": "excited",
+      "type": "dialogue"
+    },
+    {
+      "text": "佳树没把话说完就冲上了楼梯。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "不就是来客人了吗，至于这么慌张吗。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "thought"
+    },
+    {
+      "text": "我略感奇怪，在将脱下的鞋子摆放整齐的时候，注意到一双可爱的女性运动鞋。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "这鞋对佳树来说太大了，对我妈来说设计又显得过于年轻了。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "我将视线移向走廊的尽头。感受到了微弱的气息。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    },
+    {
+      "text": "不会吧。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "thought"
+    },
+    {
+      "text": "光猜也没用。我就这么走向了客厅。",
+      "speaker": "narrator",
+      "emotion": "neutral",
+      "type": "narration"
+    }
+  ]
+}
+🆕 发现新角色: 温水佳树 [young_sweet_female]
+[
+  {
+    "text": "从车站前的精文馆书店回来的路上。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "我从有轨电车的红色车厢中走下车站，耀眼的阳光使我低下了头。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "尽管已经是8月下旬，但是夏天的酷热感丝毫没有要褪去的迹象。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "我穿过斑马线，手中书皮的触感让我不禁心神荡漾起来。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "没错，我总算买到了期待已久的把我叫作飞机场的家伙给我踩屎去吧最新卷。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "这本书是以欧派的大小来决定阶级，以反乌托邦为舞台的热血超能力战斗小说。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "在上一卷的结尾，主角的闺蜜绮罗里酱的欧派成长到了C cup，并且成为主角的敌人。让人十分在意后续。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "温水和彦，一年C班，石蕗高中文艺部的一员。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "正值暑假，今天平稳祥和。时针才刚转到11点的位置。我得赶紧回家，在有冷气的房间里好好享受书的封面和彩插才行——。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "身后的知了叫个不停，我回到了家，刚进玄关处就听到清澈的声音。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "欢迎回家哥哥大人！",
+    "speaker": "温水佳树",
+    "emotion": "happy",
+    "type": "dialogue"
+  },
+  {
+    "text": "冲我跑来的是小我两岁的妹妹，温水佳树。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "虽然有点兄控显得美中不足，但是个天真可爱的妹妹。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "她身上穿着的是牛仔连衣裙，今天还在乌黑的长发上戴了大大的发带。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "怎么了吗，这么着急。",
+    "speaker": "温水和彦",
+    "emotion": "neutral",
+    "type": "dialogue"
+  },
+  {
+    "text": "哥哥大人！不好了！出大事了！",
+    "speaker": "温水佳树",
+    "emotion": "excited",
+    "type": "dialogue"
+  },
+  {
+    "text": "佳树手上拿着挂历，兴奋地活蹦乱跳。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "有紧急状况？还有为什么拿着这么个玩意。",
+    "speaker": "温水和彦",
+    "emotion": "neutral",
+    "type": "dialogue"
+  },
+  {
+    "text": "因为因为！面试的安排得赶紧定下来才行！不如就现在吧！？",
+    "speaker": "温水佳树",
+    "emotion": "excited",
+    "type": "dialogue"
+  },
+  {
+    "text": "完全没听懂她在说什么。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "thought"
+  },
+  {
+    "text": "我知道了佳树，你先冷静一下。冷静下来了再跟哥哥说说是什么回事吧。",
+    "speaker": "温水和彦",
+    "emotion": "neutral",
+    "type": "dialogue"
+  },
+  {
+    "text": "好的，佳树冷静下来啦！佳树在准备午饭的时候她突然来访了！对了、午饭是昨天吃剩的咖喱！",
+    "speaker": "温水佳树",
+    "emotion": "excited",
+    "type": "dialogue"
+  },
+  {
+    "text": "嗯，完全没冷静下来啊。姑且我知道午饭要吃什么了。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "thought"
+  },
+  {
+    "text": "这样啊，隔夜的咖喱也挺美味呢。有谁来了吗？",
+    "speaker": "温水和彦",
+    "emotion": "neutral",
+    "type": "dialogue"
+  },
+  {
+    "text": "是啊！然而佳树却在客人面前穿成这样！佳树要去换衣服了，所以客人就拜托哥哥大人了。",
+    "speaker": "温水佳树",
+    "emotion": "excited",
+    "type": "dialogue"
+  },
+  {
+    "text": "额、喂。",
+    "speaker": "温水和彦",
+    "emotion": "neutral",
+    "type": "dialogue"
+  },
+  {
+    "text": "客人我已经领进客厅了！",
+    "speaker": "温水佳树",
+    "emotion": "excited",
+    "type": "dialogue"
+  },
+  {
+    "text": "佳树没把话说完就冲上了楼梯。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "不就是来客人了吗，至于这么慌张吗。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "thought"
+  },
+  {
+    "text": "我略感奇怪，在将脱下的鞋子摆放整齐的时候，注意到一双可爱的女性运动鞋。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "这鞋对佳树来说太大了，对我妈来说设计又显得过于年轻了。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "我将视线移向走廊的尽头。感受到了微弱的气息。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  },
+  {
+    "text": "不会吧。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "thought"
+  },
+  {
+    "text": "光猜也没用。我就这么走向了客厅。",
+    "speaker": "narrator",
+    "emotion": "neutral",
+    "type": "narration"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "narrator",
+    "gender": "unknown",
+    "voice_archetype": "narrator_standard",
+    "description": "系统默认旁白"
+  },
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "young_sweet_female",
+    "description": null
+  }
+]

@@ -1,0 +1,19 @@
+# --- 核心依赖 ---
+openai>=1.0.0            # 用于调用 DeepSeek 或 OpenAI 的 API
+python-dotenv>=1.0.0     # 用于从 .env 文件加载 API Key
+
+# --- Rust 交互 ---
+maturin>=1.0.0           # 用于编译和管理 Rust 编写的 Python 模块
+# pyo3-pack>=0.7.0b12        # (可选) 某些旧版环境可能需要
+
+# --- 音频处理 ---
+pydub>=0.25.1            # 处理音频拼接、格式转换的基础库
+simpleaudio>=1.0.4       # (可选) 用于在命令行直接播放生成的音频进行测试
+
+# --- 数据处理与验证 ---
+pydantic>=2.0.0          # 强烈推荐，用于解析和验证 LLM 返回的 JSON 剧本
+loguru>=0.7.0            # 更好的日志管理，比 print 更清晰
+
+# --- 选填：如果你打算在本地跑一些轻量级 TTS ---
+# edge-tts>=6.1.10       # 微软的免费 TTS API，不需要显卡，效果不错
+# requests>=2.31.0       # 通用 HTTP 请求库
