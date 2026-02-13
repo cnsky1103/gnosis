@@ -82,15 +82,19 @@ fn merge_audio(input_dir: String, output_file: String, pause_ms: u32) -> PyResul
     let status = Command::new("ffmpeg")
         .current_dir(dir_path) // 切换到目录，解决路径问题
         .args(&[
-            "-y", // 覆盖输出文件
+            "-y",
             "-f",
-            "concat", // 使用 concat 格式
+            "concat",
             "-safe",
-            "0", // 允许非标准路径
+            "0",
             "-i",
             "concat_list.txt",
-            "-c",
-            "copy", // 关键：不重新编码，瞬间完成！
+            "-af",
+            "loudnorm=I=-16:TP=-1.5:LRA=11",
+            "-c:a",
+            "libmp3lame",
+            "-q:a",
+            "2",
             &output_file,
         ])
         .output()?; // 使用 output 而不是 status，可以隐藏 ffmpeg 冗长的日志
