@@ -20,14 +20,7 @@ class CharacterManager:
                     self.characters[char.name] = char
         else:
             # 初始化默认旁白
-            self.add_character(
-                CharacterProfile(
-                    name="narrator",
-                    gender="unknown",
-                    voice_archetype="narrator_standard",
-                    description="系统默认旁白",
-                )
-            )
+            1
 
     def save_db(self):
         """保存更新后的角色库"""

@@ -2,6 +2,7 @@ from gnosis.llm_director import SYSTEM_PROMPT_TEMPLATE
 from gnosis.state_manager import CharacterManager
 from gnosis.models import ChapterAnalysis
 from gnosis.utils import remove_code_fences_regex
+from gnosis.tts_engine import run_synthesis
 from openai import OpenAI
 
 import os
@@ -60,17 +61,33 @@ def process_segment(text_segment):
 
 if __name__ == "__main__":
     try:
-        with open("./data/prelude.txt", "r", encoding="utf-8") as f:
-            raw_text = f.read()
+        # with open("./data/input.txt", "r", encoding="utf-8") as f:
+        #    raw_text = f.read()
 
-        # 这里调用 Rust 函数！
-        clean_content = gnosis_rs.clean_text(raw_text)
-        script = process_segment(clean_content)
+        ## 这里调用 Rust 函数！
+        # clean_content = gnosis_rs.clean_text(raw_text)
+        # script = process_segment(clean_content)
+        # with open("./data/character_db.json", "r", encoding="utf-8") as f:
+        #    characters = json.loads(f.read())
+        # with open("./data/out.txt", "r", encoding="utf-8") as f:
+        #    data = json.loads(f.read())
+        #    run_synthesis(data["script"], characters)
+        # 假设 TTS 生成的音频都放在这个文件夹里
+        audio_dir = "output_audio"
 
-        # 打印结果，你会发现“老人”被自动注册了，而“温水和彦”复用了旧的设定
-        print(
-            json.dumps([s.model_dump() for s in script], ensure_ascii=False, indent=2)
-        )
+        # 我们最终要输出的有声书文件
+        final_output = os.path.abspath("final_audiobook.mp3")
+
+        print("等待所有音频生成完成...")
+        # 你的 run_synthesis(script) 逻辑 ...
+
+        print("交由 Rust 处理后期混音...")
+        # 调用 Rust 函数：传入目录，输出路径，以及统一停顿时间（比如 400 毫秒）
+        success = gnosis_rs.merge_audio(os.path.abspath(audio_dir), final_output, 200)
+
+        if success:
+            print("🎉 你的第一部有声书已经制作完成！快去听听看吧！")
+
     except Exception as _e:
         # 容错处理：可以把 raw_json 打印出来看看哪里错了
         traceback.print_exc()

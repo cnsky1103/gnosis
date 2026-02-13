@@ -2,13 +2,21 @@
   {
     "name": "narrator",
     "gender": "unknown",
-    "voice_archetype": "narrator_standard",
-    "description": "系统默认旁白"
+    "voice_archetype": "narrator_standard"
+  },
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "mature_calm_male"
   },
   {
     "name": "温水佳树",
     "gender": "female",
-    "voice_archetype": "young_sweet_female",
-    "description": null
+    "voice_archetype": "young_sweet_female"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "mature_elegant_female"
   }
 ]
