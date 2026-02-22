@@ -71,4 +71,5 @@ docs/_build/
 # Pyenv
 .python-version
 
-output_audio/
+**/llm_cache/
+**/output_audio/

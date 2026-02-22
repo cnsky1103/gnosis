@@ -1,23 +1,71 @@
-ARCHETYPE_TO_EDGE_TTS = {
-    "narrator_standard": "zh-CN-YunxiNeural",  # 旁白：云希（沉稳男）
-    "young_energetic_male": "zh-CN-YunyangNeural",  # 少年：云扬（新闻/专业）
-    "mature_calm_male": "zh-CN-YunxiNeural",  # 成男：云希
-    "old_wise_male": "zh-CN-YunzeNeural",  # 老年：云泽（虽然是老模型，凑合用）
-    "villain_male": "zh-CN-YunyangNeural",  # 反派：可以通过调整 pitch/rate 实现
-    "young_sweet_female": "zh-CN-XiaoxiaoNeural",  # 少女：晓晓（活泼）
-    "mature_elegant_female": "zh-CN-XiaoyiNeural",  # 御姐：晓伊
-    "old_kind_female": "zh-CN-LiaoNing-XiaobeiNeural",  # 这里的选择比较少，可能需要找特定方言或语气
-    "child_neutral": "zh-CN-XiaoxiaoNeural",  # 儿童：通常用女声调高音调
+from typing import Dict, List, Tuple
+
+# LLM 仅可使用以下标签
+ALLOWED_CHARACTER_TAGS: List[str] = [
+    "男-元气",
+    "男-正太",
+    "男-沉稳",
+    "男-温柔",
+    "男-慵懒",
+    "男-大叔",
+    "男-老人",
+    "女-萝莉",
+    "女-傲娇",
+    "女-优雅",
+    "女-御姐",
+    "女-三无",
+    "女-JK",
+    "未知",
+]
+
+# 声线池映射: ['性别', '风格'] -> ['seed_id', ...]
+VOICE_SEEDS_BY_TAG_PARTS: Dict[Tuple[str, str], List[str]] = {
+    ("男", "元气"): ["zuole"],
+    ("男", "正太"): ["zuole"],
+    ("男", "沉稳"): ["zuole"],
+    ("男", "温柔"): ["zuole"],
+    ("男", "慵懒"): ["zuole"],
+    ("男", "大叔"): ["zuole"],
+    ("男", "老人"): ["zuole"],
+    ("女", "萝莉"): ["zuole"],
+    ("女", "傲娇"): ["zuole"],
+    ("女", "优雅"): ["zuole"],
+    ("女", "御姐"): ["zuole"],
+    ("女", "三无"): ["zuole"],
+    ("女", "JK"): ["zuole"],
+    ("未知", "未知"): ["zuole"],
 }
 
+GENDER_BY_TAG_PREFIX = {"男": "male", "女": "female", "未知": "unknown"}
 
-def resolve_voice(character_name, char_manager):
-    # 1. 从 manager 拿到角色的 profile
-    profile = char_manager.characters.get(character_name)
+DEFAULT_CHARACTER_TAG = "未知"
 
-    if not profile:
-        # 如果 LLM 幻觉生成了没注册的名字，兜底
-        return ARCHETYPE_TO_EDGE_TTS["narrator_standard"]
 
-    # 2. 查表返回 ID
-    return ARCHETYPE_TO_EDGE_TTS.get(profile.voice_archetype, "zh-CN-YunxiNeural")
+def normalize_character_tag(tag: str) -> str:
+    if tag in ALLOWED_CHARACTER_TAGS:
+        return tag
+    return DEFAULT_CHARACTER_TAG
+
+
+def split_character_tag(tag: str) -> Tuple[str, str]:
+    normalized = normalize_character_tag(tag)
+    if normalized == "未知":
+        return ("未知", "未知")
+    if "-" not in normalized:
+        return ("未知", "未知")
+    prefix, style = normalized.split("-", 1)
+    return (prefix, style)
+
+
+def get_gender_from_tag(tag: str) -> str:
+    prefix, _ = split_character_tag(tag)
+    return GENDER_BY_TAG_PREFIX.get(prefix, "unknown")
+
+
+def get_voice_seeds_for_tag(tag: str) -> List[str]:
+    tag_parts = split_character_tag(tag)
+    seeds = VOICE_SEEDS_BY_TAG_PARTS.get(tag_parts, [])
+    if seeds:
+        return seeds
+    return VOICE_SEEDS_BY_TAG_PARTS[("未知", "未知")]
+

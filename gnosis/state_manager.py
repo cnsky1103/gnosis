@@ -1,15 +1,21 @@
 import json, os, hashlib
 from .models import CharacterProfile
+from .config import (
+    get_gender_from_tag,
+    get_voice_seeds_for_tag,
+    normalize_character_tag,
+)
 
 
 class CharacterManager:
-    def __init__(self, db_path="data/character_db.json", seeds_dir="./seeds"):
+    def __init__(self, db_path="data/character_db.json", seeds_dir="voice/ref"):
         self.db_path = db_path
         self.seeds_dir = seeds_dir
         self.characters = {}
         self.load_db()
 
     def load_db(self):
+        self.characters = {}
         if os.path.exists(self.db_path):
             with open(self.db_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
@@ -30,34 +36,67 @@ class CharacterManager:
         if profile.name in self.characters:
             return False
 
-        # 1. 定位到具体的原型文件夹
-        # 路径示例: ./seeds/female/young_sweet/
-        archetype_dir = os.path.join(
-            self.seeds_dir, profile.gender, profile.voice_archetype
-        )
-
-        # 2. 如果原型文件夹不存在，退而求其次走性别大类
-        if not os.path.exists(archetype_dir):
-            archetype_dir = os.path.join(self.seeds_dir, profile.gender)
-
-        if os.path.exists(archetype_dir):
-            seeds = sorted([f for f in os.listdir(archetype_dir) if f.endswith(".wav")])
-            if seeds:
-                # 在该特定原型分类下进行哈希，保证同一类型的角色分到不同的种子
-                idx = int(hashlib.md5(profile.name.encode()).hexdigest(), 16) % len(
-                    seeds
-                )
-                seed_name = seeds[idx]
-
-                profile.ref_audio_path = os.path.join(archetype_dir, seed_name)
-                # 加载参考文本
-                txt_path = profile.ref_audio_path.rsplit(".", 1)[0] + ".txt"
-                if os.path.exists(txt_path):
-                    with open(txt_path, "r") as f:
-                        profile.ref_audio_text = f.read().strip()
+        # 标签标准化，并由标签反推出性别，避免 LLM 性别字段与标签冲突
+        profile.voice_archetype = normalize_character_tag(profile.voice_archetype)
+        profile.gender = get_gender_from_tag(profile.voice_archetype)
 
         self.characters[profile.name] = profile
         return True
+
+    def _pick_seed_id(self, profile: CharacterProfile):
+        seed_ids = get_voice_seeds_for_tag(profile.voice_archetype)
+        if not seed_ids:
+            return None
+        idx = int(hashlib.md5(profile.name.encode()).hexdigest(), 16) % len(seed_ids)
+        return seed_ids[idx]
+
+    def assign_voice_to_character(self, profile: CharacterProfile, overwrite: bool = False):
+        if profile.voice and not overwrite:
+            return
+
+        seed_id = self._pick_seed_id(profile)
+        if not seed_id:
+            return
+
+        profile.voice = seed_id
+        ref_file = os.path.join(self.seeds_dir, f"{seed_id}.ref")
+        self._load_seed_ref(profile, ref_file)
+
+    def assign_voices(self, overwrite: bool = False):
+        for profile in self.characters.values():
+            self.assign_voice_to_character(profile, overwrite=overwrite)
+
+    def _load_seed_ref(self, profile: CharacterProfile, ref_file: str):
+        if not os.path.exists(ref_file):
+            return
+
+        with open(ref_file, "r", encoding="utf-8") as f:
+            lines = [line.strip() for line in f if line.strip()]
+
+        if not lines:
+            return
+
+        # .ref 标准格式:
+        # 1 ckpt, 2 pth, 3 ref wav path, 4+ 参考文本
+        if len(lines) >= 4:
+            ref_wav_path = lines[2]
+            if not os.path.isabs(ref_wav_path):
+                ref_wav_path = os.path.abspath(
+                    os.path.join(os.path.dirname(ref_file), ref_wav_path)
+                )
+            profile.ref_audio_path = ref_wav_path
+            profile.ref_audio_text = " ".join(lines[3:])
+            return
+
+        # 兼容最简格式: 第一行是 wav path，第二行是文本
+        ref_wav_path = lines[0]
+        if not os.path.isabs(ref_wav_path):
+            ref_wav_path = os.path.abspath(
+                os.path.join(os.path.dirname(ref_file), ref_wav_path)
+            )
+        profile.ref_audio_path = ref_wav_path
+        if len(lines) >= 2:
+            profile.ref_audio_text = " ".join(lines[1:])
 
     def get_known_names(self):
         return "\n".join(
@@ -66,3 +105,6 @@ class CharacterManager:
                 for c in self.characters.values()
             ]
         )
+
+    def get_known_names_and_gender(self):
+        return "\n".join([f"- {c.name} ({c.gender})" for c in self.characters.values()])
