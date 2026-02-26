@@ -1,39 +1,40 @@
+import os
 from typing import Dict, List, Tuple
+
+DEFAULT_LLM_MODEL = os.environ.get("LLM_MODEL", "qwen3.5-flash-2026-02-23")
 
 # LLM 仅可使用以下标签
 ALLOWED_CHARACTER_TAGS: List[str] = [
     "男-元气",
     "男-正太",
-    "男-沉稳",
     "男-温柔",
-    "男-慵懒",
+    "男-普通",
     "男-大叔",
-    "男-老人",
     "女-萝莉",
     "女-傲娇",
-    "女-优雅",
+    "女-温柔",
     "女-御姐",
+    "女-元气",
     "女-三无",
-    "女-JK",
+    "女-普通",
     "未知",
 ]
 
 # 声线池映射: ['性别', '风格'] -> ['seed_id', ...]
 VOICE_SEEDS_BY_TAG_PARTS: Dict[Tuple[str, str], List[str]] = {
-    ("男", "元气"): ["zuole"],
-    ("男", "正太"): ["zuole"],
-    ("男", "沉稳"): ["zuole"],
-    ("男", "温柔"): ["zuole"],
-    ("男", "慵懒"): ["zuole"],
-    ("男", "大叔"): ["zuole"],
-    ("男", "老人"): ["zuole"],
-    ("女", "萝莉"): ["zuole"],
-    ("女", "傲娇"): ["zuole"],
-    ("女", "优雅"): ["zuole"],
-    ("女", "御姐"): ["zuole"],
-    ("女", "三无"): ["zuole"],
-    ("女", "JK"): ["zuole"],
-    ("未知", "未知"): ["zuole"],
+    ("男", "元气"): ["baitie", "cangtai"],
+    ("男", "正太"): ["xuerong", "zhijian"],
+    ("男", "温柔"): ["liuming", "xunshi"],
+    ("男", "普通"): ["yinxian", "logos", "duanya", "zuole"],
+    ("男", "大叔"): ["maenna", "heijiaoS"],
+    ("女", "萝莉"): ["wenmi"],
+    ("女", "傲娇"): ["tianhuo"],
+    ("女", "少女"): ["anjielina", "haruka"],
+    ("女", "温柔"): ["raidian", "perfumer"],
+    ("女", "御姐"): ["shenxun"],
+    ("女", "三无"): ["red"],
+    ("女", "普通"): ["perfumer", "yela"],
+    ("未知", "未知"): ["logos"],
 }
 
 GENDER_BY_TAG_PREFIX = {"男": "male", "女": "female", "未知": "unknown"}
@@ -68,4 +69,3 @@ def get_voice_seeds_for_tag(tag: str) -> List[str]:
     if seeds:
         return seeds
     return VOICE_SEEDS_BY_TAG_PARTS[("未知", "未知")]
-

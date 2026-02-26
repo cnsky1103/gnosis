@@ -8,7 +8,7 @@ from .config import (
 
 
 class CharacterManager:
-    def __init__(self, db_path="data/character_db.json", seeds_dir="voice/ref"):
+    def __init__(self, db_path="data/character_db.json", seeds_dir="voice/ref/sovits"):
         self.db_path = db_path
         self.seeds_dir = seeds_dir
         self.characters = {}
@@ -71,9 +71,66 @@ class CharacterManager:
             return
 
         with open(ref_file, "r", encoding="utf-8") as f:
-            lines = [line.strip() for line in f if line.strip()]
+            lines = []
+            for line in f:
+                stripped = line.strip()
+                if not stripped or stripped.startswith("#"):
+                    continue
+                lines.append(stripped)
 
         if not lines:
+            return
+
+        def split_ref_kv(raw_line: str):
+            for separator in ("=", ":"):
+                if separator not in raw_line:
+                    continue
+                key, value = raw_line.split(separator, 1)
+                key = key.strip().lower()
+                value = value.strip()
+                if key and value:
+                    return key, value
+            return None, None
+
+        def looks_like_audio_path(raw_value: str):
+            normalized = str(raw_value or "").strip().lower()
+            return normalized.endswith(
+                (".wav", ".mp3", ".m4a", ".flac", ".ogg", ".aac", ".opus")
+            )
+
+        # key-value 格式（兼容 cosyvoice ref）
+        kv_ref_audio_path = None
+        kv_prompt_parts = []
+        has_kv_line = False
+        passthrough_lines = []
+        for raw_line in lines:
+            key, value = split_ref_kv(raw_line)
+            if not key:
+                passthrough_lines.append(raw_line)
+                continue
+            has_kv_line = True
+            if key in {"ref_audio_path", "ref_audio", "ref_wav", "prompt_wav", "wav"}:
+                kv_ref_audio_path = value
+            elif key in {"prompt_text", "prompt", "text"}:
+                kv_prompt_parts.append(value)
+
+        if has_kv_line:
+            if not kv_ref_audio_path and passthrough_lines:
+                candidate = passthrough_lines[0]
+                if looks_like_audio_path(candidate):
+                    kv_ref_audio_path = candidate
+                    passthrough_lines = passthrough_lines[1:]
+            if kv_ref_audio_path:
+                ref_wav_path = kv_ref_audio_path
+                if not os.path.isabs(ref_wav_path):
+                    ref_wav_path = os.path.abspath(
+                        os.path.join(os.path.dirname(ref_file), ref_wav_path)
+                    )
+                profile.ref_audio_path = ref_wav_path
+            if kv_prompt_parts:
+                profile.ref_audio_text = " ".join(kv_prompt_parts)
+            elif passthrough_lines:
+                profile.ref_audio_text = " ".join(passthrough_lines)
             return
 
         # .ref 标准格式:

@@ -3,20 +3,30 @@ import asyncio
 import json
 import os
 import subprocess
+import unicodedata
 import wave
 from gnosis.state_manager import CharacterManager
 from gnosis.chunking import ChunkingConfig
+from gnosis.project_prompt import ProjectPromptOverrides, load_project_prompt_overrides
 from gnosis.tts_engine import (
+    DEFAULT_COSYVOICE_MODE,
+    DEFAULT_COSYVOICE_REF_DIR,
+    DEFAULT_COSYVOICE_SAMPLE_RATE,
+    DEFAULT_COSYVOICE_SPK_ID,
+    DEFAULT_COSYVOICE_URL,
+    DEFAULT_SOVITS_REF_DIR,
     DEFAULT_SOVITS_URL,
     DEFAULT_SWITCH_URL,
+    DEFAULT_TTS_ENGINE,
     build_voice_registry,
-    switch_character,
-    tts_generate,
+    create_tts_engine,
 )
 
 DEFAULT_MIN_RATIO = 1200 / 1800
 DEFAULT_MAX_RATIO = 2600 / 1800
 SUPPORTED_AUDIO_EXTENSIONS = {".wav", ".mp3", ".m4a", ".flac"}
+PUNCTUATION_ONLY_SILENCE_MS = 400
+DEFAULT_AUDIO_SAMPLE_RATE = 24000
 
 
 def load_text(path):
@@ -151,6 +161,32 @@ def _probe_duration_ms(audio_file):
     )
 
 
+def _is_punctuation_only_text(text):
+    value = (text or "").strip()
+    if not value:
+        return True
+
+    has_punctuation = False
+    for ch in value:
+        if ch.isspace():
+            continue
+        if unicodedata.category(ch).startswith("P"):
+            has_punctuation = True
+            continue
+        return False
+    return has_punctuation
+
+
+def _write_silence_wav(output_path, duration_ms, sample_rate=DEFAULT_AUDIO_SAMPLE_RATE):
+    frame_count = max(1, int(round(sample_rate * (duration_ms / 1000.0))))
+    silence_bytes = b"\x00\x00" * frame_count  # mono int16
+    with wave.open(output_path, "wb") as wav_file:
+        wav_file.setnchannels(1)
+        wav_file.setsampwidth(2)
+        wav_file.setframerate(int(sample_rate))
+        wav_file.writeframes(silence_bytes)
+
+
 def _format_srt_timestamp(total_ms):
     total_ms = max(0, int(total_ms))
     hours, rest = divmod(total_ms, 3_600_000)
@@ -159,7 +195,31 @@ def _format_srt_timestamp(total_ms):
     return f"{hours:02d}:{minutes:02d}:{seconds:02d},{milliseconds:03d}"
 
 
-def generate_srt_subtitles(audio_dir, script_lines, subtitle_path, pause_ms=400):
+def _infer_effective_pause_ms(
+    configured_pause_ms, segment_durations_ms, final_audio_path=None
+):
+    segment_count = len(segment_durations_ms)
+    if segment_count <= 1:
+        return 0, None
+
+    if not final_audio_path or not os.path.exists(final_audio_path):
+        return configured_pause_ms, None
+
+    final_audio_ms = _probe_duration_ms(final_audio_path)
+    total_voice_ms = sum(segment_durations_ms)
+    inferred_pause = (final_audio_ms - total_voice_ms) / (segment_count - 1)
+    if inferred_pause < 0:
+        return configured_pause_ms, final_audio_ms
+    return int(round(inferred_pause)), final_audio_ms
+
+
+def generate_srt_subtitles(
+    audio_dir,
+    script_lines,
+    subtitle_path,
+    pause_ms=400,
+    final_audio_path=None,
+):
     segments = _collect_sorted_segments(audio_dir)
     if not segments:
         raise ValueError(f"未找到可用于字幕对齐的音频片段: {audio_dir}")
@@ -168,9 +228,25 @@ def generate_srt_subtitles(audio_dir, script_lines, subtitle_path, pause_ms=400)
     if subtitle_dir:
         os.makedirs(subtitle_dir, exist_ok=True)
 
-    current_start_ms = 0
+    segment_durations_ms = [_probe_duration_ms(path) for path in segments]
+    effective_pause_ms, final_audio_ms = _infer_effective_pause_ms(
+        pause_ms, segment_durations_ms, final_audio_path=final_audio_path
+    )
+
+    predicted_total_ms = sum(segment_durations_ms)
+    if len(segments) > 1:
+        predicted_total_ms += effective_pause_ms * (len(segments) - 1)
+
+    scale = 1.0
+    if final_audio_ms and predicted_total_ms > 0:
+        scale = final_audio_ms / predicted_total_ms
+
+    current_start_raw_ms = 0
+    last_written_end_ms = 0
     with open(subtitle_path, "w", encoding="utf-8") as srt:
-        for subtitle_index, segment_path in enumerate(segments, start=1):
+        for subtitle_index, (segment_path, duration_ms) in enumerate(
+            zip(segments, segment_durations_ms), start=1
+        ):
             file_name = os.path.basename(segment_path)
             stem = os.path.splitext(file_name)[0]
             line_index = int(stem) if stem.isdigit() else subtitle_index - 1
@@ -188,30 +264,134 @@ def generate_srt_subtitles(audio_dir, script_lines, subtitle_path, pause_ms=400)
             else:
                 subtitle_text = f"[{stem}]"
 
-            duration_ms = _probe_duration_ms(segment_path)
-            end_ms = current_start_ms + duration_ms
+            current_end_raw_ms = current_start_raw_ms + duration_ms
+            start_ms = int(round(current_start_raw_ms * scale))
+            end_ms = int(round(current_end_raw_ms * scale))
+            if subtitle_index == len(segments) and final_audio_ms is not None:
+                end_ms = final_audio_ms
+            if start_ms < last_written_end_ms:
+                start_ms = last_written_end_ms
+            if end_ms <= start_ms:
+                end_ms = start_ms + 1
 
             srt.write(f"{subtitle_index}\n")
             srt.write(
-                f"{_format_srt_timestamp(current_start_ms)} --> "
+                f"{_format_srt_timestamp(start_ms)} --> "
                 f"{_format_srt_timestamp(end_ms)}\n"
             )
             srt.write(f"{subtitle_text}\n\n")
+            last_written_end_ms = end_ms
 
             if subtitle_index < len(segments):
-                current_start_ms = end_ms + pause_ms
+                current_start_raw_ms = current_end_raw_ms + effective_pause_ms
             else:
-                current_start_ms = end_ms
+                current_start_raw_ms = current_end_raw_ms
 
-    return len(segments)
+    return {
+        "subtitle_count": len(segments),
+        "configured_pause_ms": pause_ms,
+        "effective_pause_ms": effective_pause_ms,
+        "final_audio_ms": final_audio_ms,
+        "predicted_total_ms": predicted_total_ms,
+        "scale": scale,
+    }
+
+
+async def run_cosyvoice_concurrent_tts(
+    tts_engine,
+    grouped_jobs,
+    voice_specs,
+    audio_dir,
+    total_lines,
+    workers,
+):
+    pending_jobs = []
+    for voice_id, jobs in grouped_jobs.items():
+        voice_spec = voice_specs[voice_id]
+        for i, line in jobs:
+            file_path = os.path.join(audio_dir, f"{i:04d}.wav")
+            if os.path.exists(file_path):
+                continue
+            pending_jobs.append((i, line, voice_id, voice_spec, file_path))
+
+    if not pending_jobs:
+        print("   所有音频片段已存在，跳过生成")
+        return
+
+    pending_jobs.sort(key=lambda item: item[0])
+    job_queue = asyncio.Queue()
+    for job in pending_jobs:
+        job_queue.put_nowait(job)
+
+    max_workers = max(1, min(workers, len(pending_jobs)))
+    print(f"   CosyVoice 并发线程: {max_workers}, 待生成={len(pending_jobs)}")
+    progress_lock = asyncio.Lock()
+    state = {"done": 0, "error": None}
+
+    async def worker():
+        while True:
+            if state["error"] is not None:
+                return
+            try:
+                i, line, voice_id, voice_spec, file_path = job_queue.get_nowait()
+            except asyncio.QueueEmpty:
+                return
+
+            try:
+                text = line.get("text", "")
+                emotion = line.get("emotion", "")
+                normalized_text = text if isinstance(text, str) else ""
+                if _is_punctuation_only_text(normalized_text):
+                    _write_silence_wav(
+                        file_path,
+                        duration_ms=PUNCTUATION_ONLY_SILENCE_MS,
+                        sample_rate=DEFAULT_AUDIO_SAMPLE_RATE,
+                    )
+                    ok = True
+                else:
+                    ok = await tts_engine.generate_line(
+                        text=normalized_text,
+                        emotion=emotion if isinstance(emotion, str) else "",
+                        voice_id=voice_id,
+                        voice_spec=voice_spec,
+                        output_path=file_path,
+                    )
+                if not ok:
+                    raise RuntimeError(
+                        "TTS 调用失败:"
+                        f" engine={tts_engine.name}, index={i},"
+                        f" speaker={line['speaker']}, voice={voice_id}, text={text}"
+                    )
+
+                async with progress_lock:
+                    state["done"] += 1
+                    print(
+                        "   进度:"
+                        f" {state['done']}/{len(pending_jobs)}"
+                        f" -> {line['speaker']} (line {i + 1}/{total_lines})"
+                    )
+            except Exception as exc:
+                async with progress_lock:
+                    if state["error"] is None:
+                        state["error"] = exc
+            finally:
+                job_queue.task_done()
+
+    tasks = [asyncio.create_task(worker()) for _ in range(max_workers)]
+    await asyncio.gather(*tasks)
+    if state["error"] is not None:
+        raise state["error"]
 
 
 async def main():
     parser = argparse.ArgumentParser(description="Gnosis 有声书生产系统")
     parser.add_argument(
         "step",
-        choices=["extract", "script", "tts", "merge", "full"],
-        help="运行步骤: extract(选角), script(剧本), tts(语音), merge(混音), full(全流程)",
+        choices=["extract", "script", "tts", "merge", "full", "proofread"],
+        help=(
+            "运行步骤: extract(选角), script(剧本), tts(语音), merge(混音), "
+            "proofread(剧本校对 Web), full(全流程)"
+        ),
     )
     parser.add_argument(
         "--project",
@@ -235,6 +415,12 @@ async def main():
         type=int,
         default=None,
         help="pass1 分段目标字数；默认等于 pass2 的 5 倍",
+    )
+    parser.add_argument(
+        "--pass2-workers",
+        type=int,
+        default=4,
+        help="script 阶段并发数（run_pass2），默认 4",
     )
     parser.add_argument(
         "--rolling-paragraphs",
@@ -264,12 +450,64 @@ async def main():
         help="GPT-SoVITS API 基地址（用于 /set_gpt_weights 与 /set_sovits_weights）",
     )
     parser.add_argument(
+        "--tts-engine",
+        default=DEFAULT_TTS_ENGINE,
+        choices=["cosyvoice", "gpt-sovits"],
+        help="TTS 引擎选择：默认 cosyvoice，可切换为 gpt-sovits",
+    )
+    parser.add_argument(
+        "--tts-workers",
+        type=int,
+        default=8,
+        help="TTS 并发线程数（仅 cosyvoice 生效，最小值 1）",
+    )
+    parser.add_argument(
+        "--cosyvoice-url",
+        default=DEFAULT_COSYVOICE_URL,
+        help="CosyVoice FastAPI 地址（可传主机地址或具体 inference 端点）",
+    )
+    parser.add_argument(
+        "--cosyvoice-mode",
+        default=DEFAULT_COSYVOICE_MODE,
+        choices=["instruct", "instruct2"],
+        help="CosyVoice 模式：instruct(预置说话人) / instruct2(参考音频)",
+    )
+    parser.add_argument(
+        "--cosyvoice-sample-rate",
+        type=int,
+        default=DEFAULT_COSYVOICE_SAMPLE_RATE,
+        help="CosyVoice 输出采样率（用于将 API 返回 PCM 包装为 wav）",
+    )
+    parser.add_argument(
+        "--cosyvoice-spk-id",
+        default=DEFAULT_COSYVOICE_SPK_ID,
+        help="CosyVoice instruct 模式默认 spk_id（默认 logos；优先级低于 .ref 中 cosyvoice_spk_id）",
+    )
+    parser.add_argument(
         "--subtitle",
         default="",
         help="输出字幕文件路径（SRT）；相对路径按项目目录解析，默认与最终音频同名",
     )
+    parser.add_argument(
+        "--web-host",
+        default="127.0.0.1",
+        help="proofread Web 服务监听地址",
+    )
+    parser.add_argument(
+        "--web-port",
+        type=int,
+        default=8765,
+        help="proofread Web 服务监听端口",
+    )
 
     args = parser.parse_args()
+    if args.tts_workers < 1:
+        parser.error("--tts-workers 必须 >= 1")
+    if args.pass2_workers < 1:
+        parser.error("--pass2-workers 必须 >= 1")
+    if args.web_port < 1 or args.web_port > 65535:
+        parser.error("--web-port 必须在 1..65535 之间")
+
     try:
         project_name = validate_project_name(args.project)
     except ValueError as exc:
@@ -280,12 +518,30 @@ async def main():
     print(f"📁 当前 project: {project_name}")
     print(f"📂 project 目录: {project_root}")
 
+    if args.step == "proofread":
+        from gnosis.proofread_web import run_proofread_server
+
+        run_proofread_server(
+            project_name=project_name,
+            host=args.web_host,
+            port=args.web_port,
+            projects_root=os.path.join("data", "projects"),
+        )
+        return
+
     script_path = os.path.join(project_root, "script.json")
     audio_dir = os.path.join(project_root, "output_audio")
     character_db_path = os.path.join(project_root, "character_db.json")
     llm_cache_dir = resolve_project_path(project_root, args.llm_cache_dir)
     project_input_path = os.path.join(project_root, "input.txt")
     final_file = os.path.join(project_root, "final_audiobook.mp3")
+    project_prompts = ProjectPromptOverrides()
+    if args.step in ["extract", "script", "full"]:
+        project_prompts = load_project_prompt_overrides(project_root)
+        if project_prompts.source_path:
+            print(f"🧩 已加载 project prompt: {project_prompts.source_path}")
+        else:
+            print("🧩 未找到 project prompt（prompt.json），使用默认主 prompt")
 
     pass2_chunking_config = build_chunking_config(
         chunk_size=args.pass2_chunk_size,
@@ -305,8 +561,13 @@ async def main():
 
     char_manager = None
     if args.step in ["extract", "script", "full"]:
+        character_seeds_dir = (
+            DEFAULT_COSYVOICE_REF_DIR
+            if args.tts_engine == "cosyvoice"
+            else DEFAULT_SOVITS_REF_DIR
+        )
         char_manager = CharacterManager(
-            db_path=character_db_path, seeds_dir="voice/ref"
+            db_path=character_db_path, seeds_dir=character_seeds_dir
         )
     text = None
     if args.step in ["extract", "script", "full"]:
@@ -322,7 +583,11 @@ async def main():
 
         print("🔍 [Step 1] 正在分析角色并绑定种子...")
         run_pass1(
-            text, char_manager, pass1_chunking_config, cache_dir=llm_cache_dir
+            text,
+            char_manager,
+            pass1_chunking_config,
+            cache_dir=llm_cache_dir,
+            pass1_custom_prompt=project_prompts.pass1_prompt,
         )  # 内部会自动 save_db
         print(f"✅ 角色库已更新: {len(char_manager.characters)} 个角色")
 
@@ -332,7 +597,12 @@ async def main():
 
         print("📝 [Step 2] 正在生成结构化剧本...")
         script_data = run_pass2(
-            text, char_manager, pass2_chunking_config, cache_dir=llm_cache_dir
+            text,
+            char_manager,
+            pass2_chunking_config,
+            cache_dir=llm_cache_dir,
+            pass2_workers=args.pass2_workers,
+            pass2_custom_prompt=project_prompts.pass2_prompt,
         )
         with open(script_path, "w", encoding="utf-8") as f:
             json.dump(script_data, f, ensure_ascii=False, indent=2)
@@ -340,17 +610,35 @@ async def main():
 
     # --- Step 3: 语音生成 (TTS) ---
     if args.step in ["tts", "full"]:
-        print("🎙️ [Step 3] 正在调用 GPT-SoVITS 生成音频...")
+        print(f"🎙️ [Step 3] 正在调用 {args.tts_engine} 生成音频...")
         if not os.path.exists(script_path):
             print("❌ 错误: 找不到剧本文件，请先运行 script 步骤")
             return
+
+        tts_engine = create_tts_engine(
+            engine_name=args.tts_engine,
+            sovits_url=args.sovits_url,
+            sovits_switch_url=args.sovits_switch_url,
+            cosyvoice_url=args.cosyvoice_url,
+            cosyvoice_mode=args.cosyvoice_mode,
+            cosyvoice_sample_rate=args.cosyvoice_sample_rate,
+            cosyvoice_spk_id=args.cosyvoice_spk_id,
+        )
 
         with open(script_path, "r", encoding="utf-8") as f:
             script_payload = json.load(f)
             characters, script_list = parse_script_payload(script_payload)
 
+        tts_ref_dir = (
+            DEFAULT_COSYVOICE_REF_DIR
+            if args.tts_engine == "cosyvoice"
+            else DEFAULT_SOVITS_REF_DIR
+        )
+        print(f"   ref目录: {os.path.abspath(tts_ref_dir)}")
         speaker_to_voice, voice_specs, default_voice_id = build_voice_registry(
-            characters, seeds_dir="voice/ref"
+            characters,
+            seeds_dir=tts_ref_dir,
+            ref_format=args.tts_engine,
         )
 
         # 按声线分组，减少模型切换次数
@@ -364,35 +652,63 @@ async def main():
 
         os.makedirs(audio_dir, exist_ok=True)
         for voice_id, jobs in grouped_jobs.items():
-            voice_spec = voice_specs[voice_id]
-            sovits_model_path = voice_spec.get("sovits_model_path")
-            gpt_model_path = voice_spec.get("gpt_model_path")
-            if sovits_model_path and gpt_model_path:
-                switched = switch_character(
-                    sovits_model_path,
-                    gpt_model_path,
-                    switch_url=args.sovits_switch_url,
-                )
-                if not switched:
-                    raise RuntimeError(f"切换模型失败: voice={voice_id}")
-
             print(f"   声线分组: {voice_id}, 句子数={len(jobs)}")
-            for i, line in jobs:
-                file_path = os.path.join(audio_dir, f"{i:04d}.wav")
-                if os.path.exists(file_path):
-                    continue  # 跳过已存在的，方便断点续传
 
-                print(f"   进度: {i + 1}/{len(script_list)} -> {line['speaker']}")
-                ok = await tts_generate(
-                    line["text"],
-                    voice_spec,
-                    file_path,
-                    sovits_url=args.sovits_url,
-                )
-                if not ok:
+        if args.tts_engine == "cosyvoice":
+            for voice_id in grouped_jobs:
+                voice_spec = voice_specs[voice_id]
+                prepared = tts_engine.prepare_voice(voice_id, voice_spec)
+                if not prepared:
                     raise RuntimeError(
-                        f"TTS 调用失败: index={i}, speaker={line['speaker']}, voice={voice_id}"
+                        f"TTS 声线准备失败: engine={args.tts_engine}, voice={voice_id}"
                     )
+            await run_cosyvoice_concurrent_tts(
+                tts_engine=tts_engine,
+                grouped_jobs=grouped_jobs,
+                voice_specs=voice_specs,
+                audio_dir=audio_dir,
+                total_lines=len(script_list),
+                workers=args.tts_workers,
+            )
+        else:
+            for voice_id, jobs in grouped_jobs.items():
+                voice_spec = voice_specs[voice_id]
+                prepared = tts_engine.prepare_voice(voice_id, voice_spec)
+                if not prepared:
+                    raise RuntimeError(
+                        f"TTS 声线准备失败: engine={args.tts_engine}, voice={voice_id}"
+                    )
+
+                for i, line in jobs:
+                    file_path = os.path.join(audio_dir, f"{i:04d}.wav")
+                    if os.path.exists(file_path):
+                        continue  # 跳过已存在的，方便断点续传
+
+                    print(f"   进度: {i + 1}/{len(script_list)} -> {line['speaker']}")
+                    text = line.get("text", "")
+                    emotion = line.get("emotion", "")
+                    normalized_text = text if isinstance(text, str) else ""
+                    if _is_punctuation_only_text(normalized_text):
+                        _write_silence_wav(
+                            file_path,
+                            duration_ms=PUNCTUATION_ONLY_SILENCE_MS,
+                            sample_rate=DEFAULT_AUDIO_SAMPLE_RATE,
+                        )
+                        ok = True
+                    else:
+                        ok = await tts_engine.generate_line(
+                            text=normalized_text,
+                            emotion=emotion if isinstance(emotion, str) else "",
+                            voice_id=voice_id,
+                            voice_spec=voice_spec,
+                            output_path=file_path,
+                        )
+                    if not ok:
+                        raise RuntimeError(
+                            "TTS 调用失败:"
+                            f" engine={args.tts_engine}, index={i},"
+                            f" speaker={line['speaker']}, voice={voice_id}, text={text}"
+                        )
         print("✅ 音频片段生成完毕")
 
     # --- Step 4: 合并混音 ---
@@ -419,15 +735,26 @@ async def main():
                 with open(script_path, "r", encoding="utf-8") as f:
                     script_payload = json.load(f)
                     _, script_list = parse_script_payload(script_payload)
-                subtitle_count = generate_srt_subtitles(
+                subtitle_stats = generate_srt_subtitles(
                     audio_dir=os.path.abspath(audio_dir),
                     script_lines=script_list,
                     subtitle_path=os.path.abspath(subtitle_file),
                     pause_ms=args.pause,
+                    final_audio_path=os.path.abspath(final_file),
                 )
+                pause_note = ""
+                if (
+                    subtitle_stats["effective_pause_ms"]
+                    != subtitle_stats["configured_pause_ms"]
+                ):
+                    pause_note = (
+                        "，已按成片反推 pause="
+                        f"{subtitle_stats['effective_pause_ms']}ms"
+                    )
                 print(
                     f"📝 已生成同步字幕: {subtitle_file} "
-                    f"(共 {subtitle_count} 条，可直接导入剪辑软件)"
+                    f"(共 {subtitle_stats['subtitle_count']} 条，可直接导入剪辑软件"
+                    f"{pause_note})"
                 )
             else:
                 print("⚠️ 未找到剧本文件，跳过字幕生成")

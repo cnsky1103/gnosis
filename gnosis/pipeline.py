@@ -1,9 +1,11 @@
 from openai import OpenAI
 from .llm_director import PASS1_PROMPT_TEMPLATE, PASS2_PROMPT_TEMPLATE
+from .config import ALLOWED_CHARACTER_TAGS, DEFAULT_LLM_MODEL
 from .models import CharacterExtraction, ScriptResult
 from .chunking import ChunkingConfig, build_rolling_context, split_text_into_chunks
 from .utils import remove_code_fences_regex
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
 import httpx
 import json
@@ -34,11 +36,11 @@ def _parse_json_object(raw_content: str) -> dict:
 
 
 def _build_request_key(
-    model: str, user_chunk: str, response_format: Dict[str, str]
+    model: str, messages: List[Dict[str, str]], response_format: Dict[str, str]
 ) -> str:
     payload = {
         "model": model,
-        "user_chunk": user_chunk,
+        "messages": messages,
         "response_format": response_format,
     }
     encoded = json.dumps(
@@ -98,14 +100,15 @@ def _get_raw_response(
     cache_dir: str,
 ) -> Tuple[str, str, bool]:
     response_format = {"type": "json_object"}
-    user_chunk = messages[-1]["content"] if messages else ""
-    request_key = _build_request_key(model, user_chunk, response_format)
+    request_key = _build_request_key(model, messages, response_format)
     cache_path = _build_cache_path(cache_dir, stage, chunk_index, request_key)
 
     if os.path.exists(cache_path):
         print(f"chunk {chunk_index} cache hit")
         return _load_cached_raw_response(cache_path), cache_path, True
 
+    print(model)
+    print(response_format)
     response = client.chat.completions.create(
         model=model,
         messages=messages,
@@ -125,11 +128,19 @@ def _get_raw_response(
     return raw_content, cache_path, False
 
 
+def _normalize_custom_prompt(custom_prompt: str) -> str:
+    value = (custom_prompt or "").strip()
+    if value:
+        return value
+    return "无（使用通用规则）"
+
+
 def run_pass1(
     text_segment,
     char_manager,
     chunking_config: ChunkingConfig = None,
     cache_dir: str = "data/llm_cache",
+    pass1_custom_prompt: str = "",
 ):
     # Pass 1: 选角（按 chunk 迭代）
     chunking_config = chunking_config or ChunkingConfig()
@@ -139,10 +150,15 @@ def run_pass1(
 
     for chunk in chunks:
         known_str = char_manager.get_known_names()
+        print(known_str)
         messages = [
             {
                 "role": "system",
-                "content": PASS1_PROMPT_TEMPLATE.format(known_characters_str=known_str),
+                "content": PASS1_PROMPT_TEMPLATE.format(
+                    known_characters_str=known_str,
+                    allowed_character_tags="\n".join(ALLOWED_CHARACTER_TAGS),
+                    project_pass1_prompt=_normalize_custom_prompt(pass1_custom_prompt),
+                ),
             },
             {"role": "user", "content": chunk.text},
         ]
@@ -150,7 +166,7 @@ def run_pass1(
             stage="pass1",
             chunk_index=chunk.index,
             total_chunks=len(chunks),
-            model="deepseek-v3.2",
+            model=DEFAULT_LLM_MODEL,
             messages=messages,
             cache_dir=cache_dir,
         )
@@ -178,6 +194,8 @@ def run_pass2(
     char_manager,
     chunking_config: ChunkingConfig = None,
     cache_dir: str = "data/llm_cache",
+    pass2_workers: int = 4,
+    pass2_custom_prompt: str = "",
 ):
     # Pass 2: 剧本（按 chunk 迭代 + 滚动上下文）
     chunking_config = chunking_config or ChunkingConfig()
@@ -189,18 +207,24 @@ def run_pass2(
         return {"characters": characters_payload, "script": []}
 
     updated_known = char_manager.get_known_names_and_gender()
+    previous_context_map = {}
     previous_chunk_context = "无（这是第一段）"
-    script_lines = []
-
     for chunk in chunks:
+        previous_context_map[chunk.index] = previous_chunk_context
+        previous_chunk_context = (
+            build_rolling_context(chunk, chunking_config) or "无（这是第一段）"
+        )
+
+    def _process_chunk(chunk):
         messages = [
             {
                 "role": "system",
                 "content": PASS2_PROMPT_TEMPLATE.format(
                     available_characters_str=updated_known,
-                    previous_chunk_context_str=previous_chunk_context,
+                    previous_chunk_context_str=previous_context_map[chunk.index],
                     chunk_index=chunk.index,
                     total_chunks=len(chunks),
+                    project_pass2_prompt=_normalize_custom_prompt(pass2_custom_prompt),
                 ),
             },
             {"role": "user", "content": chunk.text},
@@ -209,7 +233,7 @@ def run_pass2(
             stage="pass2",
             chunk_index=chunk.index,
             total_chunks=len(chunks),
-            model="deepseek-v3.2",
+            model=DEFAULT_LLM_MODEL,
             messages=messages,
             cache_dir=cache_dir,
         )
@@ -222,9 +246,24 @@ def run_pass2(
                 f"Pass2 第 {chunk.index} 段解析失败，原始响应已保存: {cache_path}"
             ) from e
         chunk_script = ScriptResult.model_validate(script_payload)
-        script_lines.extend([line.model_dump() for line in chunk_script.script])
-        previous_chunk_context = (
-            build_rolling_context(chunk, chunking_config) or "无（这是第一段）"
-        )
+        return chunk.index, [line.model_dump() for line in chunk_script.script]
+
+    max_workers = max(1, min(int(pass2_workers or 1), len(chunks)))
+    chunk_results = {}
+    if max_workers == 1:
+        for chunk in chunks:
+            chunk_index, chunk_lines = _process_chunk(chunk)
+            chunk_results[chunk_index] = chunk_lines
+    else:
+        print(f"   [pass2] 并发执行: workers={max_workers}, chunks={len(chunks)}")
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = [executor.submit(_process_chunk, chunk) for chunk in chunks]
+            for future in as_completed(futures):
+                chunk_index, chunk_lines = future.result()
+                chunk_results[chunk_index] = chunk_lines
+
+    script_lines = []
+    for chunk in chunks:
+        script_lines.extend(chunk_results.get(chunk.index, []))
 
     return {"characters": characters_payload, "script": script_lines}
