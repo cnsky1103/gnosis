@@ -1,0 +1,119 @@
+[
+  {
+    "name": "竹久优真",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "duanya",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "本章第一人称叙述者，自称平凡的男生，文学部成员，性格内敛喜欢读书。"
+  },
+  {
+    "name": "葵栞",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": "perfumer",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文学部部长，高二女生，戴眼镜黑短发，性格成熟稳重，对主角关怀备至。"
+  },
+  {
+    "name": "宗像濑奈",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "高一新生，性格阳光活力四射，被称为太阳般的少女，文学部常客。"
+  },
+  {
+    "name": "奥山",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": "maenna",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角竹久优真的初中班主任，理科教师，摄影爱好者。外表看似中年大叔，常被学生戏称为“奥老师”（谐音大叔）。性格友善幽默，与学生关系良好，喜欢用皮包轻轻敲打学生的头。"
+  },
+  {
+    "name": "笹叶更纱",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "艺文馆高中一年级新生，栗色长发的阳光少女，性格活泼，笑容如V字形，曾与主角在上学路上相撞。"
+  },
+  {
+    "name": "黑崎大我",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": "xunshi",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "艺文馆高中入学成绩第一名的新生代表，外貌英俊完美，对谁都报以温柔微笑，被主角戏称为李尔王。"
+  },
+  {
+    "name": "原田良照",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": "maenna",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的班主任老师，三十多岁初头但已有秃顶迹象，态度傲慢地教训迟到的学生。"
+  },
+  {
+    "name": "若宫雅",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": "perfumer",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "竹久优真的初中同学及高中时期的暗恋对象。黑发文学少女，重度近视，性格文静内向。出现在主角的回忆场景中，在电车站台和电车上与主角有互动对话。"
+  },
+  {
+    "name": "鸠山遥斗",
+    "gender": "unknown",
+    "voice_archetype": "未知",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的朋友，昵称“噗噗”，性格内向的御宅族，高中加入了电脑研究部，声音爽朗。"
+  },
+  {
+    "name": "片冈",
+    "gender": "unknown",
+    "voice_archetype": "未知",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "足球部队长，身材高大且充满男子气概，嗓音低沉雄厚，性格热血直率，对社团有极强的号召力。"
+  },
+  {
+    "name": "樱木真理",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": "yela",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "高中国语老师，年轻美女，佩戴圆眼镜（如牛奶瓶），手持厚厚的现代文教科书作为惩戒学生的凶器，喜爱武者小路实笃。"
+  },
+  {
+    "name": "赤城龙之介",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "duanya",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "美术科二年级生，外貌凶狠但性格坦率害羞的男生，认识葵栞，在油画部与竹久优真和宗像濑奈相遇。"
+  },
+  {
+    "name": "爱子",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "在同人合战活动中认识的艺文馆高中学生，留着黑发，性格开朗喜欢开玩笑，在车站偶遇鸠山遥斗并认出他。"
+  }
+]

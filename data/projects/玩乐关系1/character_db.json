@@ -1,0 +1,65 @@
+[
+  {
+    "name": "常盘孤太郎",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "桌游吧『Kurumaza』的代理店长，17岁，高中辍学，是个沉迷桌游的宅男。暗恋同事小鸟游米芙露。"
+  },
+  {
+    "name": "小鸟游米芙露",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "haruka",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "在『Kurumaza』打工的高中女生，辣妹风格，对桌游兴趣不大但性格开朗。有男朋友。"
+  },
+  {
+    "name": "宇佐树",
+    "gender": "male",
+    "voice_archetype": "男-元气",
+    "voice": "xuerong",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小鸟游米芙露的男朋友，金发帅哥高中生。阳光开朗，待人和善，对桌游有浓厚兴趣。与主角常盘孤太郎关系友好，言行举止充满魅力，但也无形中给主角带来压力。"
+  },
+  {
+    "name": "歌方月乃",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": "yela",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小说第一人称主角，本名歌方月乃。天才女流将棋棋士，性格认真，对甜食（尤其是甜度高的红豆牛奶拿铁）有强烈爱好，口癖是“善哉”。因为外界评论其棋风类似AI而感到迷茫，缺乏玩乐心。"
+  },
+  {
+    "name": "真理",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": "shenxun",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角歌方月乃的姨母兼将棋师父，如今要求主角改称她为“真理小姐”。性格自由豁达、玩乐的化身，曾因在官方比赛中下出五次“二步”犯规而闻名。对主角非常关爱，给出了“缺少玩乐”的忠告，并提及一个适合主角的打工机会。"
+  },
+  {
+    "name": "羽切臣虎",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "zuole",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "曾是高中老师兼棒球社顾问，现已离职。主人公常盘孤太郎的邻居兼桌游启蒙者，是其曾经的恩师。目前帮岳父工作。性格温和，略显青涩。"
+  },
+  {
+    "name": "菜摘",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": "raidian",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "羽切臣虎的妻子，常盘孤太郎儿时邻居家的温柔大姐姐，也是其初恋对象。出身名门，性格文静但也有要强的一面。"
+  }
+]

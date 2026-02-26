@@ -16,7 +16,7 @@ class CharacterProfile(BaseModel):
 class ScriptLine(BaseModel):
     text: str
     speaker: str
-    emotion: str = "neutral"
+    #emotion: str = "neutral"
 
 
 class CharacterExtraction(BaseModel):

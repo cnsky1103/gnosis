@@ -123,6 +123,62 @@ def _collect_sorted_segments(audio_dir):
     return paths
 
 
+def _filter_script_jobs_by_character(script_lines, character_name):
+    target_character = (character_name or "").strip()
+    jobs = []
+    available_speakers = set()
+    for i, line in enumerate(script_lines):
+        if not isinstance(line, dict):
+            continue
+        speaker = str(line.get("speaker", "")).strip()
+        if speaker:
+            available_speakers.add(speaker)
+        if not target_character or speaker == target_character:
+            jobs.append((i, line))
+    return jobs, available_speakers
+
+
+def delete_character_audio_segments(audio_dir, script_lines, character_name):
+    target_character = (character_name or "").strip()
+    if not target_character:
+        return {"target": "", "matched_lines": 0, "deleted_files": 0}
+
+    target_indices = {
+        i
+        for i, line in enumerate(script_lines)
+        if isinstance(line, dict) and str(line.get("speaker", "")).strip() == target_character
+    }
+    if not target_indices:
+        return {
+            "target": target_character,
+            "matched_lines": 0,
+            "deleted_files": 0,
+        }
+    if not os.path.isdir(audio_dir):
+        return {
+            "target": target_character,
+            "matched_lines": len(target_indices),
+            "deleted_files": 0,
+        }
+
+    deleted_files = 0
+    for audio_path in _collect_sorted_segments(audio_dir):
+        file_name = os.path.basename(audio_path)
+        stem = os.path.splitext(file_name)[0]
+        if not stem.isdigit():
+            continue
+        if int(stem) not in target_indices:
+            continue
+        os.remove(audio_path)
+        deleted_files += 1
+
+    return {
+        "target": target_character,
+        "matched_lines": len(target_indices),
+        "deleted_files": deleted_files,
+    }
+
+
 def _probe_duration_ms(audio_file):
     ffprobe_cmd = [
         "ffprobe",
@@ -462,6 +518,16 @@ async def main():
         help="TTS 并发线程数（仅 cosyvoice 生效，最小值 1）",
     )
     parser.add_argument(
+        "--char",
+        default="",
+        help="TTS 仅生成指定角色名的台词（按 script.speaker 精确匹配）",
+    )
+    parser.add_argument(
+        "--delete-char-audio",
+        default="",
+        help="TTS 结束后删除指定角色名的全部语音片段（按 script.speaker 精确匹配）",
+    )
+    parser.add_argument(
         "--cosyvoice-url",
         default=DEFAULT_COSYVOICE_URL,
         help="CosyVoice FastAPI 地址（可传主机地址或具体 inference 端点）",
@@ -507,6 +573,10 @@ async def main():
         parser.error("--pass2-workers 必须 >= 1")
     if args.web_port < 1 or args.web_port > 65535:
         parser.error("--web-port 必须在 1..65535 之间")
+    if args.char.strip() and args.step not in ["tts", "full"]:
+        parser.error("--char 仅支持在 tts / full 步骤中使用")
+    if args.delete_char_audio.strip() and args.step not in ["tts", "full"]:
+        parser.error("--delete-char-audio 仅支持在 tts / full 步骤中使用")
 
     try:
         project_name = validate_project_name(args.project)
@@ -615,6 +685,34 @@ async def main():
             print("❌ 错误: 找不到剧本文件，请先运行 script 步骤")
             return
 
+        with open(script_path, "r", encoding="utf-8") as f:
+            script_payload = json.load(f)
+            characters, script_list = parse_script_payload(script_payload)
+
+        delete_target = args.delete_char_audio.strip()
+        char_target = args.char.strip()
+        delete_only_mode = args.step == "tts" and bool(delete_target) and not bool(char_target)
+        if delete_only_mode:
+            print("🧹 [Step 3] 仅删除模式：跳过 TTS 生成")
+            delete_stats = delete_character_audio_segments(
+                audio_dir=audio_dir,
+                script_lines=script_list,
+                character_name=delete_target,
+            )
+            if delete_stats["matched_lines"] == 0:
+                print(
+                    "⚠️ 删除阶段未命中角色:"
+                    f" {delete_target}（未删除任何文件）"
+                )
+            else:
+                print(
+                    "🧹 删除角色语音完成:"
+                    f" {delete_stats['target']}，命中台词 {delete_stats['matched_lines']} 句，"
+                    f" 删除文件 {delete_stats['deleted_files']} 个"
+                )
+            print("✅ 删除阶段执行完毕")
+            return
+
         tts_engine = create_tts_engine(
             engine_name=args.tts_engine,
             sovits_url=args.sovits_url,
@@ -624,10 +722,23 @@ async def main():
             cosyvoice_sample_rate=args.cosyvoice_sample_rate,
             cosyvoice_spk_id=args.cosyvoice_spk_id,
         )
-
-        with open(script_path, "r", encoding="utf-8") as f:
-            script_payload = json.load(f)
-            characters, script_list = parse_script_payload(script_payload)
+        tts_jobs, available_speakers = _filter_script_jobs_by_character(
+            script_list, args.char
+        )
+        if args.char.strip():
+            if not tts_jobs:
+                suggestion = "、".join(sorted(available_speakers)[:20])
+                if suggestion:
+                    raise ValueError(
+                        f"--char 未命中剧中人物: {args.char.strip()}。可用人物示例: {suggestion}"
+                    )
+                raise ValueError(
+                    f"--char 未命中剧中人物: {args.char.strip()}（剧本中未找到可用 speaker）"
+                )
+            print(
+                "   角色过滤:"
+                f" 仅生成 {args.char.strip()}，命中 {len(tts_jobs)}/{len(script_list)} 句"
+            )
 
         tts_ref_dir = (
             DEFAULT_COSYVOICE_REF_DIR
@@ -643,7 +754,7 @@ async def main():
 
         # 按声线分组，减少模型切换次数
         grouped_jobs = {}
-        for i, line in enumerate(script_list):
+        for i, line in tts_jobs:
             speaker = line["speaker"]
             voice_id = speaker_to_voice.get(speaker, default_voice_id)
             if voice_id not in voice_specs:
@@ -709,6 +820,23 @@ async def main():
                             f" engine={args.tts_engine}, index={i},"
                             f" speaker={line['speaker']}, voice={voice_id}, text={text}"
                         )
+        if args.delete_char_audio.strip():
+            delete_stats = delete_character_audio_segments(
+                audio_dir=audio_dir,
+                script_lines=script_list,
+                character_name=args.delete_char_audio,
+            )
+            if delete_stats["matched_lines"] == 0:
+                print(
+                    "⚠️ 删除阶段未命中角色:"
+                    f" {args.delete_char_audio.strip()}（未删除任何文件）"
+                )
+            else:
+                print(
+                    "🧹 删除角色语音完成:"
+                    f" {delete_stats['target']}，命中台词 {delete_stats['matched_lines']} 句，"
+                    f" 删除文件 {delete_stats['deleted_files']} 个"
+                )
         print("✅ 音频片段生成完毕")
 
     # --- Step 4: 合并混音 ---
