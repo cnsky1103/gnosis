@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gnosis 剧本校对</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <h1>Script Proofread</h1>
+          <p>聚焦一句，快速判定说话者</p>
+        </div>
+        <div class="controls">
+          <label class="field compact">
+            <span>项目</span>
+            <select id="projectSelect"></select>
+          </label>
+          <label class="field compact">
+            <span>跳转行</span>
+            <div class="jump-group">
+              <input id="jumpInput" type="number" min="1" step="1" />
+              <button id="jumpBtn" type="button">跳转</button>
+            </div>
+          </label>
+          <button id="reloadBtn" type="button">重载</button>
+          <div id="saveStatus" class="save-status idle">就绪</div>
+        </div>
+      </header>
+
+      <section class="progress-wrap">
+        <div id="progressText">0 / 0</div>
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </section>
+
+      <main class="main-grid">
+        <section class="context-panel">
+          <div id="contextList" class="context-list"></div>
+        </section>
+
+        <aside class="editor-panel">
+          <div class="editor-head">
+            <button id="prevBtn" type="button" class="nav-btn">上一句</button>
+            <div id="lineMeta" class="line-meta">第 0 句</div>
+            <button id="nextBtn" type="button" class="nav-btn">下一句</button>
+          </div>
+
+          <label class="field">
+            <span>台词</span>
+            <textarea id="textInput" rows="4"></textarea>
+          </label>
+
+          <label class="field">
+            <span>说话者</span>
+            <input id="speakerInput" type="text" />
+          </label>
+
+          <label class="field">
+            <span>语气</span>
+            <input id="emotionInput" type="text" />
+          </label>
+
+          <label class="field">
+            <span>类型</span>
+            <input id="typeInput" type="text" />
+          </label>
+
+          <div class="hotkey-wrap">
+            <div class="hotkey-title">角色快捷键</div>
+            <div id="hotkeyGrid" class="hotkey-grid"></div>
+          </div>
+
+          <div class="hint">
+            Enter 下一句，Shift+Enter 上一句；角色快捷键仅在输入框未聚焦时生效。
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
