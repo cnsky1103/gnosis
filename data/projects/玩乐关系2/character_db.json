@@ -1,0 +1,110 @@
+[
+  {
+    "name": "常盘孤太郎",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "桌游咖啡店的店员，17岁男生，喜欢桌游，暗恋同事小鸟游米芙露"
+  },
+  {
+    "name": "小鸟游米芙露",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "桌游咖啡店的辣妹店员，染粉头发，性格开朗活泼，有男友宇佐君"
+  },
+  {
+    "name": "宇佐树",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": "yu",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小鸟游米芙露的男朋友，金发美少年，聪明且气场强大，对常盘孤太郎略带敌意但也会道歉，实际身份是歌方月乃的假扮"
+  },
+  {
+    "name": "武士",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "yinxian",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "常盘孤太郎高中时期最要好的朋友，自称'在下'，称呼常盘为'常盘氏'，喜欢桌游"
+  },
+  {
+    "name": "半杭",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": "shenxun",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "武士的前女友，田径部ACE，金发有晒痕，长相好看，行动力强，对常盘孤太郎有强烈敌意"
+  },
+  {
+    "name": "杉野",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "yinxian",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小鸟游米芙露的初中同学，与春山、久米田一起出现"
+  },
+  {
+    "name": "春山",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "yinxian",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小鸟游米芙露的初中同学，轻浮且令人不悦，试图纠缠小鸟游"
+  },
+  {
+    "name": "久米田",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "zuole",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小鸟游米芙露的初中同学，与杉野、春山一起出现"
+  },
+  {
+    "name": "羽切臣虎",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": "maenna",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学校的顾问老师，也是棒球部的教练，性格爽朗，对桌游有兴趣，是主角的恩人和憧憬对象"
+  },
+  {
+    "name": "巽真理",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": "shenxun",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "歌方月乃的前师父，经营人才派遣公司Roll Worker，性格精明，对歌方月乃很了解，说话直接"
+  },
+  {
+    "name": "武士萌萌爱",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "阳当高中田径部的前成员，因受伤退出社团后开始沉迷桌游。外表健康阳光，性格天真烂漫且有些天然呆，对桌游充满热情但容易吸引过多关注。"
+  },
+  {
+    "name": "歌方月乃",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": "shenxun",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "女流名人，桌游高手，以歌丸的伪装身份出现，对常盘孤太郎有好感"
+  }
+]
