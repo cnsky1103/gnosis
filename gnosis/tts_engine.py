@@ -3,8 +3,15 @@ import os
 import wave
 from typing import Dict, Optional
 from urllib.parse import urlsplit, urlunsplit
-from cosyvoice.cli.cosyvoice import AutoModel
-import torchaudio
+try:
+    from cosyvoice.cli.cosyvoice import AutoModel
+except ModuleNotFoundError:
+    AutoModel = None  # type: ignore[assignment]
+
+try:
+    import torchaudio
+except ModuleNotFoundError:
+    torchaudio = None  # type: ignore[assignment]
 
 import requests
 
