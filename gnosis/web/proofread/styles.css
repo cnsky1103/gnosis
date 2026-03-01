@@ -202,6 +202,16 @@ button:hover {
   cursor: pointer;
 }
 
+.ctx-line.window-green {
+  border-color: #9bd2b5;
+  background: #edf9f1;
+}
+
+.ctx-line.window-red {
+  border-color: #e7aaaa;
+  background: #fff1f1;
+}
+
 .ctx-line:hover {
   border-color: #c8bba4;
 }
@@ -212,12 +222,34 @@ button:hover {
   border-color: #ddd2c4;
 }
 
+.ctx-line.muted.window-green {
+  background: #e7f4eb;
+  border-color: #bfdcc9;
+}
+
+.ctx-line.muted.window-red {
+  background: #f8e9e9;
+  border-color: #e1bcbc;
+}
+
 .ctx-line.current {
   color: var(--ink);
   border-color: #bc5d3a;
   background: linear-gradient(160deg, #fff7ea 0%, #ffeede 100%);
   box-shadow: 0 8px 24px rgba(176, 87, 50, 0.16);
   transform: scale(1.01);
+}
+
+.ctx-line.current.window-green {
+  border-color: #2f9f68;
+  background: linear-gradient(160deg, #f2fcf6 0%, #dff3e8 100%);
+  box-shadow: 0 8px 24px rgba(47, 159, 104, 0.18);
+}
+
+.ctx-line.current.window-red {
+  border-color: #c94a4a;
+  background: linear-gradient(160deg, #fff6f6 0%, #ffe6e6 100%);
+  box-shadow: 0 8px 24px rgba(201, 74, 74, 0.18);
 }
 
 .ctx-meta {

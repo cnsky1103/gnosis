@@ -2,6 +2,7 @@ const state = {
   projects: [],
   project: "",
   lines: [],
+  windowFlags: [],
   characters: [],
   keyMap: [],
   keyToName: new Map(),
@@ -12,11 +13,14 @@ const state = {
 };
 
 const contextRadius = 3;
+const speakerWindowSize = 20;
+const maxSpeakersInWindow = 2;
 
 const els = {
   projectSelect: document.getElementById("projectSelect"),
   jumpInput: document.getElementById("jumpInput"),
   jumpBtn: document.getElementById("jumpBtn"),
+  nextRedBtn: document.getElementById("nextRedBtn"),
   reloadBtn: document.getElementById("reloadBtn"),
   saveStatus: document.getElementById("saveStatus"),
   progressText: document.getElementById("progressText"),
@@ -112,6 +116,51 @@ function renderHotkeys() {
   }
 }
 
+function normalizeSpeakerKey(value) {
+  const speaker = value == null ? "" : String(value).trim();
+  return speaker.toLowerCase();
+}
+
+function recomputeWindowFlags() {
+  const total = state.lines.length;
+  const redFlags = new Array(total).fill(false);
+  const greenFlags = new Array(total).fill(false);
+
+  for (let start = 0; start < total; start += 1) {
+    const end = Math.min(total, start + speakerWindowSize);
+    const speakers = new Set();
+    for (let idx = start; idx < end; idx += 1) {
+      const key = normalizeSpeakerKey(state.lines[idx]?.speaker);
+      if (key) {
+        speakers.add(key);
+        if (speakers.size > maxSpeakersInWindow) {
+          break;
+        }
+      }
+    }
+
+    const isRed = speakers.size > maxSpeakersInWindow;
+    for (let idx = start; idx < end; idx += 1) {
+      if (isRed) {
+        redFlags[idx] = true;
+      } else {
+        greenFlags[idx] = true;
+      }
+    }
+  }
+
+  state.windowFlags = new Array(total);
+  for (let idx = 0; idx < total; idx += 1) {
+    if (redFlags[idx]) {
+      state.windowFlags[idx] = "red";
+    } else if (greenFlags[idx]) {
+      state.windowFlags[idx] = "green";
+    } else {
+      state.windowFlags[idx] = "neutral";
+    }
+  }
+}
+
 function renderProgress() {
   const total = state.lines.length;
   if (total === 0) {
@@ -159,8 +208,14 @@ function renderContext() {
   for (let offset = -contextRadius; offset <= contextRadius; offset += 1) {
     const idx = state.index + offset;
     const line = idx >= 0 && idx < state.lines.length ? state.lines[idx] : null;
+    const zone = idx >= 0 && idx < state.windowFlags.length ? state.windowFlags[idx] : "neutral";
     const block = document.createElement("div");
     block.className = "ctx-line";
+    if (zone === "red") {
+      block.classList.add("window-red");
+    } else if (zone === "green") {
+      block.classList.add("window-green");
+    }
     if (offset === 0) {
       block.classList.add("current");
     } else {
@@ -228,6 +283,7 @@ async function saveLine(index) {
       if (state.lines[index]) {
         state.lines[index] = normalizeLine(result.line);
       }
+      recomputeWindowFlags();
       state.dirty.delete(index);
       setSaveStatus("saved", "已保存");
       renderProgress();
@@ -281,6 +337,7 @@ async function assignSpeakerAndAdvance(name) {
   const line = state.lines[state.index];
   if (!line) return;
   line.speaker = name;
+  recomputeWindowFlags();
   markDirty(state.index);
   renderEditor();
   renderContext();
@@ -299,6 +356,9 @@ function updateCurrentField(field, value) {
   if (line[field] === value) return;
   line[field] = value;
   markDirty(state.index);
+  if (field === "speaker") {
+    recomputeWindowFlags();
+  }
   if (field === "text" || field === "speaker") {
     renderContext();
   }
@@ -314,10 +374,25 @@ async function jumpToInputLine() {
   await gotoIndex(nextIndex);
 }
 
+async function gotoNextRedRegion() {
+  for (let idx = state.index + 1; idx < state.windowFlags.length; idx += 1) {
+    if (state.windowFlags[idx] !== "red") {
+      continue;
+    }
+    if (idx > 0 && state.windowFlags[idx - 1] === "red") {
+      continue;
+    }
+    await gotoIndex(idx);
+    return;
+  }
+  setSaveStatus("saved", "no red ahead");
+}
+
 async function loadProject(projectName) {
   const payload = await fetchJson(`/api/project/${encodeURIComponent(projectName)}`);
   state.project = payload.project;
   state.lines = (payload.lines || []).map(normalizeLine);
+  recomputeWindowFlags();
   state.characters = payload.characters || [];
   state.keyMap = payload.key_map || [];
   state.index = state.lines.length > 0 ? restoreIndex(state.lines.length) : 0;
@@ -362,6 +437,9 @@ function bindEvents() {
   });
   els.jumpBtn.addEventListener("click", () => {
     void jumpToInputLine();
+  });
+  els.nextRedBtn.addEventListener("click", () => {
+    void gotoNextRedRegion();
   });
   els.jumpInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
