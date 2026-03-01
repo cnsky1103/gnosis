@@ -1,7 +1,7 @@
 import os
 from typing import Dict, List, Tuple
 
-DEFAULT_LLM_MODEL = os.environ.get("LLM_MODEL", "deepseek-v3.1")
+DEFAULT_LLM_MODEL = os.environ.get("LLM_MODEL", "kimi-k2.5")
 
 # LLM 仅可使用以下标签
 ALLOWED_CHARACTER_TAGS: List[str] = [

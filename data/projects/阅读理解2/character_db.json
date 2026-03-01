@@ -1,0 +1,173 @@
+[
+  {
+    "name": "竹久优真",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "duanya",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "第一人称叙述者，文艺部/漫画研究部成员，热爱阅读莎士比亚作品，性格有些执拗且容易在感兴趣的话题上忘我畅谈，正在帮助挚友黑崎大我追求栞学姐"
+  },
+  {
+    "name": "葵栞",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": "shenxun",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "漫画研究部部长，短发戴眼镜的美少女，被称为'壁作家'的知名BL本子漫画家，性格强势略带S属性，喜欢用暧昧言语调戏后辈，对社团成员有严格要求"
+  },
+  {
+    "name": "小户部",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "duanya",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "三年级学生，领带为红色，性格弱气、唯唯诺诺，面对栞学姐时地位较低，是轻小说《怪异学园事件手帖》的粉丝，委托栞学姐寻找该书的作者平泽香织以获取签名"
+  },
+  {
+    "name": "笹叶更纱",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": "perfumer",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角竹久优真的同班同学，班上的美少女，性格认真纯粹的文学少女。好友黑崎大我的前恋人，因分手而翘课逃避。外表华丽但内心纤细，聊到书本话题时会变得开朗。"
+  },
+  {
+    "name": "福间香织",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": "wenmi",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "艺文馆高中三年级料理科学生，咖啡店『ダディ』的女儿。轻小说作家『平泽香织』的真身，身材娇小如中学生，外眼角下垂的稚气脸庞，工作时展现天真烂漫的笑容。擅长料理，手艺已达职业水准。"
+  },
+  {
+    "name": "黑崎大我",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "竹久优真的好友，笹叶更纱的前恋人。在校内相当引人注目，与笹叶的交往是众所周知的事实。分手后仍关心笹叶的行踪，与濑奈一起寻找翘课的笹叶。"
+  },
+  {
+    "name": "宗像濑奈",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "栞学姐的好朋友，笹叶更纱的亲友，栗色直发、健康日晒肤色、琥珀色眼睛，性格元气活泼，自称情报通，食量惊人"
+  },
+  {
+    "name": "咖啡店ダディ的老板",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": "heijiaoS",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "福间香织的父亲，前国语老师、前作家，现为幽灵写手，以女儿名义'平泽香织'发表轻小说《怪异学园事件手帖》，是蒙面现役女子高中生作家的真身"
+  },
+  {
+    "name": "城井",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "duanya",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "演剧部的核心成员，外貌异常出众，在学生之间有相当规模的粉丝俱乐部。具有领袖气质和相当的演技实力，大部分部员都是为了他才入部。目前因闹脾气而拒绝参加学园祭演出，导致社团濒临崩溃。"
+  },
+  {
+    "name": "胁屋",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "yinxian",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "演剧部三年级学生，与小户部并肩作战三年，是仅剩的不抵制参演的部员之一。无论如何都想在学园祭的舞台上演出，对剧本可能有自己的想法。"
+  },
+  {
+    "name": "星野学长",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "zuole",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "艺文馆高中学生会长，戴着银框眼镜，表情冷淡给人以遭到蔑视的感觉。主持学园祭执行委员会议时态度高压、独断专行，只会照搬去年的做法，对提案一味驳回。传闻父母向学校捐赠巨额款项，教师难以过问其做法。"
+  },
+  {
+    "name": "斋藤春奈",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": "yela",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "1年F班学生，濑奈的同班同学。被擅自推荐成为学园祭执行委员但本人完全不想做，连名字都没被学生会长记住。濑奈曾冒用她的名字参加会议。"
+  },
+  {
+    "name": "平泽学长",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "演剧部部长，饰演提伯尔特一角，与黑崎、胁屋有对决场景"
+  },
+  {
+    "name": "葵学姐",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": "shenxun",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "饰演女主角科迪利娅，二年级学生（从领带颜色推断），在屋顶抽烟时偶遇笹叶更纱"
+  },
+  {
+    "name": "城井将彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "duanya",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "演剧部王牌的二年级学生，因平泽学长犯错而一气之下说要退部的关键人物。在卡拉OK与第一人称叙述者（笹叶更纱）相遇，态度傲慢但歌声美妙，后成为其演剧教练。有吸烟习惯，似乎与体育馆小型火灾事件有关。"
+  },
+  {
+    "name": "龙宫坂辉夜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "戴着黑色宽边魔女帽、左眼戴眼罩的占卜师少女，装扮夸张但本人很开心。自称能看见未来，对竹久优真表现出明显的好感，说话时会突然变得温顺结巴。与宗像濑奈是同班同学但关系不好，被宗像称为\"小辉夜\"。"
+  },
+  {
+    "name": "罪子",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": "perfumer",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "葵栞的同班同学，黑色长发、肌肤白皙，性格内向害羞，总是低垂着头不与他人对视，是葵栞的闺蜜。穿着与葵一样的绿色领带，和葵一起来Cosplay咖啡厅参观。"
+  },
+  {
+    "name": "赤城",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "zuole",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "油画部成员，因油画部废部而失去部室，答应借出名字作为新社团的挂名部员以换取绘画场所"
+  },
+  {
+    "name": "噗噗",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "duanya",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "栞学姐的朋友，学园祭当天穿着栞学姐的制服女装在体育馆入口贩卖演剧剧本册子"
+  }
+]
