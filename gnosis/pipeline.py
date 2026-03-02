@@ -10,7 +10,7 @@ import os
 import httpx
 import json
 import hashlib
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional, Tuple
 
 API_KEY = os.environ.get("API_KEY")
 BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
@@ -21,6 +21,8 @@ client = OpenAI(
     timeout=600.0,
     http_client=httpx.Client(timeout=httpx.Timeout(600.0, connect=30.0)),
 )
+
+MAX_MERGED_SCRIPT_TEXT_CHARS = 80
 
 
 def _parse_json_object(raw_content: str) -> dict:
@@ -133,6 +135,50 @@ def _normalize_custom_prompt(custom_prompt: str) -> str:
     if value:
         return value
     return "无（使用通用规则）"
+
+
+def _merge_consecutive_script_lines(
+    script_lines: List[dict], max_text_chars: int = MAX_MERGED_SCRIPT_TEXT_CHARS
+) -> List[dict]:
+    if max_text_chars < 1:
+        return list(script_lines)
+
+    merged: List[dict] = []
+    current: Optional[dict] = None
+
+    for raw_line in script_lines:
+        if not isinstance(raw_line, dict):
+            if current is not None:
+                merged.append(current)
+                current = None
+            continue
+
+        line = dict(raw_line)
+        speaker = str(line.get("speaker", "")).strip()
+        text = str(line.get("text", ""))
+
+        if current is None:
+            current = line
+            continue
+
+        current_speaker = str(current.get("speaker", "")).strip()
+        current_text = str(current.get("text", ""))
+
+        can_merge = (
+            bool(speaker)
+            and speaker == current_speaker
+            and len(current_text + text) <= max_text_chars
+        )
+        if can_merge:
+            current["text"] = current_text + text
+            continue
+
+        merged.append(current)
+        current = line
+
+    if current is not None:
+        merged.append(current)
+    return merged
 
 
 def run_pass1(
@@ -265,5 +311,6 @@ def run_pass2(
     script_lines = []
     for chunk in chunks:
         script_lines.extend(chunk_results.get(chunk.index, []))
+    script_lines = _merge_consecutive_script_lines(script_lines)
 
     return {"characters": characters_payload, "script": script_lines}

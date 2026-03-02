@@ -1,0 +1,137 @@
+[
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "yinxian",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "第一人称叙述者，班级背景板角色，喜欢轻小说的御宅族，自称『知道同一栋楼的水龙头会有不同味道』的奇怪知识拥有者。性格内向、怕麻烦，但无法对困境中的人置之不理。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "班级里很有人气的可爱系软妹，袴田草介的青梅竹马，被甩后展现出强烈的『败犬女主』气质。情绪起伏大，容易落泪也容易振作，对情敌姬宫华恋有复杂的嫉妒心。"
+  },
+  {
+    "name": "袴田草介",
+    "gender": "male",
+    "voice_archetype": "男-元气",
+    "voice": "cangtai",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "开朗系帅哥，八奈见的青梅竹马，选择了转学生姬宫华恋而非青梅竹马的八奈见。性格爽朗，但在感情处理上显得迟钝或优柔寡断。"
+  },
+  {
+    "name": "姬宫华恋",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "转学来的美少女，具有华丽的正宫气质，胸部丰满，性格开朗直率。与袴田草介开始交往，将八奈见视为挚友但似乎未察觉对方的真实心情。"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "田径部成员，被晒得健康的体育系女生，开朗可爱且受欢迎。在文中仅短暂坐在主角座位上，尚未展开对话。"
+  },
+  {
+    "name": "甘夏古奈美",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "社会学科老师兼班主任，身材娇小可爱，冒失属性，经常迟到、忘带教材、搞错教室。虽然工作态度认真但行事脱线，对拜占庭帝国有异常的执着。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": "red",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部一年级女生，极度社恐，与人交流主要靠手机打字，紧张时会结巴，性格冷淡但对社团事务很认真"
+  },
+  {
+    "name": "月之木古都",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": "shenxun",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部三年级副部长，戴眼镜的成熟美女，对太宰治和三岛由纪夫的顺序有执念，性格温和但有些古怪"
+  },
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会成员，外表是辣妹风格（波浪卷、花饰、浓妆、白色美瞳），但性格意外软弱无力，说话低声下气像僵尸系女子"
+  },
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水和彦的妹妹，小两岁，兄控属性，过度关心哥哥的人际交往，最近进了学生会"
+  },
+  {
+    "name": "绫野光希",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": "yinxian",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "D班学生，温水和彦的初中同学兼补习班同伴，戴眼镜，成绩优秀，与朝云千早同为特升班学生"
+  },
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "身材苗条的可爱女生，与绫野光希同为特升班学生，在补习班里很有名，经常和绫野一起行动"
+  },
+  {
+    "name": "玉木慎太郎",
+    "gender": "male",
+    "voice_archetype": "男-元气",
+    "voice": "cangtai",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部部长，高个子男生，与月之木古都是青梅竹马关系，喜欢科幻小说，性格随和友善"
+  },
+  {
+    "name": "小抜",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": "shenxun",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学校的保健老师，甘夏古奈美的同级生。身材色气，性格有些调皮和脱线，会故意制造误会。与甘夏老师关系很好，学生时代经常一起来保健室休息。"
+  },
+  {
+    "name": "放虎原云雀",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": "logos",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中的学生会长，在合宿食堂向志喜屋梦子招手"
+  }
+]
