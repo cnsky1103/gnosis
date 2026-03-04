@@ -4,7 +4,7 @@
       "name": "温水佳树",
       "gender": "female",
       "voice_archetype": "女-元气",
-      "voice": null,
+      "voice": "wenmi",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "温水和彦的妹妹，小他两岁，有点兄控的天真可爱少女。穿着牛仔连衣裙，乌黑长发上戴着大发带。性格活泼兴奋，容易慌张，对哥哥的事情非常关心，甚至会准备\"面试\"来询问哥哥的校园生活。"
@@ -13,7 +13,7 @@
       "name": "八奈见杏菜",
       "gender": "female",
       "voice_archetype": "女-元气",
-      "voice": null,
+      "voice": "haruka",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "石蕗高中文艺部成员，被转学生夺走青梅竹马的正统派败犬女主。性格开朗直率，有些贪吃（在温水家吃了两盘咖喱），善于自我开导（正在阅读心理疗愈书籍）。与温水和彦是朋友关系，会主动到对方家里拜访。"
@@ -22,7 +22,7 @@
       "name": "小鞠知花",
       "gender": "female",
       "voice_archetype": "女-三无",
-      "voice": null,
+      "voice": "red",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "石蕗高中文艺部高一学生，脑袋边上扎着小辫子，刘海遮住眼睛。性格极度内向害羞，曾被部长甩过而加入败犬女主行列。与人交流时会紧张到说不出话，需要用手机打字沟通，像胆怯的仓鼠一样。"
@@ -31,7 +31,7 @@
       "name": "玉木慎太郎",
       "gender": "male",
       "voice_archetype": "男-普通",
-      "voice": null,
+      "voice": "cangtai",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "石蕗高中文艺部部长，高三学生。与副部长月之木古都交往中，正为备考而苦恼。性格认真负责但面对月之木学姐时显得无奈，需要督促她学习。"
@@ -40,7 +40,7 @@
       "name": "月之木古都",
       "gender": "female",
       "voice_archetype": "女-御姐",
-      "voice": null,
+      "voice": "shenxun",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "石蕗高中文艺部副部长，高三学生，与部长玉木慎太郎交往中。性格随性散漫，备考态度消极（甚至想\"永久就职\"即结婚当主妇），同时忙于驾校事务而忘记学生会通知。擅长绘画，与小鞠关系很好。"
@@ -58,7 +58,7 @@
       "name": "温水和彦",
       "gender": "male",
       "voice_archetype": "男-普通",
-      "voice": null,
+      "voice": "duanya",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "第一人称叙述者，文艺部成员，被妹妹佳树称为'哥哥大人'，性格较为普通、有些迟钝，面对女生时会紧张"
