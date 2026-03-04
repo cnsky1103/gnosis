@@ -1,0 +1,110 @@
+[
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水和彦的妹妹，小他两岁，有点兄控的天真可爱少女。穿着牛仔连衣裙，乌黑长发上戴着大发带。性格活泼兴奋，容易慌张，对哥哥的事情非常关心，甚至会准备\"面试\"来询问哥哥的校园生活。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中文艺部成员，被转学生夺走青梅竹马的正统派败犬女主。性格开朗直率，有些贪吃（在温水家吃了两盘咖喱），善于自我开导（正在阅读心理疗愈书籍）。与温水和彦是朋友关系，会主动到对方家里拜访。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中文艺部高一学生，脑袋边上扎着小辫子，刘海遮住眼睛。性格极度内向害羞，曾被部长甩过而加入败犬女主行列。与人交流时会紧张到说不出话，需要用手机打字沟通，像胆怯的仓鼠一样。"
+  },
+  {
+    "name": "玉木慎太郎",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中文艺部部长，高三学生。与副部长月之木古都交往中，正为备考而苦恼。性格认真负责但面对月之木学姐时显得无奈，需要督促她学习。"
+  },
+  {
+    "name": "月之木古都",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中文艺部副部长，高三学生，与部长玉木慎太郎交往中。性格随性散漫，备考态度消极（甚至想\"永久就职\"即结婚当主妇），同时忙于驾校事务而忘记学生会通知。擅长绘画，与小鞠关系很好。"
+  },
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中高二学生会成员，时尚辣妹风格的学姐。白褐色大波浪、夸张眼睫毛、白皙肌肤，戴着白色彩瞳（给人恐怖感）。不知道为什么周围的黑暗会越来越深邃，会无力地靠在自动贩卖机阴影处，给人神秘阴郁的印象。"
+  },
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "第一人称叙述者，文艺部成员，被妹妹佳树称为'哥哥大人'，性格较为普通、有些迟钝，面对女生时会紧张"
+  },
+  {
+    "name": "绫野光希",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角初中时期的补习班同学，高个子眼镜帅哥，成绩优秀，正在与朝云千早交往，喜欢向主角秀恩爱"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "田径部成员，性格大大咧咧、不拘小节，会在文艺部活动室换衣服，人气顶级的美少女，擅长照顾人"
+  },
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "绫野光希的女朋友，石蕗高中学生。身材娇小但比例好，站姿像芭蕾舞者。性格冷静理性，擅长数据分析，会用科学手段调查男友行踪。对甜食有抵抗力但会找借口说是为了补充糖分。面对感情问题表现出成熟态度，愿意为了男友的幸福而放手。"
+  },
+  {
+    "name": "权藤亜咲美",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水佳树在初中最好的朋友，市立桃园中学2年3班学生。个子偏高，看上去很成熟。关心佳树，主动询问她的烦恼，用亲昵的称呼\"温酱\"和\"姐\"来交流。"
+  },
+  {
+    "name": "烧盐柠檬的奶奶",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "烧盐的祖母，独居在山中的二层洋风别墅。曾是大学教授，花白头发但站姿优美、容貌端正，气质优雅可靠。对孙女的朋友热情好客，主动邀请大家留宿并准备寿司晚餐。"
+  }
+]

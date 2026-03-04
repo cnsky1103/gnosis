@@ -1,0 +1,209 @@
+[
+  {
+    "name": "竹久悠真",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "第一人称叙述者，艺文馆高中学生，喜欢阅读太宰治等文学作品，正在帮助朋友黑崎大我解决过去的恋爱心结。从文中可知其姓氏为竹久，名字为悠真。"
+  },
+  {
+    "name": "黑崎大我",
+    "gender": "male",
+    "voice_archetype": "男-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "竹久悠真的朋友，被公认为相当帅气、才色兼备的男生，初中时曾是篮球社成员，因初恋对象瑞希前辈的强暴诬告事件而退出社团，现在想要整理过去的恋爱残痕并向栞学姐告白。"
+  },
+  {
+    "name": "宗像濑奈",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "竹久悠真的朋友，笹叶更纱的挚友，身高娇小但饭量惊人，性格直率开朗，对恋爱话题很感兴趣，曾与大我短暂交往过。"
+  },
+  {
+    "name": "御堂",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "黑崎大我初中篮球社的前辈和队长，身材高大魁梧如大猩猩，当时暗恋经理瑞希，因嫉妒而对大我有些刻薄，现已取得大学推荐入学资格，对大我心怀愧疚。"
+  },
+  {
+    "name": "种崎茜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "黑崎大我初中篮球社的女经理，与瑞希前辈同为三年级且关系很好，浅色卷发短发，性格开朗有活力，可能知道当年强暴事件的隐情。"
+  },
+  {
+    "name": "瑞希",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "黑崎大我初中时的篮球社前辈，曾是大我的初恋对象。三年前设计陷害大我，谎称被其袭击，后搬离学校不再升学，目前在冈山县汤原的美容院工作。性格复杂，有预谋地制造事件却最终失败。"
+  },
+  {
+    "name": "上田",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "黑崎大我初中篮球社的另一位女经理，皮肤偏白扎单马尾。性格文静，以黑崎为目标加入社团，在黑崎退社后也随即辞职，与茜学姐关系不深。"
+  },
+  {
+    "name": "大地",
+    "gender": "male",
+    "voice_archetype": "男-正太",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "瑞希的儿子，两岁，名字取自'广袤的土地'。活泼可爱的婴儿，并非大我的孩子。"
+  },
+  {
+    "name": "邑崎武士",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "弓道社唯一的一年级生，存在感稀薄但真心热爱弓道。师从当地有名的大师学习小笠原流正面起弓，面临社团废社危机，需在地方预选赛中取得好成绩以挽救社团。"
+  },
+  {
+    "name": "岸本由纪",
+    "gender": "female",
+    "voice_archetype": "女-傲娇",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "弓道部的美少女选手，女子组最强，性格强势高压，喜欢红豆粥，对主角的射术有过评价"
+  },
+  {
+    "name": "笹叶更纱",
+    "gender": "unknown",
+    "voice_archetype": "未知",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "被提及与竹久、黑崎有关的人物，但未在本片段中实际出场说话"
+  },
+  {
+    "name": "木野",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "仅在回忆中被提及，是黑崎大我初中时真心喜欢的男生，未实际出场"
+  },
+  {
+    "name": "星野学长",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "现任学生会长，支持笹叶更纱参加学生会选举，与齐藤春奈交往"
+  },
+  {
+    "name": "内藤",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "下届学生会长候选人，副会长，家境优渥，态度傲慢，与笹叶更纱理念不合"
+  },
+  {
+    "name": "齐藤春奈",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "F班学园祭实行委员，濑奈的同学，因男友支持内藤而无法帮助更纱"
+  },
+  {
+    "name": "龙宫坂辉夜",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "拥有漆黑长发、肌肤苍白、戴黑色蕾丝眼罩的神秘女学生，自称会占卜且准确率很高，兴趣独特希望别人用特定名字称呼她，说话风格带有神秘感和中二气息"
+  },
+  {
+    "name": "葵栞",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "漫画研究社社长，二年级前辈，黑崎大我所爱之人，画R18同人漫画，性格强势有谋略，曾做过学生会选举应援演讲，对黑崎大我态度冷淡"
+  },
+  {
+    "name": "近藤",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "现任学生会副会长，预定下届学生会长候选人，戴着黑框眼镜，看起来老实不善社交，内向寡言，拜托别人时自己一言不发站在一旁"
+  },
+  {
+    "name": "城井",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "戏剧社前辈，被称为天才演员，对笹叶更纱的才能非常执着，希望她能加入戏剧社。性格有些自我中心但演技一流。"
+  },
+  {
+    "name": "内藤晴臣",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "被城井前辈在演讲中力荐的学生会副会长候选人，被称为积累了最多经验、最适合担任学生会长的人选。最终落选。"
+  },
+  {
+    "name": "赤城龙之介",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "被笹叶更纱提议加入新成立的『轻文学社』的成员之一，尚未正式登场说话，仅被提及名字。"
+  },
+  {
+    "name": "鸠山遥斗",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "艺文馆高中的学生，初中时与宗像濑奈相识，称呼龙宫坂辉夜为\"小优酱\"。被葵栞（爱子小姐）强迫穿上女仆装参加同人志即卖会。"
+  },
+  {
+    "name": "莎莉",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "《长腿叔叔续集》中的主人公，朱迪的朋友。龙宫坂辉夜将她视为恋爱策略的榜样，在内心独白中向她寻求鼓励。"
+  }
+]
