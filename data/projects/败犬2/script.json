@@ -31,7 +31,7 @@
       "name": "玉木慎太郎",
       "gender": "male",
       "voice_archetype": "男-普通",
-      "voice": "cangtai",
+      "voice": "logos",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "石蕗高中文艺部部长，高三学生。与副部长月之木古都交往中，正为备考而苦恼。性格认真负责但面对月之木学姐时显得无奈，需要督促她学习。"
@@ -40,7 +40,7 @@
       "name": "月之木古都",
       "gender": "female",
       "voice_archetype": "女-御姐",
-      "voice": "shenxun",
+      "voice": "perfumer",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "石蕗高中文艺部副部长，高三学生，与部长玉木慎太郎交往中。性格随性散漫，备考态度消极（甚至想\"永久就职\"即结婚当主妇），同时忙于驾校事务而忘记学生会通知。擅长绘画，与小鞠关系很好。"
@@ -49,7 +49,7 @@
       "name": "志喜屋梦子",
       "gender": "female",
       "voice_archetype": "女-御姐",
-      "voice": null,
+      "voice": "yela",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "石蕗高中高二学生会成员，时尚辣妹风格的学姐。白褐色大波浪、夸张眼睫毛、白皙肌肤，戴着白色彩瞳（给人恐怖感）。不知道为什么周围的黑暗会越来越深邃，会无力地靠在自动贩卖机阴影处，给人神秘阴郁的印象。"
@@ -67,7 +67,7 @@
       "name": "绫野光希",
       "gender": "male",
       "voice_archetype": "男-温柔",
-      "voice": null,
+      "voice": "liuming",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "主角初中时期的补习班同学，高个子眼镜帅哥，成绩优秀，正在与朝云千早交往，喜欢向主角秀恩爱"
@@ -76,7 +76,7 @@
       "name": "烧盐柠檬",
       "gender": "female",
       "voice_archetype": "女-元气",
-      "voice": null,
+      "voice": "shihuaiya",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "田径部成员，性格大大咧咧、不拘小节，会在文艺部活动室换衣服，人气顶级的美少女，擅长照顾人"
@@ -85,7 +85,7 @@
       "name": "朝云千早",
       "gender": "female",
       "voice_archetype": "女-普通",
-      "voice": null,
+      "voice": "shenxun",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "绫野光希的女朋友，石蕗高中学生。身材娇小但比例好，站姿像芭蕾舞者。性格冷静理性，擅长数据分析，会用科学手段调查男友行踪。对甜食有抵抗力但会找借口说是为了补充糖分。面对感情问题表现出成熟态度，愿意为了男友的幸福而放手。"
@@ -94,7 +94,7 @@
       "name": "权藤亜咲美",
       "gender": "female",
       "voice_archetype": "女-御姐",
-      "voice": null,
+      "voice": "raidian",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "温水佳树在初中最好的朋友，市立桃园中学2年3班学生。个子偏高，看上去很成熟。关心佳树，主动询问她的烦恼，用亲昵的称呼\"温酱\"和\"姐\"来交流。"
@@ -103,7 +103,7 @@
       "name": "烧盐柠檬的奶奶",
       "gender": "female",
       "voice_archetype": "女-温柔",
-      "voice": null,
+      "voice": "raidian",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "烧盐的祖母，独居在山中的二层洋风别墅。曾是大学教授，花白头发但站姿优美、容貌端正，气质优雅可靠。对孙女的朋友热情好客，主动邀请大家留宿并准备寿司晚餐。"
@@ -9677,6 +9677,90 @@
     {
       "text": "「男朋友……？又……？」这家伙有被男朋友甩过吗……没搞错吧……",
       "speaker": "温水和彦"
+    },
+    {
+      "text": "这家伙有被男朋友甩过吗……没搞错吧……\n\n我在思考是否要吐槽的时候，八奈见的眼中闪过怪异的光芒并小心翼翼地看向我。",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「所以呢，我想到了一个办法，找一个代打不就好了吗」",
+      "speaker": "八奈见杏菜",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「代打，你是说男朋友？」",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「没错。让他们见一面，我不就倍儿有面子了吗？」",
+      "speaker": "八奈见杏菜",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "意思就是说要找个假的男朋友啊。\n\n这展开怎么像恋爱喜剧一样。本不是很在意的我突然产生了兴趣。\n\n「嚯，感觉挺有趣的」",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「没错吧？所以我有一件事情要拜托温水君」",
+      "speaker": "八奈见杏菜",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "拜托我？难道是想找我当假男朋友吗……？\n\n我一半不想扯上关系，一半因为这只在轻小说里见过的桥段而感到有些小心动。\n\n「所以……你想拜托我什么事情？」\n\n我摆出新房45°，八奈见凑向我。",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「那个，我想拜托温水君的是——」",
+      "speaker": "八奈见杏菜",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「哦、哦……」\n\n八奈见的脸猛地凑了过来。",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「你能帮我把绫野君借过来吗！他不仅长得帅气又是个优等生，我想他再合适不过了」",
+      "speaker": "八奈见杏菜",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「……你是认真的？」\n\n我也不用听她的回答。因为这家伙的眼神是认真的——。",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "我一言不发，将手肘搭在栏杆上，抬头望着已经入秋的天空。\n\n多事之夏已然逝去。\n\n都到第二学期了，应该安稳度日才是……",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "「那么温水君，刚才的事情你怎么说？能帮我吗？」",
+      "speaker": "八奈见杏菜",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "八奈见靠在栏杆上，满怀期待地盯着我。\n\n我的回答早已决定。\n\n我面向八奈见对她露出温柔的微笑，随后开口道。\n\n「……八奈见同学，你自己找个男朋友呗？」",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
     }
   ]
 }

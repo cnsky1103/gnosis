@@ -129,6 +129,32 @@ class ScriptStore:
                 "line": target,
             }
 
+    def insert_line_after(self, project_name: str, line_index: int) -> dict[str, Any]:
+        with self._lock:
+            cached = self._load_project_unlocked(project_name)
+            total = len(cached.script_lines)
+            if total == 0 and line_index == -1:
+                insert_at = 0
+            elif line_index < 0 or line_index >= total:
+                raise IndexError("line_index 超出范围")
+            else:
+                insert_at = line_index + 1
+
+            new_line: dict[str, str] = {
+                "text": "",
+                "speaker": "",
+                "emotion": "",
+                "type": "",
+            }
+            cached.script_lines.insert(insert_at, new_line)
+            self._write_project_unlocked(cached)
+            return {
+                "ok": True,
+                "inserted_index": insert_at,
+                "line": new_line,
+                "total_lines": len(cached.script_lines),
+            }
+
     def _load_project_unlocked(self, project_name: str) -> CachedProject:
         valid_name = _validate_project_name(project_name)
         project_root = self._projects_root / valid_name
@@ -306,6 +332,35 @@ def run_proofread_server(
                 _json_response(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
             except json.JSONDecodeError:
                 _json_response(self, HTTPStatus.BAD_REQUEST, {"error": "请求体必须是 JSON"})
+            except Exception as exc:  # noqa: BLE001
+                _json_response(self, HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
+
+        def do_POST(self) -> None:
+            parsed = urlparse(self.path)
+            path = unquote(parsed.path)
+            if not path.startswith("/api/project/"):
+                _json_response(self, HTTPStatus.NOT_FOUND, {"error": "Not Found"})
+                return
+
+            segments = path.split("/")
+            if len(segments) != 7 or segments[4] != "line" or segments[6] != "insert":
+                _json_response(self, HTTPStatus.NOT_FOUND, {"error": "Not Found"})
+                return
+
+            target_project = segments[3]
+            try:
+                line_index = int(segments[5])
+            except ValueError:
+                _json_response(self, HTTPStatus.BAD_REQUEST, {"error": "line index 非法"})
+                return
+
+            try:
+                result = store.insert_line_after(target_project, line_index)
+                _json_response(self, HTTPStatus.OK, result)
+            except FileNotFoundError as exc:
+                _json_response(self, HTTPStatus.NOT_FOUND, {"error": str(exc)})
+            except (ValueError, IndexError) as exc:
+                _json_response(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
             except Exception as exc:  # noqa: BLE001
                 _json_response(self, HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
 
