@@ -33,6 +33,7 @@ const els = {
   speakerInput: document.getElementById("speakerInput"),
   emotionInput: document.getElementById("emotionInput"),
   typeInput: document.getElementById("typeInput"),
+  insertBtn: document.getElementById("insertBtn"),
   hotkeyGrid: document.getElementById("hotkeyGrid"),
 };
 
@@ -350,6 +351,36 @@ async function assignSpeakerAndAdvance(name) {
   }
 }
 
+async function insertLineBelowCurrent() {
+  if (!state.project || !state.lines.length) return;
+  const ok = await flushCurrentLine();
+  if (!ok) return;
+
+  setSaveStatus("saving", "插入并保存中");
+  const currentIndex = state.index;
+  try {
+    const result = await fetchJson(
+      `/api/project/${encodeURIComponent(state.project)}/line/${currentIndex}/insert`,
+      { method: "POST" }
+    );
+    const insertedIndex =
+      Number.isInteger(result.inserted_index) && result.inserted_index >= 0
+        ? result.inserted_index
+        : currentIndex + 1;
+    const newLine = normalizeLine(result.line || {});
+    state.lines.splice(insertedIndex, 0, newLine);
+    recomputeWindowFlags();
+    state.index = Math.min(insertedIndex, state.lines.length - 1);
+    persistIndex();
+    setSaveStatus("saved", "已插入并保存");
+    renderAll();
+    els.textInput.focus();
+  } catch (err) {
+    setSaveStatus("error", "插入失败");
+    console.error(err);
+  }
+}
+
 function updateCurrentField(field, value) {
   const line = state.lines[state.index];
   if (!line) return;
@@ -466,6 +497,9 @@ function bindEvents() {
   });
   els.typeInput.addEventListener("input", () => {
     updateCurrentField("type", els.typeInput.value);
+  });
+  els.insertBtn.addEventListener("click", () => {
+    void insertLineBelowCurrent();
   });
 
   document.addEventListener("keydown", (event) => {
