@@ -45,6 +45,15 @@
     "description": "黑崎大我初中篮球社的女经理，与瑞希前辈同为三年级且关系很好，浅色卷发短发，性格开朗有活力，可能知道当年强暴事件的隐情。"
   },
   {
+    "name": "若宫雅",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": "xingzhu",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "竹久优真的初中同学及高中时期的暗恋对象。黑发文学少女，重度近视，性格文静内向。出现在主角的回忆场景中，在电车站台和电车上与主角有互动对话。"
+  },
+  {
     "name": "瑞希",
     "gender": "female",
     "voice_archetype": "女-御姐",
