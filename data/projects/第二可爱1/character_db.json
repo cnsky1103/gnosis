@@ -70,5 +70,14 @@
     "ref_audio_path": null,
     "ref_audio_text": null,
     "description": "朝凪海的母亲，外表漂亮温和但眼神严厉，对女儿管教严格，初次见面时训斥了朝凪和前原真树关于过夜的事。"
+  },
+{
+    "name": "纱那绘与茉奈佳",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": ""
   }
 ]
