@@ -13,7 +13,8 @@ import hashlib
 from typing import Dict, List, Optional, Tuple
 
 API_KEY = os.environ.get("API_KEY")
-BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+BASE_URL = "https://api.deepseek.com"
+# BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
 client = OpenAI(
     api_key=API_KEY,
@@ -109,11 +110,10 @@ def _get_raw_response(
         print(f"chunk {chunk_index} cache hit")
         return _load_cached_raw_response(cache_path), cache_path, True
 
-    print(model)
-    print(response_format)
     response = client.chat.completions.create(
         model=model,
         messages=messages,
+        temperature=0.3,
         response_format=response_format,
     )
     raw_content = response.choices[0].message.content or ""
@@ -231,8 +231,8 @@ def run_pass1(
     # 先把 pass1 角色结果持久化，再读取后进行声线分配，最后再次持久化
     char_manager.save_db()
     char_manager.load_db()
-    char_manager.assign_voices()
-    char_manager.save_db()
+    #char_manager.assign_voices()
+    #char_manager.save_db()
 
 
 def run_pass2(

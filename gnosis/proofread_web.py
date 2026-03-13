@@ -271,7 +271,6 @@ def _static_content_type(path: Path) -> str:
 def run_proofread_server(
     project_name: str,
     *,
-    host: str = "127.0.0.1",
     port: int = 8765,
     projects_root: str = "data/projects",
 ) -> None:
@@ -411,8 +410,8 @@ def run_proofread_server(
             message = fmt % args
             print(f"[proofread-web] {message}")
 
-    server = ThreadingHTTPServer((host, port), Handler)
-    url = f"http://{host}:{port}/?project={project_name}"
+    server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    url = f"http://127.0.0.1:{port}/?project={project_name}"
     print(f"🧪 剧本校对界面已启动: {url}")
     print("按 Ctrl+C 停止服务。")
     try:

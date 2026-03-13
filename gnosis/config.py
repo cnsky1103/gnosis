@@ -1,7 +1,9 @@
 import os
 from typing import Dict, List, Tuple
 
-DEFAULT_LLM_MODEL = os.environ.get("LLM_MODEL", "kimi-k2.5")
+DEFAULT_LLM_MODEL = os.environ.get("LLM_MODEL", "deepseek-chat")
+# DEFAULT_LLM_MODEL = os.environ.get("LLM_MODEL", "kimi-k2.5")
+
 
 # LLM 仅可使用以下标签
 ALLOWED_CHARACTER_TAGS: List[str] = [
@@ -31,7 +33,7 @@ VOICE_SEEDS_BY_TAG_PARTS: Dict[Tuple[str, str], List[str]] = {
     ("男", "大叔"): ["maenna", "heijiaoS"],
     ("女", "萝莉"): ["wenmi"],
     ("女", "傲娇"): ["tianhuo"],
-    ("女", "少女"): ["anjielina", "haruka", "exusiai"],
+    ("女", "少女"): ["anjielina", "haruka", "exusiai", "miu", "shihuaiya"],
     ("女", "温柔"): ["raidian", "perfumer"],
     ("女", "御姐"): ["shenxun"],
     ("女", "三无"): ["red"],

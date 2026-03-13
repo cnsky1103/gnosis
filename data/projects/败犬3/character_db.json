@@ -1,0 +1,173 @@
+[
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部的高一学生，第一人称叙述者，性格随性，对自来水有特殊兴趣，被妹妹佳树和八奈见杏菜缠上。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部的高一学生，胆小但认真，对校内自来水情况很了解，被指名为下一任部长，对石蕗祭准备很上心。"
+  },
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会成员，穿着护士服，面无表情，说话缓慢，帮助文艺部修改石蕗祭申请书，被称为僵尸系辣妹。"
+  },
+  {
+    "name": "玉木慎太郎",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部的三年级部长，关心社团成员，计划在石蕗祭后引退，决定让小鞠知花担任下一任部长。"
+  },
+  {
+    "name": "月之木古都",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部的三年级副部长，曾在学生会，很关心小鞠知花，性格活泼，与玉木慎太郎关系密切。"
+  },
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水的妹妹，坐在哥哥腿上读书，关心哥哥与八奈见杏菜的关系，擅自使用哥哥的手机回复消息。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，被青梅竹马袴田草介甩了，活泼开朗，经常找温水发牢骚，邀请温水午休时在逃生楼梯见面。"
+  },
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "烧盐曾经的心上人绫野光希的女朋友，身材娇小如洋娃娃，头发从中间分开两半，额头闪亮，性格活泼可爱，暑假时曾卷入与烧盐的骚乱，之后偶尔出现在主角身边。"
+  },
+  {
+    "name": "绫野光希",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "朝云千早的男朋友，戴眼镜，性格成熟稳重，暑假时曾与主角有交集，愿意帮助朋友，在书店与主角相遇并交谈。"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "田径部兼文艺部成员，晒成小麦色皮肤，性格活泼开朗，行动敏捷，从窗户翻进家庭科室，与温水、八奈见、小鞠互动。"
+  },
+  {
+    "name": "甘夏古奈美",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "1-C班的班主任，容貌娇小可爱，容易被误认为是学生，性格有些孩子气，不擅长记住学生名字，在资料室被书本埋住，与烧盐和温水讨论顾问事宜。"
+  },
+  {
+    "name": "马剃天爱星",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会副会长，高一学生，戴着姓名牌，性格认真但有些紧张和易怒，对规则严格遵守。"
+  },
+  {
+    "name": "放虎原阳叶里",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会长，高个子，长发，穿着靴子，有压迫感，眼神锐利，但偶尔会表现出温柔的一面。"
+  },
+  {
+    "name": "小拔小夜",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "保健室老师，新担任文艺部顾问，身材婀娜，使用香水和化妆品，性格会照顾人但有时会开暧昧玩笑。"
+  },
+  {
+    "name": "姬宫华恋",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "八奈见杏菜的发小，袴田草介的女朋友，性格开朗闪耀，有女子气场，使用香水，在走廊与主角相撞后互动。"
+  },
+  {
+    "name": "野野村同学",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "与温水同组负责小道具的女生，个子高但存在感低，说话声音小，效率至上。"
+  },
+  {
+    "name": "袴田草介",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "在班级万圣节活动中扮演吸血鬼的男生，身材好，与姬宫华恋站在一起很般配。"
+  },
+  {
+    "name": "西川",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "穿着新选组武士服的男学生，插嘴叫八奈见去练习，并以锐利的眼光盯着温水。"
+  },
+  {
+    "name": "小进",
+    "gender": "male",
+    "voice_archetype": "男-正太",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小鞠的弟弟，小学低年级学生，在玄关迎接小鞠和温水，并帮助扶小鞠进屋。"
+  }
+]

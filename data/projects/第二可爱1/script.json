@@ -4,7 +4,7 @@
       "name": "前原真树",
       "gender": "male",
       "voice_archetype": "男-普通",
-      "voice": null,
+      "voice": "duanya",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "主角，第一人称叙述者，高中新生，性格内向、怕寂寞，喜欢电玩和B级电影，与母亲两人生活。"
@@ -13,7 +13,7 @@
       "name": "前原真咲",
       "gender": "female",
       "voice_archetype": "女-普通",
-      "voice": null,
+      "voice": "shenxun",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "主角的母亲，在出版社工作，忙碌但关心儿子，性格开朗。"
@@ -22,7 +22,7 @@
       "name": "八木泽美纪",
       "gender": "female",
       "voice_archetype": "女-普通",
-      "voice": null,
+      "voice": "yela",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "高中班导，第一次担任班导，紧张但努力营造轻松氛围。"
@@ -31,7 +31,7 @@
       "name": "天海夕",
       "gender": "female",
       "voice_archetype": "女-元气",
-      "voice": null,
+      "voice": "haruka",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "同班同学，金发蓝眼的美少女，性格开朗活泼，与朝凪海是好朋友。"
@@ -40,7 +40,7 @@
       "name": "朝凪海",
       "gender": "female",
       "voice_archetype": "女-普通",
-      "voice": null,
+      "voice": "xingzhu",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "同班同学，短发中性印象的女生，性格随和，喜欢电影和电玩，与主角成为朋友。"
@@ -49,7 +49,7 @@
       "name": "大山同学",
       "gender": "male",
       "voice_archetype": "男-普通",
-      "voice": null,
+      "voice": "maenna",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "同班同学，戴无框眼镜，体型与主角相似，仅是点头之交。"
@@ -58,7 +58,7 @@
       "name": "新田同学",
       "gender": "female",
       "voice_archetype": "女-普通",
-      "voice": null,
+      "voice": "miu",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "天海夕的朋友，与天海夕一起偷看朝凪海被告白的场景，性格较为八卦和直接。"
@@ -67,7 +67,7 @@
       "name": "朝凪空",
       "gender": "female",
       "voice_archetype": "女-普通",
-      "voice": null,
+      "voice": "yela",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": "朝凪海的母亲，外表漂亮温和但眼神严厉，对女儿管教严格，初次见面时训斥了朝凪和前原真树关于过夜的事。"
@@ -76,7 +76,7 @@
       "name": "纱那绘与茉奈佳",
       "gender": "female",
       "voice_archetype": "女-普通",
-      "voice": null,
+      "voice": "anjielina",
       "ref_audio_path": null,
       "ref_audio_text": null,
       "description": ""
@@ -7540,7 +7540,7 @@
       "speaker": "前原真树"
     },
     {
-      "text": "「～♪」",
+      "text": "「嗯哼」",
       "speaker": "朝凪海"
     },
     {
@@ -10968,7 +10968,7 @@
       "speaker": "前原真树"
     },
     {
-      "text": "「──」",
+      "text": "...",
       "speaker": "朝凪海"
     },
     {
