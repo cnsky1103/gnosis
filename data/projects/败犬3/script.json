@@ -1,9 +1,195 @@
 {
+  "characters": [
+    {
+      "name": "温水和彦",
+      "gender": "male",
+      "voice_archetype": "男-普通",
+      "voice": "duanya",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "文艺部的高一学生，第一人称叙述者，性格随性，对自来水有特殊兴趣，被妹妹佳树和八奈见杏菜缠上。"
+    },
+    {
+      "name": "小鞠知花",
+      "gender": "female",
+      "voice_archetype": "女-萝莉",
+      "voice": "red",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "文艺部的高一学生，胆小但认真，对校内自来水情况很了解，被指名为下一任部长，对石蕗祭准备很上心。"
+    },
+    {
+      "name": "志喜屋梦子",
+      "gender": "female",
+      "voice_archetype": "女-三无",
+      "voice": "yela",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "学生会成员，穿着护士服，面无表情，说话缓慢，帮助文艺部修改石蕗祭申请书，被称为僵尸系辣妹。"
+    },
+    {
+      "name": "玉木慎太郎",
+      "gender": "male",
+      "voice_archetype": "男-温柔",
+      "voice": "logos",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "文艺部的三年级部长，关心社团成员，计划在石蕗祭后引退，决定让小鞠知花担任下一任部长。"
+    },
+    {
+      "name": "月之木古都",
+      "gender": "female",
+      "voice_archetype": "女-温柔",
+      "voice": "perfumer",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "文艺部的三年级副部长，曾在学生会，很关心小鞠知花，性格活泼，与玉木慎太郎关系密切。"
+    },
+    {
+      "name": "温水佳树",
+      "gender": "female",
+      "voice_archetype": "女-萝莉",
+      "voice": "wenmi",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "温水的妹妹，坐在哥哥腿上读书，关心哥哥与八奈见杏菜的关系，擅自使用哥哥的手机回复消息。"
+    },
+    {
+      "name": "八奈见杏菜",
+      "gender": "female",
+      "voice_archetype": "女-元气",
+      "voice": "haruka",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "文艺部成员，被青梅竹马袴田草介甩了，活泼开朗，经常找温水发牢骚，邀请温水午休时在逃生楼梯见面。"
+    },
+    {
+      "name": "朝云千早",
+      "gender": "female",
+      "voice_archetype": "女-普通",
+      "voice": "shenxun",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "烧盐曾经的心上人绫野光希的女朋友，身材娇小如洋娃娃，头发从中间分开两半，额头闪亮，性格活泼可爱，暑假时曾卷入与烧盐的骚乱，之后偶尔出现在主角身边。"
+    },
+    {
+      "name": "绫野光希",
+      "gender": "male",
+      "voice_archetype": "男-温柔",
+      "voice": "liuming",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "朝云千早的男朋友，戴眼镜，性格成熟稳重，暑假时曾与主角有交集，愿意帮助朋友，在书店与主角相遇并交谈。"
+    },
+    {
+      "name": "烧盐柠檬",
+      "gender": "female",
+      "voice_archetype": "女-元气",
+      "voice": "shihuaiya",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "田径部兼文艺部成员，晒成小麦色皮肤，性格活泼开朗，行动敏捷，从窗户翻进家庭科室，与温水、八奈见、小鞠互动。"
+    },
+    {
+      "name": "甘夏古奈美",
+      "gender": "female",
+      "voice_archetype": "女-普通",
+      "voice": "xingzhu",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "1-C班的班主任，容貌娇小可爱，容易被误认为是学生，性格有些孩子气，不擅长记住学生名字，在资料室被书本埋住，与烧盐和温水讨论顾问事宜。"
+    },
+    {
+      "name": "马剃天爱星",
+      "gender": "female",
+      "voice_archetype": "女-普通",
+      "voice": "miu",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "学生会副会长，高一学生，戴着姓名牌，性格认真但有些紧张和易怒，对规则严格遵守。"
+    },
+    {
+      "name": "放虎原阳叶里",
+      "gender": "female",
+      "voice_archetype": "女-御姐",
+      "voice": "ling",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "学生会长，高个子，长发，穿着靴子，有压迫感，眼神锐利，但偶尔会表现出温柔的一面。"
+    },
+    {
+      "name": "小拔小夜",
+      "gender": "female",
+      "voice_archetype": "女-御姐",
+      "voice": "simang",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "保健室老师，新担任文艺部顾问，身材婀娜，使用香水和化妆品，性格会照顾人但有时会开暧昧玩笑。"
+    },
+    {
+      "name": "姬宫华恋",
+      "gender": "female",
+      "voice_archetype": "女-元气",
+      "voice": "anjielina",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "八奈见杏菜的发小，袴田草介的女朋友，性格开朗闪耀，有女子气场，使用香水，在走廊与主角相撞后互动。"
+    },
+    {
+      "name": "野野村同学",
+      "gender": "female",
+      "voice_archetype": "女-普通",
+      "voice": "raidian",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "与温水同组负责小道具的女生，个子高但存在感低，说话声音小，效率至上。"
+    },
+    {
+      "name": "袴田草介",
+      "gender": "male",
+      "voice_archetype": "男-普通",
+      "voice": "cangtai",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "在班级万圣节活动中扮演吸血鬼的男生，身材好，与姬宫华恋站在一起很般配。"
+    },
+    {
+      "name": "西川",
+      "gender": "male",
+      "voice_archetype": "男-普通",
+      "voice": "logos",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "穿着新选组武士服的男学生，插嘴叫八奈见去练习，并以锐利的眼光盯着温水。"
+    },
+    {
+      "name": "小进",
+      "gender": "male",
+      "voice_archetype": "男-正太",
+      "voice": "zhijian",
+      "ref_audio_path": null,
+      "ref_audio_text": null,
+      "description": "小鞠的弟弟，小学低年级学生，在玄关迎接小鞠和温水，并帮助扶小鞠进屋。"
+    }
+  ],
   "script": [
     {
-      "text": "十月半的放学后，我来到中庭食堂的入口处，等待那个时候的到来。我一边看着建筑工人将养护胶带撕下来，一边拿出一张纸。",
+      "text": "简介。\n\n石蕗祭中，恋爱的花朵会盛开还是凋谢？\n\n\n\n10月，我们这群高一即将迎来我们的第一个学园祭——石蕗祭。\n\n三年级学生就此隐退，而剩下的我们将继续延续社团活动。\n\n在被文艺部的展览、社团杂志还有自己班级的节目准备忙得焦头烂额之际，小鞠被指名为下一任部长，可她的样子却有些奇怪……？",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
+    },
+    {
+      "text": "本是随性路人角色的我不光被学生会成员甚至还被姬宫华恋缠上，我的高中生活会变成什么样呢。\n\n对了，今天的八奈见也非常精神。她正大口大口地吃得起劲。着实很让人安心不少。\n\n\n\n\n\n败犬恋爱喜剧第三弹。这是一封感谢和道别的情书。",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
+    },
+    {
+      "text": "CONTENTS\n\n\n\n~1败目~\n\n志喜屋梦子\n\n会照顾的\n\n\n\n\n\n~2败目~\n\n姬宫华恋\n\n让您久候多时\n\nIntermission\n\n秘密的林荫小道\n\n\n\n\n\nIntermission\n\n扰邻行为\n\n要适可而止\n\n\n~3败目~\n\n现在说再见\n\n还为时尚早\n\n\n\n\n\nIntermission\n\n兄妹\n\n\n\n\n\n尾声\n\n石蕗高中旧校舍\n\n紧急楼梯四楼\n\n平台之间\n\n~4败目~\n\n来谈谈\n\n结果\n\n责任吧",
+      "speaker": "温水和彦",
+      "emotion": "",
+      "type": ""
     },
     {
       "text": "十月半的放学后，我来到中庭食堂的入口处，等待那个时候的到来。我一边看着建筑工人将养护胶带撕下来，一边拿出一张纸。",
@@ -176,7 +362,7 @@
       "emotion": "害怕"
     },
     {
-      "text": "欸，我来扶？女生的身体？我吗？志喜屋学姐的身体就要滑到地板上了没有时间去想那么多了。我做好了觉悟，抱起志喜屋学姐冰冷的身体。♢",
+      "text": "欸，我来扶？女生的身体？我吗？志喜屋学姐的身体就要滑到地板上了没有时间去想那么多了。我做好了觉悟，抱起志喜屋学姐冰冷的身体。",
       "speaker": "温水和彦",
       "emotion": "惊讶"
     },
@@ -296,7 +482,7 @@
       "emotion": "平淡"
     },
     {
-      "text": "小鞠再一次缩回到房间的角落。……又回到最开始的样子了喂，我一边想着下一步该怎么办，一边仰望天花板。♢有关如何填写申请书的讲座开始了。",
+      "text": "小鞠再一次缩回到房间的角落。……又回到最开始的样子了喂，我一边想着下一步该怎么办，一边仰望天花板。有关如何填写申请书的讲座开始了。",
       "speaker": "温水和彦",
       "emotion": "描述"
     },
@@ -411,7 +597,7 @@
       "emotion": "neutral"
     },
     {
-      "text": "……看来距离凝视着门石化了的小鞠再次解冻，还要十分钟。♢在志喜屋学姐出其不意地造访文艺部后不久，我被叫了出去。",
+      "text": "……看来距离凝视着门石化了的小鞠再次解冻，还要十分钟。在志喜屋学姐出其不意地造访文艺部后不久，我被叫了出去。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -691,7 +877,7 @@
       "emotion": "内心独白"
     },
     {
-      "text": "我这么回答着，喝了一口慢慢变冷的咖啡。总之，这件事就先搁置着吧。♢当天晚上，我在房间的书桌前坐着。",
+      "text": "我这么回答着，喝了一口慢慢变冷的咖啡。总之，这件事就先搁置着吧。当天晚上，我在房间的书桌前坐着。",
       "speaker": "温水和彦",
       "emotion": "叙述"
     },
@@ -811,9 +997,10 @@
       "emotion": "轻松"
     },
     {
-      "text": "注：immoral，邪恶、不道德的，淫荡、伤风败俗的奇怪，真的吗。我把单词的拼写方式修改了回来，佳树拿起我的手机摆到我面前。",
+      "text": "奇怪，真的吗。我把单词的拼写方式修改了回来，佳树拿起我的手机摆到我面前。",
       "speaker": "温水和彦",
-      "emotion": "中性"
+      "emotion": "中性",
+      "type": ""
     },
     {
       "text": "「还有哥哥大人，刚刚八奈见学姐发了LINE过来，好像是要邀请你吃午饭」",
@@ -826,9 +1013,10 @@
       "emotion": "疑问"
     },
     {
-      "text": "Yana-Chan『明天午休逃生楼梯见』",
+      "text": "『明天午休逃生楼梯见』",
       "speaker": "八奈见杏菜",
-      "emotion": "中性"
+      "emotion": "中性",
+      "type": ""
     },
     {
       "text": "……我深深地叹了一口气，把手机翻了过去。这是这个学期第三次被八奈见叫出去。当然这并不是什么男女幽会，而是八奈见每次要发牢骚的时候就会把我叫过去。",
@@ -896,7 +1084,7 @@
       "emotion": "开心"
     },
     {
-      "text": "♢第二天的午休，我先一步来到逃生楼梯坐了下来。吹着秋风的我打开了便当盒。以往我午饭都是吃面包，但佳树今天无论如何都要我带便当到学校来吃。",
+      "text": "第二天的午休，我先一步来到逃生楼梯坐了下来。吹着秋风的我打开了便当盒。以往我午饭都是吃面包，但佳树今天无论如何都要我带便当到学校来吃。",
       "speaker": "温水和彦",
       "emotion": "中性"
     },
@@ -1231,7 +1419,7 @@
       "emotion": "neutral"
     },
     {
-      "text": "「……有空」我把所剩无几的便当都吃完，无力地点了点头。♢放学后，从丰桥站走出来的我寻找着八奈见和小鞠的身影。她们俩都是骑自行车上学，所以我们约好在这里碰头。",
+      "text": "「……有空」我把所剩无几的便当都吃完，无力地点了点头。放学后，从丰桥站走出来的我寻找着八奈见和小鞠的身影。她们俩都是骑自行车上学，所以我们约好在这里碰头。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -1671,7 +1859,7 @@
       "emotion": "casual"
     },
     {
-      "text": "……啊，这个好好吃。♢和两人分别之后。我穿过市电大道向北走，来到了我经常光顾的精文馆书店总店。即便什么都不做，光是看着书本整齐排列在一起，就觉得脑袋清爽了许多。",
+      "text": "……啊，这个好好吃。和两人分别之后。我穿过市电大道向北走，来到了我经常光顾的精文馆书店总店。即便什么都不做，光是看着书本整齐排列在一起，就觉得脑袋清爽了许多。",
       "speaker": "温水和彦",
       "emotion": "pleased"
     },
@@ -1881,7 +2069,7 @@
       "emotion": "neutral"
     },
     {
-      "text": "……原来如此，确实是私欲啊。拿我当借口，怎么打情骂俏都行啦。♢第二天的放学后。我、八奈见还有小鞠三个人在活动室里面对面坐着。",
+      "text": "……原来如此，确实是私欲啊。拿我当借口，怎么打情骂俏都行啦。第二天的放学后。我、八奈见还有小鞠三个人在活动室里面对面坐着。",
       "speaker": "温水和彦",
       "emotion": "amused"
     },
@@ -2071,7 +2259,7 @@
       "emotion": "confident"
     },
     {
-      "text": "八奈见一脸得意地站了起来。……没办法，在合同解约之前，还是再陪陪这个大顾问吧。♢我们跟着八奈见来到了新校舍的一楼，学校的家庭科教室。",
+      "text": "八奈见一脸得意地站了起来。……没办法，在合同解约之前，还是再陪陪这个大顾问吧。我们跟着八奈见来到了新校舍的一楼，学校的家庭科教室。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -2256,7 +2444,7 @@
       "emotion": "annoyed"
     },
     {
-      "text": "小鞠没好气地回答我，然后将洗完的搅拌器放到了沥水篮里。♢茶杯里的红茶冒着热气，旁边摆着烧好的曲奇。我们围住盘子坐着，说完「我开动了」就伸手出去。",
+      "text": "小鞠没好气地回答我，然后将洗完的搅拌器放到了沥水篮里。茶杯里的红茶冒着热气，旁边摆着烧好的曲奇。我们围住盘子坐着，说完「我开动了」就伸手出去。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -2501,7 +2689,7 @@
       "emotion": "neutral"
     },
     {
-      "text": "小鞠惊慌地拍打着八奈见的背部，我撇了这个场景一眼，就跟着烧盐离开了家庭科室。♢这个时间甘夏老师好像在社会科资料室里。",
+      "text": "小鞠惊慌地拍打着八奈见的背部，我撇了这个场景一眼，就跟着烧盐离开了家庭科室。这个时间甘夏老师好像在社会科资料室里。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -2756,7 +2944,7 @@
       "emotion": "解释"
     },
     {
-      "text": "「老师，您不用接着说下去了」……亏我刚刚还有点高兴。♢第二天是星期六，我和家里人一起来到了『道之驿 丰桥』。「大人的初恋柠檬……吗」我拿着一瓶柠檬汁在自言自语。",
+      "text": "「老师，您不用接着说下去了」……亏我刚刚还有点高兴。第二天是星期六，我和家里人一起来到了『道之驿 丰桥』。「大人的初恋柠檬……吗」我拿着一瓶柠檬汁在自言自语。",
       "speaker": "温水和彦",
       "emotion": "打断"
     },
@@ -2916,7 +3104,7 @@
       "emotion": "调皮"
     },
     {
-      "text": "……妹妹啊，多少要注意点分寸吧。♢周末一过便迎来了周一。第一节课的休息时间。教室出借申请书的提交截止时间是到今天的中午前。",
+      "text": "……妹妹啊，多少要注意点分寸吧。周末一过便迎来了周一。第一节课的休息时间。教室出借申请书的提交截止时间是到今天的中午前。",
       "speaker": "温水和彦",
       "emotion": "吐槽"
     },
@@ -3121,289 +3309,351 @@
       "emotion": "neutral"
     },
     {
-      "text": "或许这大概就是所谓的偶然、碰巧。不知道下一次和小鞠再遇到这样的偶然，会不会像这次一样躲在我的身后呢。我继续看着走过去的人流，任由低着头的小鞠继续抓着我的衣服。♢",
+      "text": "或许这大概就是所谓的偶然、碰巧。不知道下一次和小鞠再遇到这样的偶然，会不会像这次一样躲在我的身后呢。我继续看着走过去的人流，任由低着头的小鞠继续抓着我的衣服。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
     {
       "text": "文艺部活动报告 ~秋报 小鞠知花『婚约作废就要众人皆知！ 第4话』我的名字是希尔维娅•卢克泽德，原公爵的千金。再往前追溯的话，原本是一名现实世界的女子高中生。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "我转生到了自己喜欢的乙女游戏中成了恶役大小姐。在付出诸多努力后，我终于转入能让自己过上幸福生活的外传路线。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "甜蜜的溺爱生活开始了……本应该是这样的，可实际上并不甜蜜——",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「菲利普！听说你连饭都没有正经吃？」",
       "speaker": "小鞠知花",
-      "emotion": "concerned"
+      "emotion": "concerned",
+      "type": ""
     },
     {
       "text": "我推开办公室厚重的大门，提起裙子下摆走进房间里。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「是希尔维娅吗。不要发出太大的声音」",
-      "speaker": "玉木慎太郎",
-      "emotion": "calm"
+      "speaker": "小鞠知花",
+      "emotion": "calm",
+      "type": ""
     },
     {
       "text": "一边叹气，一边放开手中计算尺的是菲利普王子。……我和他相遇是在一个月前。我的婚约在派对上被遭撕毁，而我被他半强行地带到了邻国来。我看了看桌子上摆着的食物。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "咸肉、芋头汤和面包，只有这些简朴的食物。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「也不用和佣人吃同样的东西不是吗」",
       "speaker": "小鞠知花",
-      "emotion": "concerned"
+      "emotion": "concerned",
+      "type": ""
     },
     {
       "text": "「我宝贵的时间不值得浪费在进食上。能吃进肚子里就行」",
-      "speaker": "玉木慎太郎",
-      "emotion": "dismissive"
+      "speaker": "小鞠知花",
+      "emotion": "dismissive",
+      "type": ""
     },
     {
       "text": "他大言壮语，嘴角露出轻蔑的笑容。今年从夏天起就一直没下过雨，尽管到了秋收时期食物仍然短缺。没有什么应对措施的话，会出现很多饿死的人。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「既便如此，供给食物的计划也不需要由你来制定吧。如果没有合适的人选的话，把王都的行政官请来怎么样？」",
       "speaker": "小鞠知花",
-      "emotion": "suggestive"
+      "emotion": "suggestive",
+      "type": ""
     },
     {
       "text": "菲利普皱起了眉头。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「中央的官僚集团有哥尔多大公做靠山。让那些家伙进入公爵领的话，金钱和食物都会被他们夺走，那样的话我们就真的什么都做不了了」",
-      "speaker": "玉木慎太郎",
-      "emotion": "serious"
+      "speaker": "小鞠知花",
+      "emotion": "serious",
+      "type": ""
     },
     {
       "text": "「但是最近你都没怎么睡觉吧」",
       "speaker": "小鞠知花",
-      "emotion": "concerned"
+      "emotion": "concerned",
+      "type": ""
     },
     {
       "text": "「我是首先是公爵领的领主，然后才是王太子，我要守护住领地人民的生活——」",
-      "speaker": "玉木慎太郎",
-      "emotion": "determined"
+      "speaker": "小鞠知花",
+      "emotion": "determined",
+      "type": ""
     },
     {
       "text": "似乎注意到了我的视线，菲利普王子耸了耸肩。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「……这是现学现卖的。我是为了不让大公找到可乘之机，做好人也很累啊」",
-      "speaker": "玉木慎太郎",
-      "emotion": "resigned"
+      "speaker": "小鞠知花",
+      "emotion": "resigned",
+      "type": ""
     },
     {
       "text": "「这事是很麻烦。但是菲利普，在吃的事情上还是要多花点心思啊」",
       "speaker": "小鞠知花",
-      "emotion": "insistent"
+      "emotion": "insistent",
+      "type": ""
     },
     {
       "text": "真是的，面对这固执又不坦率的人，只能来硬的。我打了个响指，女仆送来了新的食物。",
-      "speaker": "温水和彦",
-      "emotion": "exasperated"
+      "speaker": "小鞠知花",
+      "emotion": "exasperated",
+      "type": ""
     },
     {
       "text": "「希尔维娅，这些食物是……？」",
-      "speaker": "玉木慎太郎",
-      "emotion": "curious"
+      "speaker": "小鞠知花",
+      "emotion": "curious",
+      "type": ""
     },
     {
       "text": "「是呢，这是菜包肉卷，应该叫这个名字。这是把肉和蔬菜不用的部位切碎，用北方芹菜叶包住，再放到汤里煮软做出来的」",
       "speaker": "小鞠知花",
-      "emotion": "explaining"
+      "emotion": "explaining",
+      "type": ""
     },
     {
       "text": "「卷……？你这做法我可不喜欢。今年降雨量不足导致蔬菜都全灭了，从北方把食材运回来也是在浪费魔力」",
-      "speaker": "玉木慎太郎",
-      "emotion": "skeptical"
+      "speaker": "小鞠知花",
+      "emotion": "skeptical",
+      "type": ""
     },
     {
       "text": "「这我知道。哥尔多大公那里一直大量使用冷冻魔法将稀少的食材运回来」",
       "speaker": "小鞠知花",
-      "emotion": "knowledgeable"
+      "emotion": "knowledgeable",
+      "type": ""
     },
     {
       "text": "是的，在这个社会体系中内嵌了魔法的世界里，魔力等同于货币和资源。为了运送稀少的食材而使用的魔力，可以生产出数倍的普通食材。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「请放心吧，我也做了便携式保温箱，已经将要用的魔力降到最低了。」",
       "speaker": "小鞠知花",
-      "emotion": "reassuring"
+      "emotion": "reassuring",
+      "type": ""
     },
     {
       "text": "「必彦携式保乌恩箱？」",
-      "speaker": "玉木慎太郎",
-      "emotion": "confused"
+      "speaker": "小鞠知花",
+      "emotion": "confused",
+      "type": ""
     },
     {
       "text": "菲利普王子面对陌生的语言，歪了歪脑袋。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「嗯，把箱子分成两层，中间塞进去托儿索地区采集的风棉」",
       "speaker": "小鞠知花",
-      "emotion": "explaining"
+      "emotion": "explaining",
+      "type": ""
     },
     {
       "text": "「风棉……我听说这东西冬季的时候掉到田地里会造成很大的麻烦」",
-      "speaker": "玉木慎太郎",
-      "emotion": "doubtful"
+      "speaker": "小鞠知花",
+      "emotion": "doubtful",
+      "type": ""
     },
     {
       "text": "「这个作为隔热材料是很有用的。这个国家的老爷们有个坏习惯，认为不论什么事情只要用大量的魔力就能解决。要是能很好的控制魔力消耗的话，进口食材也会变成一个可选项」",
       "speaker": "小鞠知花",
-      "emotion": "persuasive"
+      "emotion": "persuasive",
+      "type": ""
     },
     {
       "text": "「……原来如此。如果是这样的话，那我就陪你搞这些小玩意儿。是叫做菜包肉卷，对吗？」",
-      "speaker": "玉木慎太郎",
-      "emotion": "convinced"
+      "speaker": "小鞠知花",
+      "emotion": "convinced",
+      "type": ""
     },
     {
       "text": "「嗯，要是能把吃东西放在强词夺理前面会更好呢」",
       "speaker": "小鞠知花",
-      "emotion": "playful"
+      "emotion": "playful",
+      "type": ""
     },
     {
       "text": "菲利普王子吃了一口之后，表情就变了。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「这个是你做的……？」",
-      "speaker": "玉木慎太郎",
-      "emotion": "surprised"
+      "speaker": "小鞠知花",
+      "emotion": "surprised",
+      "type": ""
     },
     {
       "text": "「是的，这段时间暂时由我来准备饭菜。殿下可得好好保重自己的身体」",
       "speaker": "小鞠知花",
-      "emotion": "caring"
+      "emotion": "caring",
+      "type": ""
     },
     {
       "text": "「倒是你自己，搞得黑眼圈都出来了。没好好睡觉吗」",
-      "speaker": "玉木慎太郎",
-      "emotion": "concerned"
+      "speaker": "小鞠知花",
+      "emotion": "concerned",
+      "type": ""
     },
     {
       "text": "！我慌张得遮住眼角。",
-      "speaker": "温水和彦",
-      "emotion": "flustered"
+      "speaker": "小鞠知花",
+      "emotion": "flustered",
+      "type": ""
     },
     {
       "text": "「那个……工作的事情我想我也能出一份力。我已经做好了这个准备」",
       "speaker": "小鞠知花",
-      "emotion": "determined"
+      "emotion": "determined",
+      "type": ""
     },
     {
       "text": "「抱歉，这是我的工作。没有经他人之手的打算」",
-      "speaker": "玉木慎太郎",
-      "emotion": "firm"
+      "speaker": "小鞠知花",
+      "emotion": "firm",
+      "type": ""
     },
     {
       "text": "「这不用说，实际工作的是菲利普，我只是帮忙而已」",
       "speaker": "小鞠知花",
-      "emotion": "insistent"
+      "emotion": "insistent",
+      "type": ""
     },
     {
       "text": "我发动了自己最擅长的幻影魔法，虽然我常被他人说没有魔法资质，但这却是我磨练至今的技能。魔法在房间的一面墙壁上用光线编织出一个个格子的形状。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「这个魔法到底……」",
-      "speaker": "玉木慎太郎",
-      "emotion": "astonished"
+      "speaker": "小鞠知花",
+      "emotion": "astonished",
+      "type": ""
     },
     {
       "text": "「这正是Excel——嗯，幻影魔法『EXCEL』！用光魔法在这列中写上数字的话，就会自动得出合计和计总」",
       "speaker": "小鞠知花",
-      "emotion": "excited"
+      "emotion": "excited",
+      "type": ""
     },
     {
       "text": "这是我在高中的信息处理课上的学习成果。作为示范，我伸手拿过来一份资料，将数字写入其中，瞬间魔法展示出合计额。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「计算正确。这到底是什么结构」",
-      "speaker": "玉木慎太郎",
-      "emotion": "intrigued"
+      "speaker": "小鞠知花",
+      "emotion": "intrigued",
+      "type": ""
     },
     {
       "text": "菲利普走到投影出表格的墙壁旁边，小心翼翼的用手碰了碰。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「每个单元格——方格的位置都配备了魔法计算尺。这可辛苦死我了。弄出来SUM函数还算顺利，VLOOKUP和SUMIF函数就稍微有点棘手了」",
       "speaker": "小鞠知花",
-      "emotion": "proud"
+      "emotion": "proud",
+      "type": ""
     },
     {
       "text": "「……难以相信。有了这个的话，领地内的食物配给立马就能制定出计划。不，连国家的财政情况都能正确地掌握。如此精湛的魔法，你花费了多少魔力？」",
-      "speaker": "玉木慎太郎",
-      "emotion": "impressed"
+      "speaker": "小鞠知花",
+      "emotion": "impressed",
+      "type": ""
     },
     {
       "text": "「啊啦，充其量不过是个Excel，，也用不了多少记忆……呃，不需要魔力呢」",
       "speaker": "小鞠知花",
-      "emotion": "casual"
+      "emotion": "casual",
+      "type": ""
     },
     {
       "text": "「原来如此，幻影魔法真是方便的魔法啊。这种使用方式我还是第一次见——」正忘我地分析着这个魔法的菲利普突然身姿摇晃了一下。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "我惊慌地一把紧抱住他，结果和他一起倒在了沙发上。「菲利普！没事吧！？」「没事，只是没睡够所以一下没站稳。就这样躺着稍微休息一会儿吧」",
-      "speaker": "温水和彦",
-      "emotion": "surprised"
+      "speaker": "小鞠知花",
+      "emotion": "surprised",
+      "type": ""
     },
     {
       "text": "「没问题呢，你就尽管向我撒娇吧」……一部分人把菲利普王子叫做冷酷无情的人。他实则是关心百姓的傲娇领主，而且只在我面前会变得有点爱撒娇——「我的判断果然不会出错」",
-      "speaker": "温水和彦",
-      "emotion": "gentle"
+      "speaker": "小鞠知花",
+      "emotion": "gentle",
+      "type": ""
     },
     {
       "text": "「啊啦，你终于肯承认我是个有用的女人了吗」「我才没有考虑你的存在会有什么得失」菲利普用手指挑弄我的头发。「——你果然是个有趣的女人」「……只是有趣吗？」",
-      "speaker": "温水和彦",
-      "emotion": "teasing"
+      "speaker": "小鞠知花",
+      "emotion": "teasing",
+      "type": ""
     },
     {
       "text": "他看着我，用与传言中不一样的过分温柔的眼神看着。而我竭力藏着火烧一般红的脸用言语逞强。「你等着我，我一定会让父亲认可你当我的妃子——」",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
     },
     {
-      "text": "[b][size=4]下一回，第5话『菲利普的私生子暴露？！』[/size][/b]♢午休，我手上拿着申请书前往学生会室。「小鞠那家伙，总感觉怪怪的啊……」",
+      "text": "下一回，第5话『菲利普的私生子暴露？！』",
+      "speaker": "小鞠知花",
+      "emotion": "neutral",
+      "type": ""
+    },
+    {
+      "text": "午休，我手上拿着申请书前往学生会室。「小鞠那家伙，总感觉怪怪的啊……」",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "",
+      "type": ""
     },
     {
       "text": "像是背景一样一动不动的小鞠，她的身影一直印在我的脑海里挥洒不去。她被指名为下一任部长负责准备石蕗祭，在那之后还有部长会议的活动报告等着她。",
@@ -3701,7 +3951,7 @@
       "emotion": "neutral"
     },
     {
-      "text": "不过今后，我应该不会再和学生会有什么瓜葛了吧，不和学生会再有牵连才是最好的。我快步走出去，远离学生会室——♢当天放学后。八奈见、烧盐、小鞠还有我。",
+      "text": "不过今后，我应该不会再和学生会有什么瓜葛了吧，不和学生会再有牵连才是最好的。我快步走出去，远离学生会室——当天放学后。八奈见、烧盐、小鞠还有我。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -3967,88 +4217,105 @@
     },
     {
       "text": "「……学姐，石蕗祭的准备工作都很顺利。文艺部要做的企划也决定好了，教室出借申请的许可也下来了，那孩子也很精神地做着」",
-      "speaker": "放虎原阳叶里",
-      "emotion": "neutral"
+      "speaker": "温水和彦",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "其中一个女生从校徽上看是一年级生。她有着一头及肩的波浪头发以及很受男生欢迎的体型。一个女生咬着黑色雷神巧克力棒，而另外一个女生则用手机看着照片。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "看着侧脸，会发现她是戴着眼镜的高三学生。后面绑成两条辫子的头发在空中摇曳，将巴掌大的袋子递了出去。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「那我就稍微安心点了。这个，拿去吃吧」",
-      "speaker": "马剃天爱星",
-      "emotion": "calm"
+      "speaker": "温水和彦",
+      "emotion": "calm",
+      "type": ""
     },
     {
       "text": "——炸鸡味的炸薯条。是丰桥引以为豪的传统粗点心。高一的女生接过来后马上打开袋子，心情愉悦地吃了起来，传出清脆的声音。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「还有一件事。我向我一个跟那孩子同班的朋友打听了下她的情况」",
-      "speaker": "放虎原阳叶里",
-      "emotion": "neutral"
+      "speaker": "温水和彦",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "眼镜女生没有说话，默默地递出了另一个袋子，这次是烤牛肉味的。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「那孩子一到休息时间马上就会离开教室，直到快打上课铃的时候才会回来。从没有见过那孩子在教室里和任何人说过话，上体育课的时候好像也没有跟人组过队」",
-      "speaker": "放虎原阳叶里",
-      "emotion": "neutral"
+      "speaker": "温水和彦",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「哦……虽然已经预料到了，但实际听到的时候心里还是很不舒服呢」「但是，到了第二学期似乎出现了一个变化」",
       "speaker": "温水和彦",
-      "emotion": "thoughtful"
+      "emotion": "thoughtful",
+      "type": ""
     },
     {
       "text": "「变化？」",
-      "speaker": "志喜屋梦子",
-      "emotion": "curious"
+      "speaker": "温水和彦",
+      "emotion": "curious",
+      "type": ""
     },
     {
       "text": "眼镜学姐第三次递出来袋子，这一袋是咸黄油味的。已经吃完烧牛肉味的高一女生毫不犹豫地接过来打开袋子马上开吃。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「那孩子午休的时候还是和以前一样见不到人影，但不知为什么看上去有点高兴的样子……这么一回事」",
-      "speaker": "野野村同学",
-      "emotion": "informative"
+      "speaker": "温水和彦",
+      "emotion": "informative",
+      "type": ""
     },
     {
       "text": "对这个情报会做出如何感想呢。眼镜学姐稍微思考了一下，不紧不慢地点了点头。",
       "speaker": "温水和彦",
-      "emotion": "thoughtful"
+      "emotion": "thoughtful",
+      "type": ""
     },
     {
       "text": "「十分感谢。你可以期待期待下一次的报酬噢」",
-      "speaker": "志喜屋梦子",
-      "emotion": "grateful"
+      "speaker": "温水和彦",
+      "emotion": "grateful",
+      "type": ""
     },
     {
       "text": "「我会期待的，那么我就先走了」",
-      "speaker": "野野村同学",
-      "emotion": "cheerful"
+      "speaker": "温水和彦",
+      "emotion": "cheerful",
+      "type": ""
     },
     {
       "text": "说完这句话，高一女生当场离开，就像是要避人耳目。在仍驻足当场的眼镜学姐的脚边，缓缓地落下了和手掌一样的北美鹅掌楸叶子。她伸手拾起来，抬起头透过叶子看望蓝天。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
-      "text": "离石蕗祭开幕还有十天。稍微再多信任一点『那孩子』的坚强——~二败目~姬宫华恋让您久候多时离文艺部定下顾问老师的人选已经过去了一周。",
+      "text": "离石蕗祭开幕还有十天。稍微再多信任一点『那孩子』的坚强——~二败目~姬宫华恋。让您久候多时。离文艺部定下顾问老师的人选已经过去了一周。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "与当初的担心相反，小拔老师意外地很会照顾人。不论是什么事情她都愿意来跟我们商量，不懂的地方她也会热心地帮我们调查。",
@@ -4131,7 +4398,7 @@
       "emotion": "thoughtful"
     },
     {
-      "text": "想到这里我不由得把视线移向了姬宫同学的缎带。姬宫同学察觉到我的视线之后脸变得更红了。只见她举起右手向我扇了过来──◇",
+      "text": "想到这里我不由得把视线移向了姬宫同学的缎带。姬宫同学察觉到我的视线之后脸变得更红了。只见她举起右手向我扇了过来──",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -4526,7 +4793,7 @@
       "emotion": "thoughtful"
     },
     {
-      "text": "我把材料装进手提袋里站了起来。出教室之前我看了眼小道具组的情况，大家都坐在自己的座位上安静地做着工作。……这个小组真让人身心放松。◇",
+      "text": "我把材料装进手提袋里站了起来。出教室之前我看了眼小道具组的情况，大家都坐在自己的座位上安静地做着工作。……这个小组真让人身心放松。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -4791,7 +5058,7 @@
       "emotion": "责备"
     },
     {
-      "text": "没错，就是这个眼神。平常的小鞠回来了。不过我的确没有自行车啊……我这样想着，脑海里突然浮现出一个人的脸庞。◇绫野从走出D班教室，把他自行车的钥匙递给了我。",
+      "text": "没错，就是这个眼神。平常的小鞠回来了。不过我的确没有自行车啊……我这样想着，脑海里突然浮现出一个人的脸庞。绫野从走出D班教室，把他自行车的钥匙递给了我。",
       "speaker": "温水和彦",
       "emotion": "内心独白"
     },
@@ -4886,7 +5153,7 @@
       "emotion": "disgusted"
     },
     {
-      "text": "「『感觉很恶心』是多余的吧……」和『恶心』相比，『感觉很恶心』似乎更加伤人。我一边想这些事，一边跟在小鞠后面踩起了自行车。◇",
+      "text": "「『感觉很恶心』是多余的吧……」和『恶心』相比，『感觉很恶心』似乎更加伤人。我一边想这些事，一边跟在小鞠后面踩起了自行车。",
       "speaker": "温水和彦",
       "emotion": "annoyed"
     },
@@ -5091,7 +5358,7 @@
       "emotion": "观察"
     },
     {
-      "text": "◇在这家石蕗中学的学生不怎么来，但我经常光顾的家庭餐厅里。我喝了一小口热可可，观察着坐在对面的小鞠的样子。小鞠表情困惑地抱着一个热草莓欧蕾的杯子。",
+      "text": "在这家石蕗中学的学生不怎么来，但我经常光顾的家庭餐厅里。我喝了一小口热可可，观察着坐在对面的小鞠的样子。小鞠表情困惑地抱着一个热草莓欧蕾的杯子。",
       "speaker": "温水和彦",
       "emotion": "场景转换"
     },
@@ -5102,8 +5369,9 @@
     },
     {
       "text": "「您点的软式布丁，久等了！」",
-      "speaker": "店员",
-      "emotion": "明朗"
+      "speaker": "narrator",
+      "emotion": "明朗",
+      "type": ""
     },
     {
       "text": "跟往常一样很有精神的店员把装有食物的容器放在了小鞠的面前。",
@@ -5381,7 +5649,7 @@
       "emotion": "描述"
     },
     {
-      "text": "每当佳树失落难过的时候，都会靠到我的身上来。而小鞠靠在我身上的力度，——就和佳树难过时一样。◇两天后的星期三。周六举办的石蕗祭迫在眉睫，各项准备渐入佳境。",
+      "text": "每当佳树失落难过的时候，都会靠到我的身上来。而小鞠靠在我身上的力度，——就和佳树难过时一样。两天后的星期三。周六举办的石蕗祭迫在眉睫，各项准备渐入佳境。",
       "speaker": "温水和彦",
       "emotion": "回忆"
     },
@@ -5711,7 +5979,7 @@
       "emotion": "stern"
     },
     {
-      "text": "……为什么连我都要扯上关系啊。我看着蝙蝠圆圆的眼睛，长长地叹了一口气。◇第二天下课后。时间已经到了星期四，距离石蕗祭只有两天了。",
+      "text": "……为什么连我都要扯上关系啊。我看着蝙蝠圆圆的眼睛，长长地叹了一口气。第二天下课后。时间已经到了星期四，距离石蕗祭只有两天了。",
       "speaker": "温水和彦",
       "emotion": "annoyed"
     },
@@ -5752,13 +6020,15 @@
     },
     {
       "text": "文艺部活动报告 ~秋季报告 月之木古都 《沉默之蟹》异世界的商埠。昏暗的角落里挂有一块招牌上面写着『月影摇曳之亭』，那里有一家大酒馆。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "推动两面开的大门，一座连着天花板的大厅映入眼帘。冒险者们举起斟满麦芽酒的杯子大声喧哗。在大厅深处隔着一扇门的包间里，一位身着和服的男子将手肘架在桌子上坐着。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "男子一脸不快地抿了一小口杯中的麦芽酒，将一块炖鱼肉放入嘴中。然后他便皱起眉头，又饮了一小口麦芽酒。不知如此反复多少次，此时，包间的橡木门开了。",
@@ -5767,48 +6037,57 @@
     },
     {
       "text": "门外人声鼎沸，一名身着军装的男人在嘈杂声之中走了进来。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「可让我久等啊，三岛君。看看，这难以下咽的麦芽酒，已经是第二杯了。」",
-      "speaker": "太宰",
-      "emotion": "不满"
+      "speaker": "月之木古都",
+      "emotion": "不满",
+      "type": ""
     },
     {
       "text": "身穿和服的男人一副早已饮醉的模样举起了酒杯。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「我也有要事在身。因为太宰先生总是那么赶。」",
-      "speaker": "三岛",
-      "emotion": "无奈"
+      "speaker": "月之木古都",
+      "emotion": "无奈",
+      "type": ""
     },
     {
       "text": "身穿军装的三岛坐到对面的椅子上，军刀喀嚓作响。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「你所说的要事，肯定是你的诡计。前几天你介绍给我的那位川端先生欺骗了我，害得我在这个世界上从头跑到尾。于是，赛利奴第乌斯为堕入衙门的梅勒斯所背叛。」",
-      "speaker": "太宰",
-      "emotion": "愤怒"
+      "speaker": "月之木古都",
+      "emotion": "愤怒",
+      "type": ""
     },
     {
       "text": "太宰将杯中的麦芽酒喝完，怒目瞪着三岛。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「请您开心一点。您要的东西我带来了，这并非出于本人歉意。」",
-      "speaker": "三岛",
-      "emotion": "苦笑"
+      "speaker": "月之木古都",
+      "emotion": "苦笑",
+      "type": ""
     },
     {
       "text": "三岛苦笑着，向太宰递出一个玻璃小瓶。拿过玻璃瓶，打开盖子，发现里面装满了澄净的白色粉末。太宰露出了今日最为愉悦的表情，随后便用手指沾了些粉末舔舐。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「真令人诧异。这简直和正宗的味精一模一样啊。」",
@@ -5817,58 +6096,69 @@
     },
     {
       "text": "「我千辛万苦才做出来的。不过来到异世界还让我去做这种东西，太宰先生，你真会来事呀。」",
-      "speaker": "三岛",
-      "emotion": "无奈"
+      "speaker": "月之木古都",
+      "emotion": "无奈",
+      "type": ""
     },
     {
       "text": "「很意外，精灵对这玩意儿可灵敏了，但是只管它来当吃的压根就不行。不对，这个世界根本就不适合饮酒吃饭。」",
-      "speaker": "太宰",
-      "emotion": "抱怨"
+      "speaker": "月之木古都",
+      "emotion": "抱怨",
+      "type": ""
     },
     {
       "text": "太宰将小瓶举到盘子上方，然后将味精撒在盘子里，仿佛雪花飘飘。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「唯有味精，才能让我在这个世界常怀自信。」",
-      "speaker": "太宰",
-      "emotion": "自信"
+      "speaker": "月之木古都",
+      "emotion": "自信",
+      "type": ""
     },
     {
       "text": "太宰胡乱搅拌一通之后总该满意了吧。他小心翼翼地盖上瓶盖，装进袖子里。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「三岛君也渴了吧。今天的饮品其实是有日本酒的。」",
-      "speaker": "太宰",
-      "emotion": "邀请"
+      "speaker": "月之木古都",
+      "emotion": "邀请",
+      "type": ""
     },
     {
       "text": "太宰大声地打了个响指，照到烛台上的阴影之中一名黑色拔染的女子突然站了起来。三岛见状下意识地用手抓住刀柄。影女对此似乎毫不在意，她默不作声地取出了一个陶瓷的酒瓶。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「只是温个酒竟让我等候多时，还不快快斟酒？」",
-      "speaker": "太宰",
-      "emotion": "不耐烦"
+      "speaker": "月之木古都",
+      "emotion": "不耐烦",
+      "type": ""
     },
     {
       "text": "太宰伸出杯子，影女便将酒倒入杯中。随后她把酒瓶伸向三岛。三岛不情不愿地拿起酒杯。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「想不到三岛君竟是如此胆怯之人啊。」",
-      "speaker": "太宰",
-      "emotion": "调侃"
+      "speaker": "月之木古都",
+      "emotion": "调侃",
+      "type": ""
     },
     {
       "text": "「看这全身涂满水墨画的人为我斟酒，我实在无法镇定下来。」",
-      "speaker": "三岛",
-      "emotion": "紧张"
+      "speaker": "月之木古都",
+      "emotion": "紧张",
+      "type": ""
     },
     {
       "text": "三岛话毕便将杯中的酒一饮而尽。",
@@ -5877,228 +6167,273 @@
     },
     {
       "text": "「表现得太过畏怯可太失礼了。虽然这名女子不论眼睛鼻子，连面貌起伏都难以仔细辨认，但我估计她一定是令人意想不到的那种标致。」",
-      "speaker": "太宰",
-      "emotion": "戏谑"
+      "speaker": "月之木古都",
+      "emotion": "戏谑",
+      "type": ""
     },
     {
       "text": "太宰用手撑着脸颊，抿了一口酒。虽说三岛最初还感到十分惊异，但在推杯换盏间也逐渐习惯了这样的氛围，开始与斟酒的影女攀谈起来。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「哎，你应该可以随意变换身体的形状，是不是？那打个比方，你能否变成希腊雕刻作品中那些魁梧的男性呢？」",
-      "speaker": "三岛",
-      "emotion": "好奇"
+      "speaker": "月之木古都",
+      "emotion": "好奇",
+      "type": ""
     },
     {
       "text": "「罢了。再说就更令人作呕了。」",
-      "speaker": "太宰",
-      "emotion": "厌恶"
+      "speaker": "月之木古都",
+      "emotion": "厌恶",
+      "type": ""
     },
     {
       "text": "太宰喝干杯中的酒，粗鲁地伸出手。影女安静地将酒注入杯中。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「话说回来，我还得到了一件珍奇好物。你，给我拿过来。」",
-      "speaker": "太宰",
-      "emotion": "命令"
+      "speaker": "月之木古都",
+      "emotion": "命令",
+      "type": ""
     },
     {
       "text": "影女点了点头，仿佛融入地面一般消失了。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「太宰先生，您还有得到了什么别的东西吗？」",
-      "speaker": "三岛",
-      "emotion": "询问"
+      "speaker": "月之木古都",
+      "emotion": "询问",
+      "type": ""
     },
     {
       "text": "「你走运了。我还找到了螃蟹。听闻这里有毛蟹一样的东西便找人要来了。」",
-      "speaker": "太宰",
-      "emotion": "愉悦"
+      "speaker": "月之木古都",
+      "emotion": "愉悦",
+      "type": ""
     },
     {
       "text": "太宰很是愉悦，三岛倒反面色僵硬起来。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「如何？不中意螃蟹吗？」",
-      "speaker": "太宰",
-      "emotion": "询问"
+      "speaker": "月之木古都",
+      "emotion": "询问",
+      "type": ""
     },
     {
       "text": "「我虽然爱吃蟹肉，但实在是不愿看见螃蟹的那副姿态。我一拿到罐头，也定要先将标签撕去之后才会食用。」",
-      "speaker": "三岛",
-      "emotion": "厌恶"
+      "speaker": "月之木古都",
+      "emotion": "厌恶",
+      "type": ""
     },
     {
       "text": "「为何如此懦弱？好吧，就让我来帮助你吧。」",
-      "speaker": "太宰",
-      "emotion": "戏弄"
+      "speaker": "月之木古都",
+      "emotion": "戏弄",
+      "type": ""
     },
     {
       "text": "太宰从容地站起身，迈着醉步走到了三岛背后。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「太宰先生，你又犯坏毛病了。肯定又搞什么恶作剧了吧？」",
-      "speaker": "三岛",
-      "emotion": "警惕"
+      "speaker": "月之木古都",
+      "emotion": "警惕",
+      "type": ""
     },
     {
       "text": "「少多嘴。就让你见识见识精灵的魔法。」",
-      "speaker": "太宰",
-      "emotion": "神秘"
+      "speaker": "月之木古都",
+      "emotion": "神秘",
+      "type": ""
     },
     {
       "text": "太宰从怀中掏出一块手巾，将三岛的眼睛遮住。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「这样如何？看不见螃蟹的样子了吧？」",
-      "speaker": "太宰",
-      "emotion": "得意"
+      "speaker": "月之木古都",
+      "emotion": "得意",
+      "type": ""
     },
     {
       "text": "「话虽如此，可我什么也看不见了呀。」",
-      "speaker": "三岛",
-      "emotion": "无奈"
+      "speaker": "月之木古都",
+      "emotion": "无奈",
+      "type": ""
     },
     {
       "text": "三岛笑着，正想摘掉手巾，太宰从上方按住了他的手。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「小心为妙。这可是一块施了魔法的手巾。被戴上手巾的人，要对戴上手巾的人言听计从。」",
-      "speaker": "太宰",
-      "emotion": "警告"
+      "speaker": "月之木古都",
+      "emotion": "警告",
+      "type": ""
     },
     {
       "text": "「太宰先生，您想骗我也办不到的。您的本领叫做『说谎』，对吧。一旦信了你的谎话，谎话可就成真了。这可真有你的风格。」",
-      "speaker": "三岛",
-      "emotion": "调侃"
+      "speaker": "月之木古都",
+      "emotion": "调侃",
+      "type": ""
     },
     {
       "text": "「唉，怎么会暴露呀……一定是川端老师又教唆你干多余的事去了。」",
-      "speaker": "太宰",
-      "emotion": "诙谐"
+      "speaker": "月之木古都",
+      "emotion": "诙谐",
+      "type": ""
     },
     {
       "text": "太宰诙谐地说道，随后松开了按着三岛的手。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「但是，我只有这次说的是真话。行了行了，太危险了，赶紧把手巾给我解开，精灵魔法要生效了呀……」",
-      "speaker": "太宰",
-      "emotion": "急切"
+      "speaker": "月之木古都",
+      "emotion": "急切",
+      "type": ""
     },
     {
       "text": "三岛一面笑着太宰的滑稽剧，一面着手解开手巾。就在这时，三岛像是注意到什么了似的，停下了手。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「且慢。太宰先生刚才说了，这块手巾上面的确施了魔法，所以要赶快摘掉，对吧？我若是就这样摘掉眼罩，是否就等同于相信了您的话呢？」",
-      "speaker": "三岛",
-      "emotion": "怀疑"
+      "speaker": "月之木古都",
+      "emotion": "怀疑",
+      "type": ""
     },
     {
       "text": "太宰听罢，一直挂在脸上那轻浮的表情便消失了。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「你确实机灵。看来你不想试探那种文字游戏究竟能否触发我的本领啊。」",
-      "speaker": "太宰",
-      "emotion": "serious"
+      "speaker": "月之木古都",
+      "emotion": "serious",
+      "type": ""
     },
     {
       "text": "「我已经难以分辨您的话孰真孰假了。今天的酒劲似乎来得好快……」",
-      "speaker": "三岛",
-      "emotion": "confused"
+      "speaker": "月之木古都",
+      "emotion": "confused",
+      "type": ""
     },
     {
       "text": "三岛依旧蒙着眼伸出手，太宰便让那只手握住酒杯；三岛又将杯中酒一饮而尽，太宰便从身后把手搭在他肩膀上。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「你刚才说酒劲来得好快，是吧。搞不好我在里面放了点什么东西吧。」",
-      "speaker": "太宰",
-      "emotion": "teasing"
+      "speaker": "月之木古都",
+      "emotion": "teasing",
+      "type": ""
     },
     {
       "text": "「您又在说谎了。您的真心，究竟是到哪里去了？」",
-      "speaker": "三岛",
-      "emotion": "questioning"
+      "speaker": "月之木古都",
+      "emotion": "questioning",
+      "type": ""
     },
     {
       "text": "「所谓作家，不过是用语言来诓骗他人的职业罢了。『说谎就像呼吸一样自然』，这说的不就是我们吗？」",
-      "speaker": "太宰",
-      "emotion": "cynical"
+      "speaker": "月之木古都",
+      "emotion": "cynical",
+      "type": ""
     },
     {
       "text": "太宰用讥讽的口吻说完，便搂住了三岛。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「如何？我现在怀抱着你的身体，你说，这手臂难道是假的么？」",
-      "speaker": "太宰",
-      "emotion": "provocative"
+      "speaker": "月之木古都",
+      "emotion": "provocative",
+      "type": ""
     },
     {
       "text": "「唉，我对你这人果然就是喜欢不起来。」",
-      "speaker": "三岛",
-      "emotion": "resigned"
+      "speaker": "月之木古都",
+      "emotion": "resigned",
+      "type": ""
     },
     {
       "text": "「我才不管。毕竟你真心喜欢我呀。」",
-      "speaker": "太宰",
-      "emotion": "playful"
+      "speaker": "月之木古都",
+      "emotion": "playful",
+      "type": ""
     },
     {
       "text": "话音一落，影女从地面上悄无声息地举着一个盛着螃蟹的大盘现了身。在太宰的眼神示意之后，影女将盘子放下后便默默的消失在了地板的缝隙中。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "太宰边解开三岛军装上的金色纽扣，小声地自言自语：",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "月之木古都",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「螃蟹不论是在捕食的时候，还是在被人当成食物的时候，永远不会多嘴，所以它确实美味。」",
-      "speaker": "太宰",
-      "emotion": "musing"
+      "speaker": "月之木古都",
+      "emotion": "musing",
+      "type": ""
     },
     {
-      "text": "◇部长读完原稿，安心地吐了一口气。",
+      "text": "部长读完原稿，安心地吐了一口气。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「看起来这一次的原稿没必要让部长检查了。」",
-      "speaker": "部长",
-      "emotion": "relieved"
+      "speaker": "玉木慎太郎",
+      "emotion": "relieved",
+      "type": ""
     },
     {
       "text": "「……你真这么觉得吗？」加入文艺部第三年，部长貌似也逐渐遭到月之木学姐的毒害。",
       "speaker": "温水和彦",
-      "emotion": "doubtful"
+      "emotion": "doubtful",
+      "type": ""
     },
     {
       "text": "「还有，你们石蕗祭准备得还顺利吗？后天就要正式开始了吧？」",
-      "speaker": "部长",
-      "emotion": "concerned"
+      "speaker": "玉木慎太郎",
+      "emotion": "concerned",
+      "type": ""
     },
     {
       "text": "部长一脸不安地询问道。「今晚就能做好售卖用的点心，明天也有一整天的时间来筹备会场，不会有问题的。再之后就是等待研究展览的原稿了。」",
@@ -6112,8 +6447,9 @@
     },
     {
       "text": "「小鞠她好像挺操心原稿的。」",
-      "speaker": "部长",
-      "emotion": "observant"
+      "speaker": "玉木慎太郎",
+      "emotion": "observant",
+      "type": ""
     },
     {
       "text": "「我也跟她说过很多次，说我可以帮忙，但是她总是说明天就能做好了，让我别担心。」最后一步就是将原稿誊抄到展览用的模造纸上，我至今还在等待这项作业开始。",
@@ -6137,8 +6473,9 @@
     },
     {
       "text": "「嗯。我已经看了三遍了。」",
-      "speaker": "部长",
-      "emotion": "enthusiastic"
+      "speaker": "玉木慎太郎",
+      "emotion": "enthusiastic",
+      "type": ""
     },
     {
       "text": "──天养选，即《天然•养殖，你会选哪边？》，是一部校园恋爱喜剧，讲述了总是打着小算盘的养殖系女生和天然系女生互相争夺主人公的故事。",
@@ -6152,8 +6489,9 @@
     },
     {
       "text": "「小未久她竟有那等波涛汹涌之物。小未久呀，是匆匆忙忙没错，可忘记穿胸罩——这种事情实际上真有可能发生吗？」",
-      "speaker": "部长",
-      "emotion": "questioning"
+      "speaker": "玉木慎太郎",
+      "emotion": "questioning",
+      "type": ""
     },
     {
       "text": "部长停下手，不再继续折纸。",
@@ -6162,8 +6500,9 @@
     },
     {
       "text": "「作为温水的学长，我就跟你坦诚相待地说吧。」",
-      "speaker": "部长",
-      "emotion": "serious"
+      "speaker": "玉木慎太郎",
+      "emotion": "serious",
+      "type": ""
     },
     {
       "text": "部长深吸了一口气，郑重其事地说道：",
@@ -6172,8 +6511,9 @@
     },
     {
       "text": "「有那种大小的女性──是不可能忘记戴胸罩的。」",
-      "speaker": "部长",
-      "emotion": "firm"
+      "speaker": "玉木慎太郎",
+      "emotion": "firm",
+      "type": ""
     },
     {
       "text": "我不禁从椅子上起身。「也就是说，小未久她是，故意不穿内衣来上学的。毕竟部长你都这么说了。」部长默默地点了点头。女主角终于露出了她的冰山一角。",
@@ -6197,8 +6537,9 @@
     },
     {
       "text": "「这样啊。那温水你就走你自己坚信的道路吧！只不过我是贫乳的爱丽丝党罢了。」",
-      "speaker": "部长",
-      "emotion": "encouraging"
+      "speaker": "玉木慎太郎",
+      "emotion": "encouraging",
+      "type": ""
     },
     {
       "text": "「部长……！」我们彼此炽热的感情激烈交战，以眼神互相交流，下一秒便发出巨大声响，印刷室的门开了。",
@@ -6217,8 +6558,9 @@
     },
     {
       "text": "「等一下！不是这样的古都！胸罩的事情不是在说你──」",
-      "speaker": "部长",
-      "emotion": "panicked"
+      "speaker": "玉木慎太郎",
+      "emotion": "panicked",
+      "type": ""
     },
     {
       "text": "「你在说什么啊？小鞠出事了！」",
@@ -6252,8 +6594,9 @@
     },
     {
       "text": "「等一下！你今天不是要去补习吗？再翘课明年真的要留级了！」",
-      "speaker": "志喜屋梦子",
-      "emotion": "concerned"
+      "speaker": "玉木慎太郎",
+      "emotion": "concerned",
+      "type": ""
     },
     {
       "text": "「跟补习没有关系！我现在必须得去小鞠的身边──」",
@@ -6262,8 +6605,9 @@
     },
     {
       "text": "「古•都！」",
-      "speaker": "志喜屋梦子",
-      "emotion": "firm"
+      "speaker": "玉木慎太郎",
+      "emotion": "firm",
+      "type": ""
     },
     {
       "text": "部长把月之木学姐的身体转向自己，紧紧搂住她的肩膀。",
@@ -6272,8 +6616,9 @@
     },
     {
       "text": "「冷静点。哪怕你这样来回奔波搞得自己留级，小鞠知道了也不会高兴的，是吧？」",
-      "speaker": "志喜屋梦子",
-      "emotion": "calm"
+      "speaker": "玉木慎太郎",
+      "emotion": "calm",
+      "type": ""
     },
     {
       "text": "「但是……要是我好好地陪着她的话，就根本不会发生这样的事……」",
@@ -6281,14 +6626,16 @@
       "emotion": "sad"
     },
     {
-      "text": "古都学姐泫然欲泣。部长便将手温柔地放在了她的头上。注释：这里作者把旁白对学姐的称呼从「月之木学姐」改成了「古都学姐」，但是下一节之后就又改回去了，不知道为什么。",
+      "text": "古都学姐泫然欲泣。部长便将手温柔地放在了她的头上。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "「你应该更加信任自己的学弟学妹才是。」",
-      "speaker": "志喜屋梦子",
-      "emotion": "encouraging"
+      "speaker": "玉木慎太郎",
+      "emotion": "encouraging",
+      "type": ""
     },
     {
       "text": "「……嗯。」",
@@ -6302,8 +6649,9 @@
     },
     {
       "text": "「温水，你先往小鞠那边去吧。我们之后也会去的。」",
-      "speaker": "志喜屋梦子",
-      "emotion": "serious"
+      "speaker": "玉木慎太郎",
+      "emotion": "serious",
+      "type": ""
     },
     {
       "text": "「咦？我没问题吗？」部长向着不安的我点了点头。",
@@ -6312,11 +6660,12 @@
     },
     {
       "text": "「这还用问吗？拜托你了，副部长。」",
-      "speaker": "志喜屋梦子",
-      "emotion": "trusting"
+      "speaker": "玉木慎太郎",
+      "emotion": "trusting",
+      "type": ""
     },
     {
-      "text": "◇一打开保健室的门，我便和正在用手机通电话的小拔老师对上了视线。她将手机装入白大褂的口袋里，向我招手。",
+      "text": "一打开保健室的门，我便和正在用手机通电话的小拔老师对上了视线。她将手机装入白大褂的口袋里，向我招手。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -6506,7 +6855,7 @@
       "emotion": "direct"
     },
     {
-      "text": "◇自石蕗高中乘车十五分钟，我们到达小鞠家。那里从前就是住宅区的一角。在许多座外观一致的平房之中，我辨认出一间屋子的名牌上写有『小鞠』，随即按响门铃。",
+      "text": "自石蕗高中乘车十五分钟，我们到达小鞠家。那里从前就是住宅区的一角。在许多座外观一致的平房之中，我辨认出一间屋子的名牌上写有『小鞠』，随即按响门铃。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -6556,7 +6905,7 @@
       "emotion": "neutral"
     },
     {
-      "text": "啊，好。在玄关站着可碍事了。我乖乖地给他让出了道。◇……怎么会变成这种情况啊。我现在位于一间由起居室和隔扇门分隔开来的儿童房里，端坐在榻榻米上。",
+      "text": "啊，好。在玄关站着可碍事了。我乖乖地给他让出了道。……怎么会变成这种情况啊。我现在位于一间由起居室和隔扇门分隔开来的儿童房里，端坐在榻榻米上。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -6757,8 +7106,9 @@
     },
     {
       "text": "「…………」",
-      "speaker": "放虎原阳叶里",
-      "emotion": "沉默"
+      "speaker": "小进",
+      "emotion": "沉默",
+      "type": ""
     },
     {
       "text": "阳奈似乎下定了决心，噔噔噔地踏步向我跑来。于是，她用手指戳了戳自己的头发给我看。她头发的扎法和小鞠是一样的。",
@@ -6767,8 +7117,9 @@
     },
     {
       "text": "「跟姐姐一样。」",
-      "speaker": "放虎原阳叶里",
-      "emotion": "害羞"
+      "speaker": "小进",
+      "emotion": "害羞",
+      "type": ""
     },
     {
       "text": "「咦？哦，真可爱呀。」小阳奈一副害羞的模样低下头，随后还是逃走了。……刚才那是什么意思？虽然很可爱就是了。",
@@ -6981,7 +7332,7 @@
       "emotion": "慌张"
     },
     {
-      "text": "小鞠快步跑掉了。听着她的脚步声，我把枕头从脸上扯下来。……这家伙，枕头喜欢荞麦皮啊。◇回到学校的时候，外面已完全天黑了。",
+      "text": "小鞠快步跑掉了。听着她的脚步声，我把枕头从脸上扯下来。……这家伙，枕头喜欢荞麦皮啊。回到学校的时候，外面已完全天黑了。",
       "speaker": "温水和彦",
       "emotion": "叙述"
     },
@@ -7226,7 +7577,7 @@
       "emotion": "确认"
     },
     {
-      "text": "「……是这样的。」现在，佳树应该正在一个人制作着大量的点心。那丫头，被我放在一边不管，估计闹别扭了。石蕗祭结束之后，得好好让她撒个娇才行……◇",
+      "text": "「……是这样的。」现在，佳树应该正在一个人制作着大量的点心。那丫头，被我放在一边不管，估计闹别扭了。石蕗祭结束之后，得好好让她撒个娇才行……",
       "speaker": "温水和彦",
       "emotion": "承认"
     },
@@ -7627,8 +7978,9 @@
     },
     {
       "text": "「关于这个，我有一个想法。能把笔记本给我看一下吗？」",
-      "speaker": "志喜屋梦子",
-      "emotion": "冷静"
+      "speaker": "玉木慎太郎",
+      "emotion": "冷静",
+      "type": ""
     },
     {
       "text": "从走廊回来的部长拿着笔记本。月之木学姐跟在后面，一脸恍惚地凝视着部长的后背。他们两个，应该没在走廊里干些奇怪的事情吧……拜托别啊……",
@@ -7637,8 +7989,9 @@
     },
     {
       "text": "「我找到了一个从事印刷业的人，他答应在中午前收到原稿文件以后，用大开本打印机帮我们打印出来。在截止时间之前我和绫野君负责排版，打算到时候直接去取完成品就行了。」",
-      "speaker": "志喜屋梦子",
-      "emotion": "自信"
+      "speaker": "玉木慎太郎",
+      "emotion": "自信",
+      "type": ""
     },
     {
       "text": "绫野点头表示赞成。……咦？这两个人……「部长，你原来认识绫野吗？」",
@@ -7647,8 +8000,9 @@
     },
     {
       "text": "「其实我跟他是第一次见面。而且也是昨晚人家介绍给我的。」",
-      "speaker": "志喜屋梦子",
-      "emotion": "平静"
+      "speaker": "玉木慎太郎",
+      "emotion": "平静",
+      "type": ""
     },
     {
       "text": "昨晚？我心想，然后烧盐给我看她的手机。",
@@ -7677,8 +8031,9 @@
     },
     {
       "text": "「我，绫野君还有朝云同学负责展览。温水，古都，你们俩主要负责布置和设计会场。八奈见同学和烧盐同学，希望你们能在准备教室的空余时间协助温水工作。拜托大家了。」",
-      "speaker": "志喜屋梦子",
-      "emotion": "郑重"
+      "speaker": "玉木慎太郎",
+      "emotion": "郑重",
+      "type": ""
     },
     {
       "text": "八奈见伸出手。烧盐和朝云同学她们也把手搭了上去。",
@@ -7697,8 +8052,9 @@
     },
     {
       "text": "「今天是石蕗祭的前一天！大家要携手共进加油干！」",
-      "speaker": "志喜屋梦子",
-      "emotion": "激昂"
+      "speaker": "玉木慎太郎",
+      "emotion": "激昂",
+      "type": ""
     },
     {
       "text": "「「「「好──！」」」」",
@@ -7726,7 +8082,7 @@
       "emotion": "开心"
     },
     {
-      "text": "八奈见又撞了一下我的身子，笑着擦掉了粘在嘴角的饭粒。◇我把用不到的桌子全部搬到走廊以后，教室里的布局也大致显现了出来。八奈见和烧盐在黑板上写着说明。",
+      "text": "八奈见又撞了一下我的身子，笑着擦掉了粘在嘴角的饭粒。我把用不到的桌子全部搬到走廊以后，教室里的布局也大致显现了出来。八奈见和烧盐在黑板上写着说明。",
       "speaker": "温水和彦",
       "emotion": "观察"
     },
@@ -7911,7 +8267,7 @@
       "emotion": "neutral"
     },
     {
-      "text": "「除了妹妹，哪怕是母校我也没有其他认识的人。」三年初中生活明明才结束几个月，我却觉得已经是很久以前的事情了。石蕗祭前一天，漫长的一天开始了──◇",
+      "text": "「除了妹妹，哪怕是母校我也没有其他认识的人。」三年初中生活明明才结束几个月，我却觉得已经是很久以前的事情了。石蕗祭前一天，漫长的一天开始了──",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -8106,7 +8462,7 @@
       "emotion": "释然"
     },
     {
-      "text": "月之木学姐抬头看向天花板，我在一旁板着脸将茶一饮而尽。◇傍晚四点前。进入1-C教室，眼前的景象已经和早上完全不一样了。",
+      "text": "月之木学姐抬头看向天花板，我在一旁板着脸将茶一饮而尽。傍晚四点前。进入1-C教室，眼前的景象已经和早上完全不一样了。",
       "speaker": "温水和彦",
       "emotion": "描述"
     },
@@ -8526,7 +8882,7 @@
       "emotion": "热情"
     },
     {
-      "text": "「真的吗？我就拭目以待吧。」话虽这么说，等我回去之后寿司铁定是一个也不剩了。因为1-C班里有个人叫做八奈见——◇",
+      "text": "「真的吗？我就拭目以待吧。」话虽这么说，等我回去之后寿司铁定是一个也不剩了。因为1-C班里有个人叫做八奈见——",
       "speaker": "温水和彦",
       "emotion": "期待"
     },
@@ -9251,9 +9607,10 @@
       "emotion": "relieved"
     },
     {
-      "text": "~三败目~现在说再见还为时过早石蕗祭当天早上。我急忙赶往学生会办公室，这是因为我要在庆典正式开始前上交会场布置完毕的照片。",
+      "text": "~三败目~现在说再见还为时过早。石蕗祭当天早上。我急忙赶往学生会办公室，这是因为我要在庆典正式开始前上交会场布置完毕的照片。",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "我调整好凌乱的呼吸，打开了学生会办公室的门。「打扰了。」",
@@ -9262,8 +9619,9 @@
     },
     {
       "text": "「咿？！」",
-      "speaker": "姬宫华恋",
-      "emotion": "startled"
+      "speaker": "马剃天爱星",
+      "emotion": "startled",
+      "type": ""
     },
     {
       "text": "房间里，一个穿着带猫耳朵的女仆装的女生僵着脸呆站在原地。……这里应该是学生会办公室吧？定睛一看，原来眼前这位猫耳女仆是学生会副会长，一年级的马剃天爱星同学。",
@@ -9376,7 +9734,7 @@
       "emotion": "平静"
     },
     {
-      "text": "◇西校舍的二楼就是文艺部的展览会场。我刚从学生会回来，就看见小鞠在墙角边孤零零地站着。",
+      "text": "西校舍的二楼就是文艺部的展览会场。我刚从学生会回来，就看见小鞠在墙角边孤零零地站着。",
       "speaker": "温水和彦",
       "emotion": "转场"
     },
@@ -9497,8 +9855,9 @@
     },
     {
       "text": "『——大家早上好。这里是石蕗中学学生会。』",
-      "speaker": "朝云千早",
-      "emotion": "正式"
+      "speaker": "放虎原阳叶里",
+      "emotion": "正式",
+      "type": ""
     },
     {
       "text": "这个成熟的声音……是学生会会长吧。一听到声音便不自觉往扬声器看去。或许这就是人的天性吧。",
@@ -9507,8 +9866,9 @@
     },
     {
       "text": "『大家是否准备好展览了呢？今天将有许多外校人员来校参观。我校的校训是「自立生存」。请各位同学都认识到，自己将代表石蕗中学的形象，也注意不要让自己的行为给学校抹黑。』",
-      "speaker": "朝云千早",
-      "emotion": "严肃"
+      "speaker": "放虎原阳叶里",
+      "emotion": "严肃",
+      "type": ""
     },
     {
       "text": "听到如此正经的问候，我稍微松了口气。虽然我一直以为我们学校的学生会里都是怪人，但会长似乎还是蛮正经的。",
@@ -9522,18 +9882,21 @@
     },
     {
       "text": "『……刚才是不是架子有点太大了？果然还是一开始的版本更好吧？』",
-      "speaker": "朝云千早",
-      "emotion": "自我怀疑"
+      "speaker": "马剃天爱星",
+      "emotion": "自我怀疑",
+      "type": ""
     },
     {
       "text": "『没事……反正没人听……』",
       "speaker": "放虎原阳叶里",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "『会长！麦克风还开着呢！请继续——喵！』",
-      "speaker": "月之木古都",
-      "emotion": "urgent"
+      "speaker": "马剃天爱星",
+      "emotion": "urgent",
+      "type": ""
     },
     {
       "text": "……搞什么啊。扬声器后方砰砰作响。会长的声音如同重振架势一般再次响起：",
@@ -9546,7 +9909,7 @@
       "emotion": "confident"
     },
     {
-      "text": "片刻之后，远处传来欢呼声和掌声。我和小鞠对视了一眼，都客客气气地拍起手来。就这样，我们的石蕗祭开始了。◇开场十五分钟之后。",
+      "text": "片刻之后，远处传来欢呼声和掌声。我和小鞠对视了一眼，都客客气气地拍起手来。就这样，我们的石蕗祭开始了。开场十五分钟之后。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -9797,8 +10160,9 @@
     },
     {
       "text": "「知道了知道了。那我就先告辞了。」",
-      "speaker": "朝云千早",
-      "emotion": "平静"
+      "speaker": "放虎原阳叶里",
+      "emotion": "平静",
+      "type": ""
     },
     {
       "text": "两人离开了教室。她们的对话响彻走廊。",
@@ -9812,8 +10176,9 @@
     },
     {
       "text": "「我吗？不，我并没有那种打算。」",
-      "speaker": "朝云千早",
-      "emotion": "否认"
+      "speaker": "放虎原阳叶里",
+      "emotion": "否认",
+      "type": ""
     },
     {
       "text": "「喵！？志喜屋学姐好像跟我说过，会长要打扮成王子殿下的模样喵？！」",
@@ -9901,7 +10266,7 @@
       "emotion": "安慰"
     },
     {
-      "text": "唉，肯定跟月之木学姐脱不了干系吧。想当然一番过后，我把这件事藏在了心底。差不多需要给它装块隔板了。◇距开场已过一个小时，前来参观的普通学生也逐渐增加。",
+      "text": "唉，肯定跟月之木学姐脱不了干系吧。想当然一番过后，我把这件事藏在了心底。差不多需要给它装块隔板了。距开场已过一个小时，前来参观的普通学生也逐渐增加。",
       "speaker": "温水和彦",
       "emotion": "推测"
     },
@@ -10031,7 +10396,7 @@
       "emotion": "玩笑"
     },
     {
-      "text": "「那也行。」这两个人是来干什么的啊。会教坏小朋友的，能不能早点出去啊……◇临近中午，我的接客手法也越来越熟练了。看到小孩子就笑着递上印章卡，然后掐时机送上点心。",
+      "text": "「那也行。」这两个人是来干什么的啊。会教坏小朋友的，能不能早点出去啊……临近中午，我的接客手法也越来越熟练了。看到小孩子就笑着递上印章卡，然后掐时机送上点心。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -10301,7 +10666,7 @@
       "emotion": "鼓励"
     },
     {
-      "text": "◇林荫道由东门一直延伸，沿途搭满了一大排货摊的帐篷。石蕗生和校外访客使得道路阻塞不堪。我和小鞠一路避开人群，好不容易走到了路的尽头。「……哎，终于到了啊。」",
+      "text": "林荫道由东门一直延伸，沿途搭满了一大排货摊的帐篷。石蕗生和校外访客使得道路阻塞不堪。我和小鞠一路避开人群，好不容易走到了路的尽头。「……哎，终于到了啊。」",
       "speaker": "温水和彦",
       "emotion": "描述"
     },
@@ -10861,7 +11226,7 @@
       "emotion": "energetic"
     },
     {
-      "text": "不由小高分说，以约会为赌注的一千五百米赛跑开始了。……几分钟后，我见证了一场恋情终结的瞬间。◇我前往西校舍，心里同时想着小高。「估计得给他留下心理阴影了……」",
+      "text": "不由小高分说，以约会为赌注的一千五百米赛跑开始了。……几分钟后，我见证了一场恋情终结的瞬间。我前往西校舍，心里同时想着小高。「估计得给他留下心理阴影了……」",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -10942,8 +11307,9 @@
     },
     {
       "text": "「卖得挺多啊。这都卖了差不多三十个了。」",
-      "speaker": "志喜屋梦子",
-      "emotion": "satisfied"
+      "speaker": "玉木慎太郎",
+      "emotion": "satisfied",
+      "type": ""
     },
     {
       "text": "「场面十分壮观呀。你们还去揽客了？」",
@@ -10952,8 +11318,9 @@
     },
     {
       "text": "「绫野君去分发传单了。有好多小学生是冲着点心来的。还有一些带着小孩子的家长是来这边休息的。」",
-      "speaker": "志喜屋梦子",
-      "emotion": "informative"
+      "speaker": "玉木慎太郎",
+      "emotion": "informative",
+      "type": ""
     },
     {
       "text": "顺着部长的视线，我看到榻榻米处，有个小孩坐在母亲的膝盖上吃着点心。这对母子旁边，有个很久都安分不下来的婴儿想靠自己的小手来印章。小鞠见状，急忙上前施助。",
@@ -11011,7 +11378,7 @@
       "emotion": "reflective"
     },
     {
-      "text": "我拼尽全力挤出笑容，向少年招了招手。◇目送一对石蕗的学生情侣离开后，教室里便只剩下学长学姐，我和小鞠四个人了。",
+      "text": "我拼尽全力挤出笑容，向少年招了招手。目送一对石蕗的学生情侣离开后，教室里便只剩下学长学姐，我和小鞠四个人了。",
       "speaker": "温水和彦",
       "emotion": "determined"
     },
@@ -11401,7 +11768,7 @@
       "emotion": "playful"
     },
     {
-      "text": "……这个人真是太任性了。◇傍晚的西校舍。偏斜的阳光从窗户照进走廊，点染出一片橘色。所有的房间似乎都已撤下石蕗祭的装饰，周围的人正逐渐减少。",
+      "text": "……这个人真是太任性了。傍晚的西校舍。偏斜的阳光从窗户照进走廊，点染出一片橘色。所有的房间似乎都已撤下石蕗祭的装饰，周围的人正逐渐减少。",
       "speaker": "温水和彦",
       "emotion": "thoughtful"
     },
@@ -12161,7 +12528,7 @@
       "emotion": "cheerful"
     },
     {
-      "text": "「啊，好的。我明白了」我决定不再反抗。……所以小鞠，别再往我这边看了。♢我抬头望向蓝天，一排排像小绵羊一样软软的云在天上飘荡着。",
+      "text": "「啊，好的。我明白了」我决定不再反抗。……所以小鞠，别再往我这边看了。我抬头望向蓝天，一排排像小绵羊一样软软的云在天上飘荡着。",
       "speaker": "温水和彦",
       "emotion": "resigned"
     },
@@ -12646,7 +13013,7 @@
       "emotion": "观察"
     },
     {
-      "text": "八奈见注意到我在看着她，冲我露出一如既往的笑容。不知为什么我突然有点想哭。♢去丰桥综合动植物公园后的第二天。一天上课时间无事发生，时间来到了班会。",
+      "text": "八奈见注意到我在看着她，冲我露出一如既往的笑容。不知为什么我突然有点想哭。去丰桥综合动植物公园后的第二天。一天上课时间无事发生，时间来到了班会。",
       "speaker": "温水和彦",
       "emotion": "观察"
     },
@@ -12856,114 +13223,136 @@
       "emotion": "demanding"
     },
     {
-      "text": "♢文艺部活动报告 ~秋报 八奈见杏菜『不会放弃、在开口之前』今天早上的我和以往有点不一样。为了在今天能跟他打上招呼说早上好，我制定好了完美的计划。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "text": "文艺部活动报告 ~秋报 八奈见杏菜『不会放弃、在开口之前』今天早上的我和以往有点不一样。为了在今天能跟他打上招呼说早上好，我制定好了完美的计划。",
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "我比往常更早地出门，在上学路上的711便利店的用餐区里占好了位置。之前两次和他失之交臂的原因，一次是我去收银台加买了热食，一次是我去加热热狗。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "故此我得出结论就是买鸡肉丸。那是因为鸡肉丸只要付完钱就可以吃了，要是看到他的身影就可以马上追上去了。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "掺有软骨的鸡肉丸配上甜辣酱和美乃滋简直是绝配，而且最大的特征是就算不用加热还是一样那么美味。而且一起点的热拿铁连牛奶泡都十分美味，最近我完全被这些美食迷住了。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "我听着咖啡机研磨咖啡豆的声音，突然有个人站在我的身后。「咦，A子同学。原来你除了甜果汁也会喝别的啊」上来搭话的是同班同学××君。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "他说话很刻薄，总是说些让我不愉快的话。××君手上拿着一杯冰咖啡。真可怜，他肯定不明白咖啡欧蕾的美味之处。我完全无视××君，看向窗外。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "一看外面把我震惊到了。他和朋友正在十字路口等红绿灯。因为今天比平常更早出门了，结果我完全大意了。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "我想打开咖啡机的盖子，但完全打不开。设计者为了安全的考量，咖啡机工作时外壳是锁住的。我一边跺着脚一边着急地等待，直到咖啡机发出哔哔的声音。咖啡欧蕾总算做好了。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "打开咖啡机的盖子，再把杯子盖上，完成了。十字路口的红绿灯正好转绿灯，如果我跑快点的话说不定能追上。我急忙慌张地穿过自动门跑，可马上又惊慌失措地回到店里。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "是的，我忘记加砂糖了。××君向往我这边扔了一包什么东西过来。我接住一看，发现正是砂糖。看来××君是注意到我忘记加砂糖了。但我仍就走回了用餐区。",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
-      "text": "「A子同学，你要的不是砂糖吗？」我一言不发地把牛奶咖啡的杯盖打开。反正××君肯定不可能明白。咖啡欧蕾要加两包砂糖。这是我的坚持……。♢",
-      "speaker": "温水和彦",
-      "emotion": "neutral"
+      "text": "「A子同学，你要的不是砂糖吗？」我一言不发地把牛奶咖啡的杯盖打开。反正××君肯定不可能明白。咖啡欧蕾要加两包砂糖。这是我的坚持……。",
+      "speaker": "八奈见杏菜",
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "放在我面前的是刚做好热气腾腾的炒乌冬面。此时我正在学校附近的乌冬面店的吧台前，和八奈见并排坐着。「为什么我们要点炒乌冬面……？」",
       "speaker": "温水和彦",
-      "emotion": "neutral"
+      "emotion": "neutral",
+      "type": ""
     },
     {
       "text": "八奈见说着要我陪她出来，还以为要被她说教，结果却被带到了乌冬面店里来。对于我理所当然的疑问，八奈见只用一句「我开动了」回应我。「啊行行行，我开动了」",
       "speaker": "温水和彦",
-      "emotion": "thoughtful"
+      "emotion": "thoughtful",
+      "type": ""
     },
     {
       "text": "「在吃之前，我有一件很重要的事要让温水君知道」",
       "speaker": "八奈见杏菜",
-      "emotion": "认真"
+      "emotion": "认真",
+      "type": ""
     },
     {
       "text": "八奈见把筷子直伸入盘中，一筷子挑起一大把面条。",
       "speaker": "温水和彦",
-      "emotion": "描述"
+      "emotion": "描述",
+      "type": ""
     },
     {
       "text": "「我啊，在这两个月里成功减重了2kg」",
       "speaker": "八奈见杏菜",
-      "emotion": "得意"
+      "emotion": "得意",
+      "type": ""
     },
     {
       "text": "「欸，不会是在骗我的吧？」要吐槽就要早一点。八奈见刚张开口准备吃，又瞪了我一眼。",
       "speaker": "温水和彦",
-      "emotion": "怀疑"
+      "emotion": "怀疑",
+      "type": ""
     },
     {
       "text": "「夏天那段时间我重了3kg，到这个月我又减了2kg回去哟？我是不是很厉害？」",
       "speaker": "八奈见杏菜",
-      "emotion": "自豪"
+      "emotion": "自豪",
+      "type": ""
     },
     {
       "text": "总计算起来还是变重了噢。「厉害是厉害，但八奈见同学怎么按现在这样的饮食习惯就变瘦了呢？去医院看看会不会更好？」",
       "speaker": "温水和彦",
-      "emotion": "内心独白"
+      "emotion": "内心独白",
+      "type": ""
     },
     {
       "text": "「我之前就说了我很注意平时的饮食习惯。吃东西时不会再要一份，也不会点大份的。我一直坚持过着这种节制的生活」",
       "speaker": "八奈见杏菜",
-      "emotion": "辩解"
+      "emotion": "辩解",
+      "type": ""
     },
     {
       "text": "八奈见嘴上这么说却豪迈地大吃一口面。靠这种减肥法都能减重，那此前她的食量得有多大啊……？我们就这么默默地吃着面。",
       "speaker": "温水和彦",
-      "emotion": "描述"
+      "emotion": "描述",
+      "type": ""
     },
     {
       "text": "直到八奈见盘子里的乌冬面只剩一半时，她放下了筷子。",
       "speaker": "温水和彦",
-      "emotion": "描述"
+      "emotion": "描述",
+      "type": ""
     },
     {
       "text": "「那么，你和小鞠酱有好好聊过吗？」",
@@ -13076,7 +13465,7 @@
       "emotion": "幽默"
     },
     {
-      "text": "……看来下一次会有人帮我好好火化。我以不输于八奈见的气势，狼吞虎咽地吃完剩下的炒乌冬面。♢我坐在市内电车上，心不在焉地看着窗外。刚才八奈见所说的肯定是对的。",
+      "text": "……看来下一次会有人帮我好好火化。我以不输于八奈见的气势，狼吞虎咽地吃完剩下的炒乌冬面。我坐在市内电车上，心不在焉地看着窗外。刚才八奈见所说的肯定是对的。",
       "speaker": "温水和彦",
       "emotion": "内心独白"
     },
@@ -13341,7 +13730,7 @@
       "emotion": "playful"
     },
     {
-      "text": "♢第二天放学后。石蕗祭结束后，新一届部长们的第一次部长会议马上要开始了。我和八奈见在会议室前的走廊上眺望着来往的学生们。小鞠还没有到会场。",
+      "text": "第二天放学后。石蕗祭结束后，新一届部长们的第一次部长会议马上要开始了。我和八奈见在会议室前的走廊上眺望着来往的学生们。小鞠还没有到会场。",
       "speaker": "温水和彦",
       "emotion": "neutral"
     },
@@ -13496,7 +13885,7 @@
       "emotion": "调侃"
     },
     {
-      "text": "嘴角还沾着蛋糕碎的八奈见手上拿着第二块蛋糕，歪着头看着我。……嗯，是我想太多了。就在这时候，眼前的会议室大门关上了。部长会议正式开始。♢",
+      "text": "嘴角还沾着蛋糕碎的八奈见手上拿着第二块蛋糕，歪着头看着我。……嗯，是我想太多了。就在这时候，眼前的会议室大门关上了。部长会议正式开始。",
       "speaker": "温水和彦",
       "emotion": "观察"
     },
@@ -13716,7 +14105,7 @@
       "emotion": "同情"
     },
     {
-      "text": "就连天爱星同学也一脸同情地看着我。「完全没问题。我这就进行文艺部的活动报告」我无视此刻的窘迫露出微笑，接着拿起还在滴水的原稿。♢部长会议结束了。",
+      "text": "就连天爱星同学也一脸同情地看着我。「完全没问题。我这就进行文艺部的活动报告」我无视此刻的窘迫露出微笑，接着拿起还在滴水的原稿。部长会议结束了。",
       "speaker": "温水和彦",
       "emotion": "观察"
     },
@@ -13796,7 +14185,7 @@
       "emotion": "犹豫"
     },
     {
-      "text": "像是要逃离八奈见的视线似地，我迅速挺直腰杆站了起来。♢太阳已经下山，夜色急匆匆地驱走了黄昏。我从西校舍走了出来，抬起头，月亮已经挂在天边。",
+      "text": "像是要逃离八奈见的视线似地，我迅速挺直腰杆站了起来。太阳已经下山，夜色急匆匆地驱走了黄昏。我从西校舍走了出来，抬起头，月亮已经挂在天边。",
       "speaker": "温水和彦",
       "emotion": "紧张"
     },
@@ -13851,7 +14240,7 @@
       "emotion": "行动"
     },
     {
-      "text": "我深深地吸了一口气，然后朝着旧校舍的逃生楼梯走去。♢最开始是因为要吃八奈见亲手制作的便当，我才被叫来了这里。",
+      "text": "我深深地吸了一口气，然后朝着旧校舍的逃生楼梯走去。最开始是因为要吃八奈见亲手制作的便当，我才被叫来了这里。",
       "speaker": "温水和彦",
       "emotion": "鼓起勇气"
     },
