@@ -1,0 +1,74 @@
+[
+  {
+    "name": "竹久优真",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "私立艺文馆高中一年级学生，轻文艺部的新任部长，喜欢读书，性格内向但善于思考，对宗像濑奈有好感。"
+  },
+  {
+    "name": "宗像濑奈",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "私立艺文馆高中学生，轻音乐部的主唱，性格开朗外向，长相出众，是学校的偶像，经常来轻文艺部活动室。"
+  },
+  {
+    "name": "笹叶更纱",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "私立艺文馆高中学生，宗像濑奈的朋友，对竹久优真有好感"
+  },
+  {
+    "name": "井上",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "轻音乐部的鼓手，个子高，眼睛温柔，性格细腻，被竹久优真私下称为“狗”。"
+  },
+  {
+    "name": "河本",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "轻音乐部的贝斯手，脸稍大，颧骨突出，头发稀疏，被竹久优真私下称为“河童”。"
+  },
+  {
+    "name": "花村",
+    "gender": "male",
+    "voice_archetype": "男-正太",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "轻音乐部的键盘手，身材娇小，五官中性精致，像短发美少女，被竹久优真私下称为“花子”。"
+  },
+  {
+    "name": "天野",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "轻音乐部的吉他手，男生但留半长发，戴圆框眼镜，有点自恋，被竹久优真私下称为“阿玛比埃”。"
+  },
+  {
+    "name": "上田麻里",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "私立艺文馆高中一年级学生，黑魔术研究部（黑研）的唯一部员，放学后自称龙宫坂辉夜，戴黑色眼罩，面色苍白，性格神秘。"
+  }
+]
