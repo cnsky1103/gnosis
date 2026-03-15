@@ -27,6 +27,15 @@
     "description": "私立艺文馆高中学生，宗像濑奈的朋友，对竹久优真有好感"
   },
   {
+    "name": "龙宫坂辉夜",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": "red",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "拥有漆黑长发、肌肤苍白、戴黑色蕾丝眼罩的神秘女学生，自称会占卜且准确率很高，兴趣独特希望别人用特定名字称呼她，说话风格带有神秘感和中二气息"
+  },
+  {
     "name": "井上",
     "gender": "male",
     "voice_archetype": "男-温柔",
