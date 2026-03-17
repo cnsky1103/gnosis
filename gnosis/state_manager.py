@@ -71,4 +71,4 @@ class CharacterManager:
         )
 
     def get_known_names_and_gender(self):
-        return "\n".join([f"- {c.name} ({c.gender})" for c in self.characters.values()])
+        return "\n".join([f"- {c.name} ({c.gender}) 人物简介：{c.description}" for c in self.characters.values()])

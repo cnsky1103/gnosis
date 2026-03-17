@@ -1,0 +1,146 @@
+[
+  {
+    "name": "关望",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "同班同学，棒球队投手，高大个子，紧张时说话吞吞吐吐，喜欢天海同学，想通过前原真树接近她。"
+  },
+  {
+    "name": "新田",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "天海同学的朋友，与主角、海、天海同学同班，性格直率，对班级八卦感兴趣但保持距离，有时会调侃主角。"
+  },
+  {
+    "name": "前原真树",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角，第一人称叙述者，高中生，性格内向，对时尚不熟悉，与海和天海同学关系密切。"
+  },
+  {
+    "name": "前原树",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的父亲，大型建设公司的部长，工作繁忙，与主角母亲离婚，性格温和，体格健壮。"
+  },
+  {
+    "name": "凑京香",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "前原树的部下，主任，眼神锐利，漂亮的女性，年龄约二十岁后半，工作能力强。"
+  },
+  {
+    "name": "朝凪海",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角前原真树的约会对象，性格活泼开朗，喜欢唱歌，在KTV中积极鼓励主角，两人关系亲密。"
+  },
+  {
+    "name": "空伯母",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "朝凪海的母亲，关心女儿，在电话中请求主角送海回家，并邀请主角吃晚饭。"
+  },
+  {
+    "name": "天海夕",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "被提及为朝凪海的朋友，喜欢唱歌，但未在当前场景中物理出场。"
+  },
+  {
+    "name": "凑小姐",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "前原真树父亲的部下，在车站与父亲一起出现，穿着便服，与父亲关系亲密，曾给主角名片。"
+  },
+  {
+    "name": "前原真树的父亲",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的父亲，与凑小姐在车站约会，离婚后与主角约定定期见面，工作忙碌。"
+  },
+  {
+    "name": "前原真树的母亲",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的母亲，工作疲惫，在家抽烟，关心主角的约会，并告知父亲想在下周五见面。"
+  },
+  {
+    "name": "关智绪",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "二年级学生，学生会长，望的姐姐，在学生会室享用午餐时处理望的请求，允许主角有条件参加圣诞派对。"
+  },
+  {
+    "name": "大地伯父",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "朝凪海的父亲，身材高大，个性认真严肃，但家庭中权力顺位较低，被妻子和女儿调侃。"
+  },
+  {
+    "name": "陆哥",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "朝凪海的哥哥，年轻男子，个子高，与妹妹关系不太融洽，个性正经但有点叛逆。"
+  },
+  {
+    "name": "二取纱那",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "朝凪海和天海夕从国小就认识的朋友，橘女子高中的学生，曾对海说谎，现在来道歉并希望和好。"
+  },
+  {
+    "name": "北条茉奈",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "朝凪海和天海夕从国小就认识的朋友，橘女子高中的学生，曾对海说谎，现在来道歉并希望和好。"
+  }
+]
