@@ -27,15 +27,6 @@
     "description": "主角，第一人称叙述者，高中生，性格内向，对时尚不熟悉，与海和天海同学关系密切。"
   },
   {
-    "name": "前原树",
-    "gender": "male",
-    "voice_archetype": "男-大叔",
-    "voice": null,
-    "ref_audio_path": null,
-    "ref_audio_text": null,
-    "description": "主角的父亲，大型建设公司的部长，工作繁忙，与主角母亲离婚，性格温和，体格健壮。"
-  },
-  {
     "name": "凑京香",
     "gender": "female",
     "voice_archetype": "女-普通",
