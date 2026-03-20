@@ -7,6 +7,6 @@ def create_sovits_engine(base_url: str):
     engine = GptSoVitsEngine(base_url)
     return TTSEngineProxy('sovits', engine)
 
-def create_cosyvoice_engine():
-    engine = CosyVoiceEngine()
+def create_cosyvoice_engine(tts_workers):
+    engine = CosyVoiceEngine(workers=tts_workers)
     return TTSEngineProxy('cosyvoice', engine)

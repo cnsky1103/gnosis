@@ -3,15 +3,15 @@ import requests
 
 from gnosis.tts.tts_utils import DEFAULT_AUDIO_SAMPLE_RATE, PUNCTUATION_ONLY_SILENCE_MS, filter_script_jobs_by_character, write_silence_wav
 from gnosis.utils import is_punctuation_only_text
-# try:
-#     from cosyvoice.cli.cosyvoice import AutoModel
-# except ModuleNotFoundError:
-#     AutoModel = None  # type: ignore[assignment]
+try:
+    from cosyvoice.cli.cosyvoice import AutoModel
+except ModuleNotFoundError:
+    AutoModel = None  # type: ignore[assignment]
 
-# try:
-#     import torchaudio
-# except ModuleNotFoundError:
-#     torchaudio = None  # type: ignore[assignment]
+try:
+    import torchaudio
+except ModuleNotFoundError:
+    torchaudio = None  # type: ignore[assignment]
 
 import asyncio
 from typing import Dict
@@ -23,7 +23,7 @@ DEFAULT_COSYVOICE_MODEL_DIR = (
     "/Users/sky/code/CosyVoice/pretrained_models/CosyVoice2-0.5B"
 )
 
-SERVER = "http://localhost:8090/generate"
+SERVER = "http://127.0.0.1:5000/generate"
 
 class CosyVoiceEngine(BaseTTSEngine):
     name = "cosyvoice"
@@ -37,7 +37,7 @@ class CosyVoiceEngine(BaseTTSEngine):
         #         f"依赖缺失，cosyvoice={AutoModel} torchaudio={torchaudio}" 
         #     )
         self.model_dir = DEFAULT_COSYVOICE_MODEL_DIR 
-        # self.cosyvoice = AutoModel(model_dir=self.model_dir)
+        self.cosyvoice = AutoModel(model_dir=self.model_dir)
         self.default_voice_id = "logos"
         self.workers = workers
 
@@ -55,33 +55,33 @@ class CosyVoiceEngine(BaseTTSEngine):
         voice_id: str,
         output_path: str,
     ) -> bool:
-        response = requests.post(url=SERVER, json={
-            "text": text,
-            "voice_id": voice_id
-        }, proxies={"http": None, "https": None})
-        if response.status_code == 200:
-            with open(output_path, "wb") as f:
-                f.write(response.content)
-                return True
-        else:
-            print(f"请求失败，状态码{response.status_code}")
-            return False
-        # try:
-            # for out in self.cosyvoice.inference_zero_shot(
-            #     tts_text=text,
-            #     prompt_text="",
-            #     prompt_wav="",
-            #     zero_shot_spk_id=voice_id,
-            #     speed=1.1,
-            # ):
-            #     torchaudio.save(
-            #         output_path, out["tts_speech"], self.cosyvoice.sample_rate
-            #     )
-            #     return True
-        # except Exception as exc:
-        #     print(f"   CosyVoice 推理异常: {exc}")
+        # response = requests.post(url=SERVER, json={
+        #     "text": text,
+        #     "voice_id": voice_id
+        # }, proxies={"http": None, "https": None})
+        # if response.status_code == 200:
+        #     with open(output_path, "wb") as f:
+        #         f.write(response.content)
+        #         return True
+        # else:
+        #     print(f"请求失败，状态码{response.status_code}")
         #     return False
-        # return False
+        try:
+            for out in self.cosyvoice.inference_zero_shot(
+                tts_text=text,
+                prompt_text="",
+                prompt_wav="",
+                zero_shot_spk_id=voice_id,
+                speed=1.1,
+            ):
+                torchaudio.save(
+                    output_path, out["tts_speech"], self.cosyvoice.sample_rate
+                )
+                return True
+        except Exception as exc:
+            print(f"   CosyVoice 推理异常: {exc}")
+            return False
+        return False
 
     async def generate_line(
         self,

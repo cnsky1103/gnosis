@@ -10,8 +10,9 @@ from gnosis.tts.tts_utils import DEFAULT_SOVITS_URL
 from gnosis.tts.tts_utils import delete_character_audio_segments
 from gnosis.srt import build_precise_timeline, check_sample_rate, write_timeline_file
 from gnosis.tts.tts_engine_factory import (create_cosyvoice_engine, create_sovits_engine)
-from gnosis.utils import parse_script_payload
+from gnosis.utils import parse_script_payload, collect_sorted_segments, clean_text
 from gnosis.merge_audio import generate_precise_master_audio
+from gnosis.tts_verify import LNAligner
 
 DEFAULT_MIN_RATIO = 1200 / 1800
 DEFAULT_MAX_RATIO = 2600 / 1800
@@ -66,9 +67,9 @@ async def main():
     parser = argparse.ArgumentParser(description="Gnosis 有声书生产系统")
     parser.add_argument(
         "step",
-        choices=["extract", "script", "tts", "merge", "full", "proofread"],
+        choices=["extract", "script", "tts", "verify", "merge", "full", "proofread"],
         help=(
-            "运行步骤: extract(选角), script(剧本), tts(语音), merge(混音), "
+            "运行步骤: extract(选角), script(剧本), tts(语音), verify(语音校对), merge(混音), "
             "proofread(剧本校对 Web), full(全流程)"
         ),
     )
@@ -295,7 +296,7 @@ async def main():
             return
 
         if args.tts_engine == "cosyvoice":
-            tts_engine = create_cosyvoice_engine()
+            tts_engine = create_cosyvoice_engine(tts_workers=args.tts_workers)
         elif args.tts_engine == "sovits":
             tts_engine = create_sovits_engine(args.sovits_url)
 
@@ -303,6 +304,44 @@ async def main():
         await tts_engine.generate_script_tts(script_path,audio_dir, char=args.char.strip())
 
         print("✅ 音频片段生成完毕")
+
+    if args.step in ["verify"]:
+        from faster_whisper import WhisperModel
+        from rapidfuzz import fuzz
+        model_size = "tiny"
+        model = WhisperModel(model_size, device="cpu", compute_type="int8")
+        print("验证TTS语音置信度")
+        audios = collect_sorted_segments(audio_dir)
+        with open(script_path, "r", encoding="utf-8") as f:
+            script_payload = json.load(f)
+            _, script_list = parse_script_payload(script_payload)
+
+        if len(audios) != len(script_list):
+            print(f"语音与剧本长度不统一！语音文件共计{len(audios)}个，剧本长度共计{len(script_list)}")
+
+        results = []
+        for i in range(len(audios)):
+            orig = script_list[i]["text"]
+            segments, _info = model.transcribe(audios[i], language='zh')
+            asr = "".join([s.text for s in segments])
+            
+            orig_cnt = len(clean_text(orig))
+            asr_cnt = len(clean_text(asr))
+            ratio = asr_cnt / orig_cnt if orig_cnt != 0 else asr_cnt
+            if ratio > 1.2 or ratio < 0.8:
+                results.append({
+                  "audio": audios[i],
+                  "script": orig,
+                  "asr": asr  
+                })
+
+        for r in results:
+            print(f"音频：{r['audio']} 剧本：{r['script']} 识别：{r['asr']}")
+
+        verify_path = os.path.join(project_root, "verify.json")
+        with open(verify_path, "w") as f:
+            json.dump(results, f, indent=2)
+                    
 
     # --- Step 4: 合并混音 ---
     if args.step in ["merge", "full"]:

@@ -1,0 +1,812 @@
+[
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0048.wav",
+    "script": "\u300c\u662f\u3001\u662f\u554a\u3002\u2026\u2026\u55ef\u3002\u300d",
+    "asr": "\u662f\u662f"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0049.wav",
+    "script": "\u300c\u2026\u2026\u55ef\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0068.wav",
+    "script": "\u300e\u2026\u2026\u2026\u2026\u300f",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0095.wav",
+    "script": "\u300c\u600e\u3001\u600e\u4e48\u4e86\uff1f\u300d",
+    "asr": "\u600e\u9ebc\u4e86?"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0113.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d\u8fd9\u8bdd\u8ddf\u4e4b\u524d\u8c03\u4f83\u7684\u8bed\u6c14\u5b8c\u5168\u4e0d\u540c\uff0c\u83ab\u540d\u5730\u5e26\u7740\u523a\u3002\u6211\u4e0d\u7531\u5f97\u6c89\u9ed8\u4e86\u3002\u7c73\u8299\u9732\u9f13\u8d77\u8138\u988a\u7ee7\u7eed\u8bf4\u9053\uff1a",
+    "asr": "\u8fd9\u8bdd\u8ddf\u4e4b\u524d\u8c03\u8003\u7684\u9884\u671f\u5b8c\u5168\u4e0d\u540c\u83ab\u540d\u7684\u5e26\u7740\u523a\u6211\u4e0d\u6709\u7684\u6c89\u9ed8\u4e86\u6211\u4e0d\u6709\u7684\u6c89\u9ed8\u4e86\u6211\u4e0d\u6709\u7684\u6c89\u9ed8\u4e86\u7c73\u592b\u8def\u4f30\u8ba1\u7ec3\u5047\u7ee7\u7eed\u8bf4\u5934"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0153.wav",
+    "script": "\u300c\u5c31\u662f\u8bf4\u554a\u2014\u2014\u300d",
+    "asr": "\u5c31\u662f\u8bf4"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0185.wav",
+    "script": "\u300c\u5475\u5475\uff0c\u5f88\u597d\u3002\u5bf9\uff0c\u5c31\u662f\u5b83\u3002\u300d",
+    "asr": "\u5f88\u597d\u5bf9\u5c31\u662f\u4ed6"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0221.wav",
+    "script": "\u300c\u554a\uff0c\u554a\u561e\uff0c\u521a\u624d\u7684\u4e3b\u5f20\u6ca1\u4f20\u8fbe\u5230\u5417\uff1f\u7528\u5c06\u68cb\u6bd4\u55bb\u4e0d\u592a\u597d\u5417\uff1f\u5443\uff0c\u5c31\u662f\u8bf4\uff0c\u6211\u5e0c\u671b\u5728\u756a\u957f\u5f00\u59cb\u610f\u8bc6\u5230\u6211\u7684\u8fd9\u4e2a\u77ac\u95f4\u8d77\uff0c\u518d\u89c2\u5bdf\u4e00\u6bb5\u65f6\u95f4\uff0c\u7136\u540e\u518d\u6b63\u5f0f\u7ed9\u6211\u7b54\u590d\u3002\u300d",
+    "asr": "\u6211\u5e0c\u671b\u5728\u7ffb\u638c\u5f00\u59cb\u610f\u8bc6\u5230\u6211\u7684\u8fd9\u4e2a\u77ac\u95f4\u671f\u5728\u89c2\u5bdf\u4e00\u6bb5\u65f6\u95f4\u7136\u540e\u5728\u6b63\u5f0f\u7ed9\u6211\u7b54\u590d"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0231.wav",
+    "script": "\u300c\u8bf6\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0250.wav",
+    "script": "\u300c\u54c8\u3001\u54c8\u554a\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0255.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0297.wav",
+    "script": "\u300c\u4e24\u5468\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0313.wav",
+    "script": "\u300c\u7b49\u4e00\u4e0b\u3002\u300d",
+    "asr": "\u7b49\u4e0b"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0337.wav",
+    "script": "\u300c\u662f\u3001\u5417\u3002\u300d",
+    "asr": "\u5abd"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0367.wav",
+    "script": "\u300c\u56e0\u4e3a\u554a\u300d",
+    "asr": "\u4f60\u5582"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0411.wav",
+    "script": "\u300c\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0438.wav",
+    "script": "\u300c\u54e6\uff0c\u66b4\u9732\u4e86\uff1f\u554a\u54c8\u54c8\u5176\u5b9e\u6211\u4eec\u4ea4\u5f80\u8fc7\u54e6\u3002\u662f\u5427\uff0c\u5c0f\u6b4c\u3002\u300d",
+    "asr": "\u54e6 \u66b4\u9732\u4e86\u5176\u5b9e\u6211\u4eec\u4ea4\u5f80\u8fc7 \u662f\u5427 \u5c0f\u54e5"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0443.wav",
+    "script": "\u300c\u54c8\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0449.wav",
+    "script": "\u300c\u554a\uff0c\u5bf9\u554a\uff01\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0468.wav",
+    "script": "\u300c\u8bf6\uff1f\u2026\u2026\u554a\uff0c\u554a\u2014\u2014\uff0c\u662f\u554a\uff01\u300e\u6211\u300f\u5b8c\u5168\u4e0d\u8ba4\u8bc6\u5979\uff0c\u662f\u7684\uff01\u300d",
+    "asr": "\u662f\u554a,\u6211\u5b8c\u5168\u4e0d\u8ba4\u8bc6\u4ed6,\u662f\u7684\u3002"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0473.wav",
+    "script": "\u300c\u2026\u2026\u5443\u2014\u2014\u2026\u2026\u3002\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0478.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u3002\u2026\u2026\u597d\u4e86\u3002\u300d",
+    "asr": "e e e \u597d\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0569.wav",
+    "script": "\u300c\u300e\u554a\u554a\uff01\u4e0d\u884c\u4e86\uff0c\u592a\u6fc0\u70c8\u4e86\uff0c\u6b4c\u4e38\u5c0f\u59d0\uff01\u6b4c\u4e38\u5c0f\u59d0\u554a\u554a\u554a\uff01\u300f\u2026\u2026\u8fd9\u79cd\uff1f\u300d",
+    "asr": "\u4e0d\u884c\u4e86 \u592a\u6fc0\u7565\u4e86\u54e5\u73a9\u5c0f\u59d0 \u54e5\u73a9\u5c0f\u59d0\u8bbe\u4e2d"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0570.wav",
+    "script": "\u300e\u2026\u2026\u2026\u2026\u300f",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0573.wav",
+    "script": "\u300c\u2026\u2026\u554a\u2014\u2014\uff0c\u5c0f\u6731\u7406\u53d1LINE\u6765\u4e86\uff0c\u4f60\u4eec\u4fe9\u6162\u6162\u804a\u5427\u2014\u2014\u3002\u300d",
+    "asr": "\u5c0f\u6731\u91cc\u53d1\u70c2\u4eba\u4e86\u4f60\u4eec\u4e24\u4e2a\u95e8\u804a\u5427"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0580.wav",
+    "script": "\u300c\uff01\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0585.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0586.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0591.wav",
+    "script": "\u3002\u3002\u3002",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0613.wav",
+    "script": "\u300c\u559c\u6b22\u4f60\u54e6\u3002\u300d",
+    "asr": "\u6211\u559c\u6b61\u4f60\u5594"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0639.wav",
+    "script": "\u300c\u600e\u3001\u600e\u4e48\u8bb2\uff1f\u300d",
+    "asr": "\u600e\u9ebc\u8b1b?"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0682.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u8fd8\u6ca1\u3002\u300d",
+    "asr": "\u554a... \u554a... \u554a... \u554a..."
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0699.wav",
+    "script": "\u300c\u54c8\uff1f\u300d",
+    "asr": "\u5475\u5475"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0706.wav",
+    "script": "\u300c\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0723.wav",
+    "script": "\u300c\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0725.wav",
+    "script": "\u300c\u55ef\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0727.wav",
+    "script": "\u300e\u8bf6\u300f",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0742.wav",
+    "script": "\u300c\u55ef\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0763.wav",
+    "script": "\u3002",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0770.wav",
+    "script": "\u300c\uff01\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0778.wav",
+    "script": "\u300c\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0787.wav",
+    "script": "\u300c\u8bf6\uff1f\u554a\u2014\u2014\uff0c\u662f\u554a\u3002\u90a3\u987a\u4fbf\u53bbLUMINE\u7684\u5730\u4e0b\u4e00\u5c42\u2026\u2026\u300d",
+    "asr": "\u662f\u554a\u90a3\u987a\u4fbf\u5374\u9759\u547d\u7684\u5730\u4e0b\u4e00\u5c42"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0820.wav",
+    "script": "\u300c\u554a\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0824.wav",
+    "script": "\u300c\u54c8\uff1f\u300d",
+    "asr": "\u5475\u5475"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0828.wav",
+    "script": "\u300c\u8bf6\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0850.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0870.wav",
+    "script": "\u300c\u554a\uff0c\u5496\u5561\u5c31\u4e0d\u7528\u4e86\u3002\u300d",
+    "asr": "\u54a6\u54a6\u54a6"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0873.wav",
+    "script": "\u300c\u554a\u3001\u554a\uff0c\u662f\u554a\u3002\u5443\uff0c\u4e0d\u8fc7\uff0c\u90a3\uff0c\u4eca\u5929\u5c31\u89e3\u6563\u4e86\uff1f\u300d",
+    "asr": "\u662f\u554a\u4e0d\u8fc7\u90a3\u4eca\u5929\u5c31\u89e3\u6563\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0880.wav",
+    "script": "\u3002",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0882.wav",
+    "script": "\u51e0\u5206\u949f\u540e\u3002\u5728Town Seven\u4e00\u697c\uff0c\u5356\u9cb7\u9c7c\u70e7\u548c\u51b0\u6dc7\u6dcb\u7684\u300cNew Komiya\u300d\u65c1\u8fb9\u7684\u4f11\u606f\u533a\u3002",
+    "asr": "\u96c6\u5206\u4e2d\u540e,\u5728\u63113-1\u697c,\u5356\u96d5\u9c7c\u70e7\u548c\u51b0\u51e0\u96f6\u7684\u725b\u53e3\u7c73\u65c1\u8fb9\u7684\u4f11\u606f\u533a\u3002"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0896.wav",
+    "script": "\u300c\u4e03\u6210\u662f\u771f\u5fc3\u5728\u5938\u60a8\u54e6\u3002\u300d",
+    "asr": "\u5475\u5475\u4e03\u6210\u662f\u771f\u5fc3\u7684\u5bec\u5be7\u554a"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0921.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u3002\u2026\u2026\u8bf4\u3001\u8bf4\u8d77\u6765\uff0c\u4eca\u5929\u7684\u300e\u7ade\u62cd\u6e38\u620f\u300f\u771f\u96be\u554a\u3002\u300d",
+    "asr": "\u7b49 \u8def\u8fc7 \u8bf4 \u8bf4\u8d77\u6765 \u4eca\u5929\u7684\u955c\u724c\u6e38\u620f\u771f\u96be\u554a"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0960.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/0998.wav",
+    "script": "\u300c\u554a\u54c8\u54c8\uff0c\u597d\u8bbd\u523a\u554a\u3002\u771f\u662f\u8d25\u72ac\u7684\u5634\u786c\u3002\u300d",
+    "asr": "\u597d \u623f\u5b50 \u771f\u662f\u62dc\u7fa4\u7684\u5634\u786c"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1011.wav",
+    "script": "\u300c\u6211\u624d\u662f\uff0c\u8c22\u8c22\u60a8\u3002\u5443\uff0c\u90a3\u5c31\u2026\u2026KURUMAZA\u518d\u89c1\u3002\u300d",
+    "asr": "\u6211\u624d\u662f\u8c22\u8c22\u4f60\u90a3\u5c31\u9694\u5165\u5cb8\u5b50\u518d\u89c1"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1037.wav",
+    "script": "\u300c\u2026\u2026\u55ef\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1043.wav",
+    "script": "\u300c\u2026\u2026\u55ef\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1071.wav",
+    "script": "\u300c\u554a\u2014\uff0c\u554a\u2014\u3002\u2026\u2026\u54b3\u54b3\u3002\u2026\u2026\u5c71\u91cc\u7684\uff0c\u7334\u5b50\u554a\uff0c\u6293\u4e86\uff0c\u5c0f\u5b69\u8dd1\u3002\u300d",
+    "asr": "\u5c71\u91cc\u7684 \u7334\u5b50\u6293\u4e86\u5c0f\u5b69\u8dd1"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1122.wav",
+    "script": "\u5c31\u5728\u8fd9\u671f\u95f4\uff0c\u53c8\u6765\u4e86\u6761LINE\u3002",
+    "asr": "\u5c31\u5728\u8fd9\u671f\u95f4\u53c8\u6765\u4e86\u6761\u84dd"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1174.wav",
+    "script": "\u300c\u4e8c\u6b65\u5c3c\u592b\uff1f\u300d",
+    "asr": "\u54c8\u5c14\u5e03\u5c3c\u592b"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1193.wav",
+    "script": "\u300c\u54ce\u5440\u5440\uff0c\u771f\u662f\u9752\u6625\u554a\u300d",
+    "asr": "\u597d\u5440 \u5403\u662f\u9752\u6625"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1201.wav",
+    "script": "\u300c\u554a\u3001\u554a\u54c8\u54c8\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1202.wav",
+    "script": "\u300c\u547c\u547c\u3002\u300d",
+    "asr": "\u547c"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1204.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1225.wav",
+    "script": "\u300c\u54c8\uff1f\u554a\uff0c\u8c22\u8c22\uff0c\u6b66\u58eb\u3002\u300d",
+    "asr": "\u8c22\u8c22\u4e0d\u662f"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1233.wav",
+    "script": "\u300c\u6700\u559c\u6b22\u4e86\uff01\u300d",
+    "asr": "\u54c8\u81ea\u5df1\u559c\u6b22\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1236.wav",
+    "script": "\u300c\u54c8\uff1f\u554a\u2014\u2014\u2026\u2026\u539f\u6765\u5982\u6b64\uff1f\u662f\u554a\uff1f\u300d",
+    "asr": "\u554a\u554a\u554a\u554a\u554a\u539f\u6765\u5982\u6b64\u554a\u662f\u554a"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1239.wav",
+    "script": "\u300c\uff01\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1327.wav",
+    "script": "\u300c\u6211\u7684\u56de\u5408\uff01\u5443\u2014\u2014\uff0c\u300e\u3093\u300f\uff01\u300d",
+    "asr": "\u6211\u7684\u56de\u5408"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1338.wav",
+    "script": "\u300c\u8bf6\uff1f\u90a3\u2026\u2026\u300d",
+    "asr": "\u6b38? \u311f? \u311f?"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1340.wav",
+    "script": "\u300c\u554a\u3001\u54c8\u3002\u2026\u2026\u5443\u3002\u90a3\u4e2a\uff0c\u600e\u4e48\u8bf4\u5462\u3002\u554a\uff0c\u90a3\u4e2a\uff0c\u5bf9\u6211\u6765\u8bf4\uff0c\u771f\u662f\u5584\u54c9\u3002\u300d",
+    "asr": "\u90a3\u600e\u4e48\u8bf4\u5462\u5bf9\u6211\u6765\u8bf4\u771f\u662f\u5584\u5728"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1349.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\uff01\u2026\u2026\u2026\u2026\u2026\u2026\u3002\u2026\u2026\u4f1a\u3001\u4f1a\u6ce8\u610f\u7684\u3002\u300d",
+    "asr": "\u4e0d\u4e0d"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1358.wav",
+    "script": "\u300c\u55ef\u55ef\u3002\u300d",
+    "asr": "\u554a"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1379.wav",
+    "script": "\u300e\uff1f\u300f",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1419.wav",
+    "script": "\u300c\u554a\u5566\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1424.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1457.wav",
+    "script": "\u300c\u5514\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1465.wav",
+    "script": "\u300c\u522b\u7684\uff1f\u300d",
+    "asr": "\u884c,\u884c,\u884c,\u884c,\u884c,\u884c"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1472.wav",
+    "script": "\u300e\u554a\uff0c\u5bf9\u4e0d\u8d77\u3002\u300f",
+    "asr": "\u5c0d\u4e0d\u8d77"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1484.wav",
+    "script": "\u300c\u771f\u662f\u7684\uff0c\u60a8\u8fd9\u4e2a\u4eba\u554a\u3002\u5475\u5475\u5475\u2026\u2026\u300d",
+    "asr": "\u771f\u662f\u7684\u60a8\u8fd9\u4e2a\u4eba\u554a"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1506.wav",
+    "script": "\u300c\u5c31\u662f\u554a\u2014\uff01\u300d",
+    "asr": "\u5c31\u5565"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1518.wav",
+    "script": "\u300cHit\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1522.wav",
+    "script": "\u300c\u554a\uff0c\u5c0f\u751f\u4e5fHit\u4e86\u3002\u300d",
+    "asr": "\u5c0f\u751f\u773c\u9ed1\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1529.wav",
+    "script": "\u300c\u5475\u5475\uff0c\u8c01\u77e5\u9053\u5462\uff1f\u300d",
+    "asr": "\u54c8\u54c8\u54c8\u54c8"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1537.wav",
+    "script": "\u300e\u54c8\u554a\u554a\u554a\u554a\u554a\u554a\u554a\u554a\u554a\u554a\u554a\u554a\u554a\u554a\uff01\uff1f\u300f\u6211\u3001\u5b64\u592a\u90ce\u5148\u751f\u3001\u5c0f\u9e1f\u6e38\u540c\u5b66\u90fd\u4e0d\u7531\u5f97\u60ca\u8bb6\u3002\u53ea\u6709\u6b66\u58eb\u540c\u5b66\u4f3c\u4e4e\u9884\u6599\u5230\u4e86\uff0c\u5f00\u5fc3\u5730\u5fae\u7b11\u7740\u65c1\u89c2\u3002\u5c0f\u9e1f\u6e38\u540c\u5b66\u7f55\u89c1\u5730\u72fc\u72c8\u5730\u786e\u8ba4\u9053\uff1a",
+    "asr": "\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f\u963f"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1540.wav",
+    "script": "\u300c\uff01\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1549.wav",
+    "script": "\u300c\u90a3\uff0c\u300e\u304d\u300f\u5427\u3002\u554a\uff0c\u8fd9\u4e2a\u6211\u4e5f\u81ea\u7206\u4e86\u54e6\u3002\u300d",
+    "asr": "\u90a3\u8e22\u5427\u8fd9\u4e2a\u56de\u81ea\u7206\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1561.wav",
+    "script": "\u300c\u554a\uff0c\u5bf9\u4e86\u3002\u6211\u4e5fHit\u4e86\u3002\u300d",
+    "asr": "\u5bf9\u4e86,\u6211\u4e5f\u5f00\u5230\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1590.wav",
+    "script": "\u300c\u54e6\uff0cHit\u4e86\uff01\u300d",
+    "asr": "\u597d \u8d77\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1606.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1619.wav",
+    "script": "\u300e\uff1f\uff1f\uff1f\uff1f\uff1f\uff1f\uff1f\u300f",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1627.wav",
+    "script": "\u8bf4\u7740\uff0c\u4ed6\u73af\u987e\u56db\u5468\u3002\u6211\u4e5f\u518d\u6b21\u786e\u8ba4\u4e86\u4e00\u4e0b\u76ee\u524d\u516c\u5f00\u7684\u6587\u5b57\u3002\u3008\u6b66\u58eb\u840c\u840c\u7231\u3000\u25cb\u25cb\u3057\u25cb\u25cb\u3068\u25cb\u3009\u3008\u534a\u676d\u6731\u7406\u3000\u3068\u304d\u25cb\u306e\u25cb\u305f\u25cb\u3009\u3008\u5c0f\u9e1f\u6e38\u7c73\u8299\u9732\u3000\u25cb\u25cb\u25cb\u25cb\u304d\u25cb\u25cb\u3009",
+    "asr": "\u8bf4\u7740,\u4ed6\u8fd8\u987e\u56db\u5468,\u6211\u4e5f\u518d\u6b21\u786e\u8ba4\u4e86\u4e00\u4e0b,\u76ee\u524d\u516c\u5f00\u7684\u6587\u5b57\u3002\u5434\u4e16,\u8499\u8499\u7231,\u8499\u4e86\u4f60\u5462,\u75bc\u8302\u65e5,\u534a\u822a\u6731\u91cc,\u5934\u5c4f\u5bc6\u8def\u5462,\u9505\u513f\u5854\u3002\u5c0f,\u82d7,\u9152,\u871c,\u5bcc\u9e7f,\u9a6c\u5f8b,\u95f9,\u8e22,\u9a6c\u5f8b\u3002"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1628.wav",
+    "script": "\u3008\u6b4c\u65b9\u6708\u4e43\u3000\u3068\u304d\u25cb\u25cb\u305f\u25cb\u25cb\u3009\u3008\u5e38\u76d8\u5b64\u592a\u90ce\u3000\u25cb\u305f\u25cb\u305f\u25cb\u304d\u306e\u3009\u786e\u8ba4\u5b8c\u72b6\u51b5\uff0c\u5b64\u592a\u90ce\u5148\u751f\u603b\u7ed3\u9053\uff1a",
+    "asr": "\u54e5\u65b9\u8d8a\u4f86,\u571f\u76ae\u62c9\u4e86\u4ed6\u5abd\u4e86\u5566\u9577\u76e4\u53e4\u592a\u90ce,\u4ed6\u5011\u7684\u4ed6\u5abd\u4e86\u76ae\u5462\u78ba\u8a8d\u5bec\u6b63\u5bec,\u53e4\u592a\u90ce\u5148\u751f\u7e3d\u7d50\u5230"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1641.wav",
+    "script": "\u300c\u545c\u545c\uff0c\u5c0f\u751f\u4e5fHit\u4e86\u3002\u7b2c\u56db\u4e2a\u5b57\u662f\u300e\u3044\u300f\u3002\u300d",
+    "asr": "\u5c0f\u53cc\u91ce\u9ed1\u4e86\u7b2c\u56db\u4e2a\u5b57\u662f\u91ce"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1644.wav",
+    "script": "\u300e\u8bf6\uff0c\u4e0d\u77e5\u9053\u3002\u300f",
+    "asr": "\u4e0d\u77e5\u9053"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1672.wav",
+    "script": "\u300c\u8bf6\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1701.wav",
+    "script": "\u300c\u554a\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1723.wav",
+    "script": "\u300c\u662f\u554a\u662f\u554a\uff0c\u662f\u554a\uff01\u547c\u2014\u2014\uff01\u300d",
+    "asr": "\u6740\u6740\u6740"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1743.wav",
+    "script": "\u300c\u8bf6\uff1f\u554a\uff0c\u62b1\u6b49\uff0c\u8fd8\u6ca1\u5b8c\u5168\u516c\u5f00\u3002\u5c31\u662f\u8fd9\u4e2a\u3002\u300d",
+    "asr": "\u62b1\u6b49 \u9084\u6c92\u5b8c\u5168\u516c\u958b"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1746.wav",
+    "script": "\u300c\u600e\u3001\u600e\u4e48\u4e86\uff1f\u300d",
+    "asr": "\u4ec0\u9ebc?"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1752.wav",
+    "script": "\u300c\u613f\u671b\uff1f\u5443\u2026\u2026\u662f\u4ec0\u4e48\u6765\u7740\uff1f\u300d",
+    "asr": "\u662f\u4ec0\u4e48\u5440"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1774.wav",
+    "script": "\u2026\u2026",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1799.wav",
+    "script": "\u300c\u2026\u2026\u8bed\u5c3e\uff0c\u8bf7\u52a0\u4e0a\u300e\u5c3c\u592b\u300f\u5c3c\u592b\u3002\u300d",
+    "asr": "\u4e0e\u7ef4 \u8bf7\u52a0\u4e0a \u5c3c\u592b"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1837.wav",
+    "script": "\u300c\u2026\u2026\u545c\u545c\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1841.wav",
+    "script": "\u300c\u5e38\u3001\u5e38\u76d8\u541b\uff01\u300d",
+    "asr": "\u5e38\u5e38\u519b"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1842.wav",
+    "script": "\u300c\u54c8\u54c8\uff01\u300d",
+    "asr": "\u54c8\u54c8\u54c8\u54c8"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1868.wav",
+    "script": "\u300c\u54c8\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1870.wav",
+    "script": "\u300c\uff01\uff1f\uff01\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1873.wav",
+    "script": "\u300c\u8bf6\uff0c\u4f60\uff0c\u90a3\u4e2a\uff0c\u8c22\u3001\u8c22\u8c22\uff1f\u5e38\u76d8\u2026\u2026\u300d",
+    "asr": "\u4f60\u90a3\u4e2a\u8c22\u8c22\u6210\u76d8"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1876.wav",
+    "script": "\u300c\uff1f\uff1f\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1890.wav",
+    "script": "\u300c\u662f\u554a\u2014\u3002\u300d",
+    "asr": "\u662f"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1906.wav",
+    "script": "\u300c\u55ef\uff0c\u4f60\u5c31\u662f\u8fd9\u79cd\u4eba\u554a\u3002\u300d",
+    "asr": "\u4f60\u5c31\u662f\u8fd9\u79cd\u4eba"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1920.wav",
+    "script": "\u300c\u545c\u3001\u545c\u545c\u2026\u2026\uff01\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/1930.wav",
+    "script": "\u300c\u7136\u4e5f\u7136\u4e5f\u3002\u300d",
+    "asr": "\u627f\u4e5f\u627f\u4e5f\u627f\u4e5f"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2011.wav",
+    "script": "\u6211\u6b63\u72ec\u81ea\u6b6a\u7740\u5934\uff0c\u7c73\u8299\u9732\u53cd\u8fc7\u6765\u95ee\u9053\uff1a",
+    "asr": " wrie\u6211\u6b63\u7763\u5b57\u5916\u5077"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2018.wav",
+    "script": "\u300c\u5c31\u662f\u554a\u2014\u3002\u300d",
+    "asr": "\u5c31\u662f"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2032.wav",
+    "script": "\u300c\u662f\u554a\u3002\u8fd9\u6211\u61c2\u3002\u300d",
+    "asr": "\u6740 \u9152\u8463"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2048.wav",
+    "script": "\u6b4c\u65b9\u6708\u4e43",
+    "asr": "\u6b4c\u65b9\u6708 \u5976\u742a"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2059.wav",
+    "script": "\u300e\u5514\uff01\u300f",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2063.wav",
+    "script": "\u300e\u2026\u2026\u2026\u2026\u300f",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2092.wav",
+    "script": "\u300c\u6253\u6c14\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2108.wav",
+    "script": "\u300c\u662f\u5427\uff0c\u54c8\u54c8\u54c8\u3002\u300d",
+    "asr": "\u662f\u5427"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2141.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2142.wav",
+    "script": "\u662f\u7684\uff0c\u5bf9\u7684\u3002\u300c\u5f88\u5feb\u8bdd\u9898\u67af\u7aed\uff0c\u9677\u5165\u6c89\u9ed8\u300d\u3002\u2026\u2026\u2026\u2026\u3002\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u3002\u2026\u2026\u2026\u2026\u2026\u2026\u8fd9\u4e0d\u662f\u5730\u72f1\u5417\u3002",
+    "asr": "\u662f\u7684,\u5bf9\u7684\u5f88\u5feb,\u8bdd\u9898\u54ed\u89e3,\u9677\u5165\u6c89\u9ed8"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2144.wav",
+    "script": "\u300e\u2026\u2026\u2026\u2026\u300f\u4e0d\uff0c\u771f\u7684\uff0c\u8fd9\u4ec0\u4e48\u554a\uff0c\u8fd9\u79cd\uff0c\u6211\u548c\u6708\u4e43\u5c0f\u59d0\u72ec\u6709\u7684\uff0c\u50f5\u5c40\u611f\u3002",
+    "asr": "\u8fd9\u79cd\u6211\u548c\u8d8a\u5357\u5c0f\u59d0\u8bfb\u6709\u7684\u5c06\u519b\u611f"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2197.wav",
+    "script": "\u300c\u5475\u5475\uff0c\u5c0f\u751f\u4eca\u5929\u4e5f\u8d85\u5f00\u5fc3\u54e6\u2014\uff0c\u5e38\u76d8\u6c0f\uff01\u300d",
+    "asr": "\u7b11\u58f0\u7ecf\u5386\u8d85\u5f00\u5fc3"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2214.wav",
+    "script": "\u4e0d\u77e5\u4ece\u54ea\u91cc\u4f20\u6765\u8c1c\u4e4b\u5c0f\u58f0\u561f\u56d4\uff0c\u4f46\u6211\u7ba1\u4e0d\u4e86\u90a3\u4e48\u591a\u4e86\u3002\u5e73\u5e38\u5fc3\uff0c\u5e73\u5e38\u5fc3\u2026\u2026\u3002\u8fd9\u6837\uff0c\u597d\u4e0d\u5bb9\u6613\u5e73\u9759\u4e0b\u6765\uff0c\u653e\u4e0b\u89c6\u7ebf\u2026\u2026\u3002\u300e\u2026\u2026\u2026\u2026\u300f\u300c\u4e3a\u4ec0\u4e48\u6211\u73b0\u5728\u4f1a\u88ab\u534a\u676d\u548c\u6708\u4e43\u5c0f\u59d0\u77aa\u7740\u554a\uff1f\u300d",
+    "asr": "\u4e0d\u77e5\u4ece\u54ea\u91cc\u7a7f\u6765\u8ff7\u7740\u5c0f\u58f0\u7763\u5462\u4f46\u6211\u7ba1\u4e0d\u4e86\u90a3\u4e48\u591a\u4e86\u5e73\u5e38\u5fc3 \u5e73\u5e38\u5fc3\u8fd9\u6837\u597d\u4e0d\u5bb9\u6613\u5e73\u9759\u4e0b\u6765\u653e\u4e0b\u4e8b\u60c5"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2242.wav",
+    "script": "\u300c\u55ef\uff1f\u771f\u53ef\u601c\u554a\uff0c\u5e38\u76d8\u6c0f\u3002\u554a\uff0c\u90a3\u5c0f\u751f\u53bb\u90a3\u8fb9\u2014\u2014\u300d",
+    "asr": "\u771f\u53ef\u826f\u554a \u5c1d\u62cd\u6444\u554a"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2271.wav",
+    "script": "\u300c\u554a\u2014\u2026\u2026\u3002\u2026\u2026\u4e0d\uff0c\u8fd9\u4e2a\u7684\u8bdd\uff0c\u756a\u957f\u5e94\u8be5\u4e0d\u4f1a\u56f0\u6270\u5427\uff1f\u300d",
+    "asr": "\u554a\u554a\u554a\u554a\u554a\u554a\u4e0d\u4e0d\u8fd9\u4e2a\u7684\u8bdd\u7ffb\u573a\u5e94\u8be5\u4e0d\u4f1a\u56f0\u64fe\u5427"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2283.wav",
+    "script": "\u300c\u55ef\uff0c\u6211\u8d70\u4e86\u3002\u300d",
+    "asr": "\u6211\u8d70\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2287.wav",
+    "script": "\u300c\u786e\u5b9e\uff0c\u54c8\u54c8\u54c8\u3002\u300d",
+    "asr": "\u5207\u5b9e"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2298.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u3002\u2026\u2026\u5584\u54c9\u3002\u300d",
+    "asr": "\u79bb \u7ad9\u5728"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2301.wav",
+    "script": "\u300c\u55ef\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2313.wav",
+    "script": "\u300c\u662f\u554a\u3002\u2026\u2026\u5bf9\u4ed6\u4fdd\u5bc6\u54e6\uff1f\u300d",
+    "asr": "\u662f \u5bf9\u4ed6\u4fdd\u5bc6"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2345.wav",
+    "script": "\u300c\u554a\uff0c\u5bf9\u3001\u5bf9\u4e0d\u8d77\u3002\u5443\uff0c\u4e24\u4e2a\u4eba\u2026\u2026\u300d",
+    "asr": "\u5bf9\u4e0d\u8d77 \u4e24\u4e2a\u4eba"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2349.wav",
+    "script": "\u300c\u55ef\uff0c\u5b8c\u5168\u6ca1\u95ee\u9898\u3002\u4e0d\u5982\u8bf4\uff0c\u6b63\u56e0\u4e3a\u5b83\u4e0d\u591f\u7cbe\u81f4\uff0c\u751a\u81f3\u53ef\u4ee5\u8bf4\u662f\u5584\u54c9\u3002\u300d",
+    "asr": "\u4e0d\u5982\u8bf4 \u6b63\u56e0\u4e3a\u4ed6\u4e0d\u8fc7\u7cbe\u81f4\u751a\u81f3\u53ef\u4ee5\u8bf4\u662f\u5584\u5728"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2358.wav",
+    "script": "\u300c\u4f46\u662f\uff1f\u300d",
+    "asr": "\u592a\u5e05\u4e86"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2389.wav",
+    "script": "\u300c\u6f02\u4eae\uff01\u300d",
+    "asr": "\u554a\u6211\u6f02\u4eae"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2407.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u3002\u2026\u2026\u8bf7\u3002\u300d",
+    "asr": "\u6211\u8acb"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2413.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2435.wav",
+    "script": "\u300c\u2026\u2026\u55ef\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2438.wav",
+    "script": "\u300c\u5443\uff0c\u6708\u4e43\u5c0f\u59d0\uff0c\u5173\u4e8e\u83dc\u6458\u5c0f\u59d0\u7684\u4e8b\uff0c\u60a8\u5e94\u8be5\u5df2\u7ecf\u4ece\u534a\u676d\u90a3\u91cc\u542c\u8bf4\u4e86\u5427\uff1f\u300d",
+    "asr": "\u4f60\u5e94\u8be5\u5df2\u7ecf\u4ece\u534a\u884c\u90a3\u91cc\u542c\u8bf4\u4e86\u5427"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2451.wav",
+    "script": "\u300c\uff01\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2454.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2457.wav",
+    "script": "\u300c\u55ef\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2466.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2506.wav",
+    "script": "\u300c\u2026\u2026\u54c8\u3002\u662f\u3001\u662f\u5417\u3002\u300d",
+    "asr": "\u662f \u662f\u5417"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2507.wav",
+    "script": "\u300c\u55ef\uff0c\u662f\u7684\u3002\u300d",
+    "asr": "\u662f\u7684"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2535.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2544.wav",
+    "script": "\u300c\u2026\u2026\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2555.wav",
+    "script": "\u300c\u55ef\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2584.wav",
+    "script": "\u300c\u8bf6\u2026\u2026\u55ef\u3001\u55ef\u2014\u3002\u600e\u3001\u600e\u4e48\u6837\u554a\u2014\u2014\u300d",
+    "asr": "\u55ef?\u600e\u4e48\u6837?"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2590.wav",
+    "script": "\u300c\u8bf6\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2592.wav",
+    "script": "\u300e\u2026\u2026\u2026\u2026\u300f",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2622.wav",
+    "script": "\u300c\u554a\uff0c\u90a3\u79c1\u4e0b\u8bf4\uff0c\u4e0e\u5176\u8bf4\u662f\u6211\u7684\u5267\u672c\u6267\u5ff5\uff0c\u4e0d\u5982\u8bf4\u662f\u89c9\u5f97\u90a3\u6837\u4ed6\u4eec\u4fe9\u7684\u4e92\u52a8\u4f1a\u66f4\u6709\u8da3\u3002\u684c\u6e38\u4e5f\u662f\uff0c\u6b63\u56e0\u4e3a\u6709\u4e0d\u4fbf\u7684\u675f\u7f1a\uff0c\u624d\u4f1a\u4ea7\u751f\u6709\u8da3\u7684\u4e92\u52a8\u5427\uff1f\u300d",
+    "asr": "\u4e0d\u5982\u8bf4\u662f\u89c9\u5f97\u90a3\u6837\u4ed6\u4eec\u4fe9\u7684\u4e92\u52a8\u4f1a\u66f4\u6709\u8da3\u5468\u6e38\u4e5f\u662f\u6b63\u56e0\u4e3a\u6709\u4e0d\u53d8\u7684\u675f\u7e1b\u624d\u4f1a\u4ea7\u751f\u6709\u8da3\u7684\u4e92\u52a8\u5427"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2635.wav",
+    "script": "\u300c\u7ed9\u300d\uff0c",
+    "asr": "OK?"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2637.wav",
+    "script": "\u300c\u547c\u2014\u2014\u2026\u2026\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2700.wav",
+    "script": "\u300c\u8fd9\u6837\u554a\u3002\u300d",
+    "asr": "\u805a\u990a"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2707.wav",
+    "script": "\u300c\u55ef\u3002\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2716.wav",
+    "script": "\u300c\uff1f\u5443\uff1f\u300d",
+    "asr": ""
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2723.wav",
+    "script": "\u300c\u90a3\u79cd\u4e8b\u2026\u2026\u300d",
+    "asr": "\u90a3\u4e00\u79cd\u4e8b"
+  },
+  {
+    "audio": "/Users/sky/code/gnosis/data/projects/\u73a9\u4e50\u5173\u7cfb3/output_audio/2731.wav",
+    "script": "\u300c\u90a3\u4e2a\uff0c\u6211\u2026\u2026\u5373\u4f7f\uff0c\u5373\u4f7f\u60a8\u5bf9\u6211\u600e\u4e48\u60f3\uff0c\u90a3\u4e2a\uff0c\u600e\u4e48\u8bf4\u5462\u2026\u2026\u300d",
+    "asr": "\u5373\u4f7f\u60a8\u5bf9\u6211\u600e\u4e48\u60f3\u90a3\u4e2a\u600e\u4e48\u8bf4\u5462"
+  }
+]

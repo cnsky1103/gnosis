@@ -2,6 +2,23 @@ import re
 import os
 import unicodedata
 
+def clean_text(text):
+    if not text:
+        return ""
+    
+    # 定义保留范围的正则表达式：
+    # \u4e00-\u9fa5: 常用汉字 (基本平面)
+    # \u3040-\u309f: 日语平假名
+    # \u30a0-\u30ff: 日语片假名
+    # a-zA-Z: 英文字母
+    # 0-9: 数字
+    pattern = re.compile(r'[^\u4e00-\u9fa5\u3040-\u309f\u30a0-\u30ff\u4e00-\u9fa5a-zA-Z0-9]')
+    
+    # 将不在白名单内的所有字符（包括空格、各种标点）替换为空字符串
+    cleaned = re.sub(pattern, '', text)
+    
+    return cleaned
+
 def remove_code_fences_regex(text):
     # 匹配开头和结尾的 ``` 行（包括可能带有的语言标识符，如 ```python）
     text = text.strip()
