@@ -73,3 +73,5 @@ docs/_build/
 
 **/llm_cache/
 **/output_audio/
+
+.claude
