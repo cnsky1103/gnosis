@@ -343,6 +343,83 @@ button:hover {
   color: var(--ink-soft);
 }
 
+/* QA status indicators */
+.ctx-line.qa-review {
+  border-color: #c94a4a;
+  border-width: 2px;
+  background: #fff1f1;
+}
+
+.ctx-line.qa-review.current {
+  border-color: #a03030;
+  background: linear-gradient(160deg, #fff3f3 0%, #ffe0e0 100%);
+  box-shadow: 0 8px 24px rgba(160, 48, 48, 0.22);
+}
+
+.ctx-line.qa-review.muted {
+  background: #f8e9e9;
+  border-color: #d49a9a;
+}
+
+.ctx-line.qa-retried {
+  border-color: #c9a030;
+  border-width: 2px;
+  background: #fffbee;
+}
+
+.ctx-line.qa-retried.current {
+  border-color: #a08020;
+  background: linear-gradient(160deg, #fffcf0 0%, #fff3d0 100%);
+  box-shadow: 0 8px 24px rgba(160, 128, 32, 0.18);
+}
+
+.ctx-line.qa-retried.muted {
+  background: #f8f0dd;
+  border-color: #d4c090;
+}
+
+.qa-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.qa-badge-review {
+  background: #f5d0d0;
+  color: #8b2020;
+  border: 1px solid #e0a0a0;
+}
+
+.qa-badge-retried {
+  background: #f5ecd0;
+  color: #7a6010;
+  border: 1px solid #e0d0a0;
+}
+
+.audio-btn {
+  display: inline-block;
+  border: 1px solid #d0c8b8;
+  background: #f8f4ec;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 6px;
+  vertical-align: middle;
+  min-width: 0;
+}
+
+.audio-btn:hover {
+  background: #f0e8d8;
+  border-color: #b8a890;
+}
+
 @media (max-width: 900px) {
   .page {
     padding: 12px 12px 14px;

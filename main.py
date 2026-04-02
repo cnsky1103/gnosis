@@ -7,12 +7,11 @@ from gnosis.state_manager import CharacterManager
 from gnosis.chunking import ChunkingConfig
 from gnosis.project_prompt import ProjectPromptOverrides, load_project_prompt_overrides
 from gnosis.tts.tts_utils import DEFAULT_SOVITS_URL
-from gnosis.tts.tts_utils import delete_character_audio_segments
+from gnosis.tts.tts_utils import delete_character_audio_segments, filter_script_jobs_by_character
 from gnosis.srt import build_precise_timeline, check_sample_rate, write_timeline_file
 from gnosis.tts.tts_engine_factory import (create_cosyvoice_engine, create_sovits_engine)
 from gnosis.utils import parse_script_payload, collect_sorted_segments, clean_text
 from gnosis.merge_audio import generate_precise_master_audio
-from gnosis.tts_verify import LNAligner
 
 DEFAULT_MIN_RATIO = 1200 / 1800
 DEFAULT_MAX_RATIO = 2600 / 1800
@@ -67,10 +66,10 @@ async def main():
     parser = argparse.ArgumentParser(description="Gnosis 有声书生产系统")
     parser.add_argument(
         "step",
-        choices=["extract", "script", "tts", "verify", "merge", "full", "proofread"],
+        choices=["extract", "script", "tts", "verify", "merge", "full", "proofread", "qa-report", "qa-export"],
         help=(
-            "运行步骤: extract(选角), script(剧本), tts(语音), verify(语音校对), merge(混音), "
-            "proofread(剧本校对 Web), full(全流程)"
+            "运行步骤: extract(选角), script(剧本), tts(语音+自动校验), verify(仅校验), merge(混音), "
+            "proofread(剧本校对 Web), qa-report(质量报告), qa-export(导出Markdown报告), full(全流程)"
         ),
     )
     parser.add_argument(
@@ -262,13 +261,12 @@ async def main():
             json.dump(script_data, f, ensure_ascii=False, indent=2)
         print(f"✅ 剧本已保存至: {script_path}")
 
-    # --- Step 3: 语音生成 (TTS) ---
+    # --- Step 3: 语音生成 + QA 校验 (TTS + Verify) ---
     if args.step in ["tts", "full"]:
-        print(f"🎙️ [Step 3] 正在调用 {args.tts_engine} 生成音频...")
+        print(f"🎙️ [Step 3] 正在调用 {args.tts_engine} 生成音频 + QA 校验...")
         if not os.path.exists(script_path):
             print("❌ 错误: 找不到剧本文件，请先运行 script 步骤")
             return
-
 
         with open(script_path, "r", encoding="utf-8") as f:
             script_payload = json.load(f)
@@ -301,46 +299,154 @@ async def main():
             tts_engine = create_sovits_engine(args.sovits_url)
 
         os.makedirs(audio_dir, exist_ok=True)
-        await tts_engine.generate_script_tts(script_path,audio_dir, char=args.char.strip())
 
-        print("✅ 音频片段生成完毕")
+        # Build speaker→voice mapping
+        speaker_to_voice = {}
+        engine = tts_engine._engine if hasattr(tts_engine, '_engine') else tts_engine
+        default_voice = getattr(engine, 'default_voice_id', 'logos')
+        for char_info in characters:
+            name = char_info.get("name", "")
+            voice = char_info.get("voice") or default_voice
+            speaker_to_voice[name] = voice
 
+        # Filter by --char
+        jobs, _speakers = filter_script_jobs_by_character(script_list, args.char.strip())
+        if not jobs:
+            print("⚠️ 未命中任何角色，跳过 TTS")
+        else:
+            from gnosis.qa import QAPipeline
+            try:
+                from rich.progress import Progress, BarColumn, TextColumn, TimeElapsedColumn
+                progress = Progress(
+                    TextColumn("[bold blue]{task.description}"),
+                    BarColumn(),
+                    TextColumn("{task.completed}/{task.total}"),
+                    TextColumn("pass={task.fields[passed]} retry={task.fields[retried]} review={task.fields[review]}"),
+                    TimeElapsedColumn(),
+                )
+                task_id = None
+
+                def rich_progress_callback(completed, total, passed, retried, human_review):
+                    nonlocal task_id
+                    if task_id is None:
+                        task_id = progress.add_task("TTS+QA", total=total, passed=0, retried=0, review=0)
+                    progress.update(task_id, completed=completed, passed=passed, retried=retried, review=human_review)
+
+                with progress:
+                    pipeline = QAPipeline(
+                        tts_engine=engine,
+                        audio_dir=audio_dir,
+                        num_workers=args.tts_workers,
+                        progress_callback=rich_progress_callback,
+                    )
+                    qa_report = await pipeline.run(jobs, speaker_to_voice, characters)
+            except ImportError:
+                # Fallback: no rich, use simple print progress
+                def simple_progress(completed, total, passed, retried, human_review):
+                    if completed % 50 == 0 or completed == total:
+                        print(f"   进度: {completed}/{total} pass={passed} retry={retried} review={human_review}")
+
+                pipeline = QAPipeline(
+                    tts_engine=engine,
+                    audio_dir=audio_dir,
+                    num_workers=args.tts_workers,
+                    progress_callback=simple_progress,
+                )
+                qa_report = await pipeline.run(jobs, speaker_to_voice, characters)
+
+            # Write qa.json (merge mode: preserve other characters' QA data when --char is used)
+            qa_path = os.path.join(project_root, "qa.json")
+            if args.char.strip() and os.path.exists(qa_path):
+                with open(qa_path, "r", encoding="utf-8") as f:
+                    existing_qa = json.load(f)
+                # Build index set of lines we just processed
+                new_indices = {line["index"] for line in qa_report["lines"]}
+                # Keep existing lines that weren't in this run
+                merged_lines = [
+                    line for line in existing_qa.get("lines", [])
+                    if line["index"] not in new_indices
+                ]
+                merged_lines.extend(qa_report["lines"])
+                merged_lines.sort(key=lambda x: x["index"])
+                # Recompute summary
+                total = len(merged_lines)
+                pass_c = sum(1 for l in merged_lines if l["status"] == "pass")
+                retried_c = sum(1 for l in merged_lines if l["status"] == "auto_retried")
+                review_c = sum(1 for l in merged_lines if l["status"] == "human_review")
+                qa_report = {
+                    "summary": {
+                        "total": total,
+                        "pass": pass_c,
+                        "auto_retried": retried_c,
+                        "human_review": review_c,
+                        "pass_rate": round((pass_c + retried_c) / total, 4) if total > 0 else 0,
+                    },
+                    "lines": merged_lines,
+                }
+            with open(qa_path, "w", encoding="utf-8") as f:
+                json.dump(qa_report, f, ensure_ascii=False, indent=2)
+
+            s = qa_report["summary"]
+            print(
+                f"✅ QA 完成: {s['total']} 行, {s['pass']} pass, "
+                f"{s['auto_retried']} retried, {s['human_review']} need review "
+                f"(pass rate: {s['pass_rate']:.1%})"
+            )
+
+            # Aggregate into pattern DB
+            from gnosis.pattern_db import aggregate
+            pattern_db_path = os.path.join("data", "pattern_db.json")
+            aggregate(qa_path, pattern_db_path)
+            print(f"📊 Pattern DB 已更新: {pattern_db_path}")
+
+    # --- Verify only (standalone) ---
     if args.step in ["verify"]:
-        from faster_whisper import WhisperModel
-        from rapidfuzz import fuzz
-        model_size = "tiny"
-        model = WhisperModel(model_size, device="cpu", compute_type="int8")
-        print("验证TTS语音置信度")
-        audios = collect_sorted_segments(audio_dir)
-        with open(script_path, "r", encoding="utf-8") as f:
-            script_payload = json.load(f)
-            _, script_list = parse_script_payload(script_payload)
+        from gnosis.qa import run_verify_only
+        print("🔍 验证 TTS 语音质量 (ASR 校验)...")
+        if not os.path.exists(script_path):
+            print("❌ 错误: 找不到剧本文件")
+            return
 
-        if len(audios) != len(script_list):
-            print(f"语音与剧本长度不统一！语音文件共计{len(audios)}个，剧本长度共计{len(script_list)}")
+        qa_report = await run_verify_only(
+            script_path=script_path,
+            audio_dir=audio_dir,
+        )
 
-        results = []
-        for i in range(len(audios)):
-            orig = script_list[i]["text"]
-            segments, _info = model.transcribe(audios[i], language='zh')
-            asr = "".join([s.text for s in segments])
-            
-            orig_cnt = len(clean_text(orig))
-            asr_cnt = len(clean_text(asr))
-            ratio = asr_cnt / orig_cnt if orig_cnt != 0 else asr_cnt
-            if ratio > 1.2 or ratio < 0.8:
-                results.append({
-                  "audio": audios[i],
-                  "script": orig,
-                  "asr": asr  
-                })
+        qa_path = os.path.join(project_root, "qa.json")
+        with open(qa_path, "w", encoding="utf-8") as f:
+            json.dump(qa_report, f, ensure_ascii=False, indent=2)
 
-        for r in results:
-            print(f"音频：{r['audio']} 剧本：{r['script']} 识别：{r['asr']}")
+        s = qa_report["summary"]
+        print(
+            f"✅ 校验完成: {s['total']} 行, {s['pass']} pass, "
+            f"{s['human_review']} need review (pass rate: {s['pass_rate']:.1%})"
+        )
 
-        verify_path = os.path.join(project_root, "verify.json")
-        with open(verify_path, "w") as f:
-            json.dump(results, f, indent=2)
+    # --- QA Report (formatted) ---
+    if args.step == "qa-report":
+        from gnosis.qa import format_qa_report
+        qa_path = os.path.join(project_root, "qa.json")
+        if not os.path.exists(qa_path):
+            print("❌ 找不到 qa.json，请先运行 tts 或 verify 步骤")
+            return
+        with open(qa_path, "r", encoding="utf-8") as f:
+            qa_data = json.load(f)
+        print(format_qa_report(qa_data))
+
+    # --- QA Export (Markdown) ---
+    if args.step == "qa-export":
+        from gnosis.qa import export_qa_markdown
+        qa_path = os.path.join(project_root, "qa.json")
+        if not os.path.exists(qa_path):
+            print("❌ 找不到 qa.json，请先运行 tts 或 verify 步骤")
+            return
+        with open(qa_path, "r", encoding="utf-8") as f:
+            qa_data = json.load(f)
+        md = export_qa_markdown(qa_data, project_name)
+        export_path = os.path.join(project_root, "qa_report.md")
+        with open(export_path, "w", encoding="utf-8") as f:
+            f.write(md)
+        print(f"📄 QA Markdown 报告已导出: {export_path}")
                     
 
     # --- Step 4: 合并混音 ---

@@ -10,6 +10,8 @@ const state = {
   dirty: new Set(),
   inflight: new Map(),
   saveTimer: null,
+  qaMap: new Map(), // index -> qa line data
+  qaSummary: null,
 };
 
 const contextRadius = 3;
@@ -232,10 +234,31 @@ function renderContext() {
       continue;
     }
 
+    // QA status
+    const qa = state.qaMap.get(idx);
+    let qaBadge = "";
+    if (qa) {
+      if (qa.status === "human_review") {
+        block.classList.add("qa-review");
+        qaBadge = `<span class="qa-badge qa-badge-review" title="ratio=${qa.ratio}">review</span>`;
+      } else if (qa.status === "auto_retried") {
+        block.classList.add("qa-retried");
+        qaBadge = `<span class="qa-badge qa-badge-retried" title="ratio=${qa.ratio}">retried</span>`;
+      }
+    }
+
+    // Audio play button
+    const audioFile = `${String(idx).padStart(4, "0")}.wav`;
+    const audioBtn = `<button class="audio-btn" data-audio="/audio/${encodeURIComponent(state.project)}/${audioFile}" title="播放音频">&#9654;</button>`;
+
     block.innerHTML = `
-      <div class="ctx-meta"><span class="ctx-speaker">${escapeHtml(line.speaker || "未标注")}</span><span class="ctx-line-index">第 ${idx + 1} 句</span></div>
+      <div class="ctx-meta"><span class="ctx-speaker">${escapeHtml(line.speaker || "未标注")}</span>${qaBadge}${audioBtn}<span class="ctx-line-index">第 ${idx + 1} 句</span></div>
       <div class="ctx-text">${escapeHtml(line.text || "（空）")}</div>
     `;
+    block.querySelector(".audio-btn").addEventListener("click", (e) => {
+      e.stopPropagation();
+      playAudio(e.target.closest(".audio-btn").dataset.audio);
+    });
     block.addEventListener("click", () => {
       void gotoIndex(idx);
     });
@@ -406,6 +429,15 @@ async function jumpToInputLine() {
 }
 
 async function gotoNextRedRegion() {
+  // First try QA flagged lines (human_review or auto_retried)
+  for (let idx = state.index + 1; idx < state.lines.length; idx += 1) {
+    const qa = state.qaMap.get(idx);
+    if (qa && qa.status === "human_review") {
+      await gotoIndex(idx);
+      return;
+    }
+  }
+  // Fallback to speaker-window red regions
   for (let idx = state.index + 1; idx < state.windowFlags.length; idx += 1) {
     if (state.windowFlags[idx] !== "red") {
       continue;
@@ -416,7 +448,7 @@ async function gotoNextRedRegion() {
     await gotoIndex(idx);
     return;
   }
-  setSaveStatus("saved", "no red ahead");
+  setSaveStatus("saved", "no flagged lines ahead");
 }
 
 async function loadProject(projectName) {
@@ -427,10 +459,14 @@ async function loadProject(projectName) {
   state.characters = payload.characters || [];
   state.keyMap = payload.key_map || [];
   state.index = state.lines.length > 0 ? restoreIndex(state.lines.length) : 0;
+  await loadQA(projectName);
   renderProjectSelect();
   renderHotkeys();
   renderAll();
-  setSaveStatus("saved", "已加载");
+  const qaInfo = state.qaSummary
+    ? ` | QA: ${state.qaSummary.pass} pass, ${state.qaSummary.human_review} review`
+    : "";
+  setSaveStatus("saved", "已加载" + qaInfo);
 }
 
 async function loadProjects() {
@@ -536,6 +572,30 @@ function bindEvents() {
       void assignSpeakerAndAdvance(name);
     }
   });
+}
+
+let currentAudio = null;
+function playAudio(url) {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio = null;
+  }
+  currentAudio = new Audio(url);
+  currentAudio.play().catch(() => {});
+}
+
+async function loadQA(projectName) {
+  try {
+    const data = await fetchJson(`/api/project/${encodeURIComponent(projectName)}/qa`);
+    state.qaMap.clear();
+    state.qaSummary = data.summary || null;
+    for (const line of (data.lines || [])) {
+      state.qaMap.set(line.index, line);
+    }
+  } catch {
+    state.qaMap.clear();
+    state.qaSummary = null;
+  }
 }
 
 function escapeHtml(value) {

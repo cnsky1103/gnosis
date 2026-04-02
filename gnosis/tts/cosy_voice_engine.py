@@ -15,12 +15,13 @@ except ModuleNotFoundError:
 
 import asyncio
 from typing import Dict
+import torch
 
 from gnosis.tts.tts_engine import BaseTTSEngine
 
 DEFAULT_COSYVOICE_SPK_ID = 'logos'
 DEFAULT_COSYVOICE_MODEL_DIR = (
-    "/Users/sky/code/CosyVoice/pretrained_models/CosyVoice2-0.5B"
+    "/Users/sky/work/node_modules/CosyVoice/pretrained_models/CosyVoice2-0.5B"
 )
 
 SERVER = "http://127.0.0.1:5000/generate"
@@ -32,10 +33,10 @@ class CosyVoiceEngine(BaseTTSEngine):
         self,
         workers = 8
     ):
-        # if AutoModel is None or torchaudio is None:
-        #     raise RuntimeError(
-        #         f"依赖缺失，cosyvoice={AutoModel} torchaudio={torchaudio}" 
-        #     )
+        if AutoModel is None or torchaudio is None:
+            raise RuntimeError(
+                f"依赖缺失，cosyvoice={AutoModel} torchaudio={torchaudio}" 
+            )
         self.model_dir = DEFAULT_COSYVOICE_MODEL_DIR 
         self.cosyvoice = AutoModel(model_dir=self.model_dir)
         self.default_voice_id = "logos"
@@ -66,6 +67,7 @@ class CosyVoiceEngine(BaseTTSEngine):
         # else:
         #     print(f"请求失败，状态码{response.status_code}")
         #     return False
+        audio_chunks = []
         try:
             for out in self.cosyvoice.inference_zero_shot(
                 tts_text=text,
@@ -74,14 +76,28 @@ class CosyVoiceEngine(BaseTTSEngine):
                 zero_shot_spk_id=voice_id,
                 speed=1.1,
             ):
-                torchaudio.save(
-                    output_path, out["tts_speech"], self.cosyvoice.sample_rate
-                )
-                return True
+                # 收集每一段分片 (tts_speech 通常是一个 Tensor)
+                audio_chunks.append(out["tts_speech"])
+            
+            # 2. 检查是否真的生成了音频
+            if not audio_chunks:
+                return False
+                
+            # 3. 在维度 1 (时间轴) 上拼接所有张量
+            # CosyVoice 输出通常是 [1, T] 形状
+            full_audio = torch.cat(audio_chunks, dim=1)
+            
+            # 4. 一次性保存完整的音频
+            torchaudio.save(
+                output_path, 
+                full_audio, 
+                self.cosyvoice.sample_rate
+            )
+            
+            return True
         except Exception as exc:
             print(f"   CosyVoice 推理异常: {exc}")
             return False
-        return False
 
     async def generate_line(
         self,

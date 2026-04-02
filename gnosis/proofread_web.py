@@ -265,6 +265,8 @@ def _static_content_type(path: Path) -> str:
         return "application/javascript; charset=utf-8"
     if suffix == ".css":
         return "text/css; charset=utf-8"
+    if suffix == ".wav":
+        return "audio/wav"
     return "application/octet-stream"
 
 
@@ -297,8 +299,14 @@ def run_proofread_server(
                     {"projects": store.list_projects(), "default_project": project_name},
                 )
                 return
+            if path.startswith("/api/project/") and path.endswith("/qa"):
+                self._handle_get_qa(path)
+                return
             if path.startswith("/api/project/"):
                 self._handle_get_project(path)
+                return
+            if path.startswith("/audio/"):
+                self._handle_audio(path)
                 return
             self._handle_static(path)
 
@@ -362,6 +370,60 @@ def run_proofread_server(
                 _json_response(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
             except Exception as exc:  # noqa: BLE001
                 _json_response(self, HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
+
+        def _handle_get_qa(self, path: str) -> None:
+            # /api/project/<name>/qa
+            segments = path.split("/")
+            if len(segments) != 5:
+                _json_response(self, HTTPStatus.NOT_FOUND, {"error": "Not Found"})
+                return
+            target_project = segments[3]
+            try:
+                valid_name = _validate_project_name(target_project)
+            except ValueError as exc:
+                _json_response(self, HTTPStatus.BAD_REQUEST, {"error": str(exc)})
+                return
+            qa_path = root_path / valid_name / "qa.json"
+            if not qa_path.is_file():
+                _json_response(self, HTTPStatus.OK, {"lines": []})
+                return
+            try:
+                with qa_path.open("r", encoding="utf-8") as f:
+                    qa_data = json.load(f)
+                _json_response(self, HTTPStatus.OK, qa_data)
+            except Exception as exc:
+                _json_response(self, HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(exc)})
+
+        def _handle_audio(self, path: str) -> None:
+            # /audio/<project>/<filename.wav>
+            segments = path.strip("/").split("/")
+            if len(segments) != 3:
+                _text_response(self, HTTPStatus.NOT_FOUND, "Not Found")
+                return
+            _, target_project, filename = segments
+            try:
+                valid_name = _validate_project_name(target_project)
+            except ValueError:
+                _text_response(self, HTTPStatus.BAD_REQUEST, "Invalid project")
+                return
+            # Only allow .wav files with numeric names
+            if not filename.endswith(".wav"):
+                _text_response(self, HTTPStatus.BAD_REQUEST, "Only .wav files")
+                return
+            audio_path = (root_path / valid_name / "output_audio" / filename).resolve()
+            audio_dir = (root_path / valid_name / "output_audio").resolve()
+            if audio_dir not in audio_path.parents and audio_path != audio_dir:
+                _text_response(self, HTTPStatus.FORBIDDEN, "Forbidden")
+                return
+            if not audio_path.is_file():
+                _text_response(self, HTTPStatus.NOT_FOUND, "Not Found")
+                return
+            data = audio_path.read_bytes()
+            self.send_response(HTTPStatus.OK)
+            self.send_header("Content-Type", "audio/wav")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
 
         def _handle_get_project(self, path: str) -> None:
             segments = path.split("/")

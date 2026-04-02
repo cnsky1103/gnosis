@@ -22,7 +22,7 @@ ALLOWED_CHARACTER_TAGS: List[str] = [
     "未知",
 ]
 
-VOICES = ['logos', 'wanqing', 'baitie', 'yinxian', 'xuerong', 'zhijian', 'maenna', 'heijiaoS', 'xunshi', 'cangtai', 'liuming', 'duanya', 'zuole', 'anjielina', 'haruka', 'red', 'raidian', 'perfumer', 'shenxun', 'tianhuo', 'yela', 'wenmi', 'yu', 'xingzhu', 'dibi', 'simang', 'exusiai', 'miu', 'shihuaiya']
+VOICES = ['logos', 'wanqing', 'baitie', 'yinxian', 'xuerong', 'zhijian', 'maenna', 'heijiaoS', 'xunshi', 'cangtai', 'liuming', 'duanya', 'zuole', 'anjielina', 'haruka', 'red', 'raidian', 'perfumer', 'shenxun', 'tianhuo', 'yela', 'wenmi', 'yu', 'xingzhu', 'dibi', 'simang', 'exusiai', 'miu', 'shihuaiya', 'ling', 'jijing', 'luwuguan']
 
 # 声线池映射: ['性别', '风格'] -> ['seed_id', ...]
 VOICE_SEEDS_BY_TAG_PARTS: Dict[Tuple[str, str], List[str]] = {
