@@ -1,0 +1,205 @@
+[
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部部长，第一人称叙述者，性格温和但有些内向，常被卷入麻烦。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，性格活泼开朗，贪吃，有时任性，对温水有好感。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部副部长，胆小内向，喜欢看书，经常躲在温水背后。"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "田径部成员，性格直率，曾与绫野有感情纠葛，现在专注于跑步。"
+  },
+  {
+    "name": "绫野光希",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水同班同学，性格迟钝，曾与烧盐有过感情纠葛。"
+  },
+  {
+    "name": "樱井弘人",
+    "gender": "male",
+    "voice_archetype": "男-正太",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会会计，外表可爱，性格温和，是温水的好友。"
+  },
+  {
+    "name": "甘夏古奈美",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "2-C班班主任，社会科教师，性格开朗，最近桃花运旺盛。"
+  },
+  {
+    "name": "小拔小夜",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部顾问，保健室教师，性格神秘，喜欢捉弄温水。"
+  },
+  {
+    "name": "白玉莉子",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "一年级新生，因停学被介绍到文艺部，外表可爱，性格软萌，疑似姐控。"
+  },
+  {
+    "name": "马剃天爱星",
+    "gender": "female",
+    "voice_archetype": "女-傲娇",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会副会长，二年级F班，性格认真，对温水有好感但嘴硬。"
+  },
+  {
+    "name": "田中雄二",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "国语教师，曾担任文艺部顾问，已婚，与白玉莉子有不明关系。"
+  },
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水的妹妹，性格活泼，关心哥哥。"
+  },
+
+  {
+    "name": "放虎原阳叶里",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会会长，性格豪爽，主动提出帮助白玉莉子。在婚礼中化名摄影工作室的虎谷"
+  },
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗调查顾问，擅长计划和伪装，负责指挥行动。"
+  },
+
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学姐，外表成熟，言语简短，扮演温水的未婚妻。"
+  },
+
+  {
+    "name": "月之木古都",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "被温水提及，在‘不希望妹妹变成那样’排行榜上第一。"
+  },
+  {
+    "name": "新菜",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "戏剧部副部长，八奈见的朋友，为人淳朴，睡眼惺忪。"
+  },
+  {
+    "name": "白玉实",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "白玉莉子的姐姐，即将与田中老师结婚的新娘。"
+  },
+
+  {
+    "name": "夏美",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "会场工作人员，被会长吸引。"
+  },
+  {
+    "name": "白玉莉子的父亲",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "白玉莉子的父亲，在婚礼会场大门前与人聊天。"
+  },
+  {
+    "name": "三枝阿姨",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "白玉家的熟人，湖西的光枝阿姨，误认八奈见为白玉莉子。"
+  },
+
+  {
+    "name": "权藤亚咲美",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "桃园中学三年级学生，温水佳树的朋友。"
+  }
+]
