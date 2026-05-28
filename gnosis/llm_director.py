@@ -31,10 +31,8 @@ PASS1_PROMPT_TEMPLATE = """
 - `voice_archetype` 必须且只能填写上面列表中的一个标签，只有在人物个性鲜明时，分配对应标签，否则倾向于分配 `男-普通` 或 `女-普通`。
 - 如果无法判断，`voice_archetype` 填 `未知`，`gender` 填 `unknown`。
 
-请以 JSON 格式输出，不要包含 markdown 标记：
-{{
-  "new_characters": [ {{ "name": "...", "gender": "...", "voice_archetype": "...", "description": "..." }} ]
-}}
+请以**紧凑的** JSON 格式输出（单行、无换行、无缩进、键值之间不加多余空格），不要包含 markdown 标记。示例：
+{{"new_characters":[{{"name":"...","gender":"...","voice_archetype":"...","description":"..."}}]}}
 """
 
 # ==========================================
@@ -68,8 +66,6 @@ PASS2_PROMPT_TEMPLATE = """
 - 严禁在 `speaker` 中捏造不存在于“演员表”中的名字。
 - 只输出“当前小说片段”的内容，严禁重复输出“上一段上下文参考”里的句子。
 
-请以 JSON 格式输出，不要包含 markdown 标记：
-{{
-  "script": [ {{ "text": "...", "speaker": "...", "emotion": "..." }} ]
-}}
+请以**紧凑的** JSON 格式输出（单行、无换行、无缩进、键值之间不加多余空格），不要包含 markdown 标记。示例：
+{{"script":[{{"text":"...","speaker":"...","emotion":"..."}}]}}
 """

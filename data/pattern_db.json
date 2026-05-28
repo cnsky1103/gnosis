@@ -1,0 +1,759 @@
+{
+  "version": 1,
+  "updated": "2026-05-27T14:39:25.425477+00:00",
+  "total_lines_processed": 14371,
+  "patterns": [
+    {
+      "voice_seed": "duanya",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 488
+    },
+    {
+      "voice_seed": "yela",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.006,
+      "failure_count": 2,
+      "sample_count": 335
+    },
+    {
+      "voice_seed": "duanya",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 441
+    },
+    {
+      "voice_seed": "duanya",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0262,
+      "failure_count": 9,
+      "sample_count": 343
+    },
+    {
+      "voice_seed": "duanya",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0272,
+      "failure_count": 4,
+      "sample_count": 147
+    },
+    {
+      "voice_seed": "duanya",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0031,
+      "failure_count": 2,
+      "sample_count": 646
+    },
+    {
+      "voice_seed": "duanya",
+      "text_length_bucket": "long",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0023,
+      "failure_count": 2,
+      "sample_count": 863
+    },
+    {
+      "voice_seed": "miu",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0174,
+      "failure_count": 9,
+      "sample_count": 518
+    },
+    {
+      "voice_seed": "miu",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 278
+    },
+    {
+      "voice_seed": "exusiai",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0092,
+      "failure_count": 1,
+      "sample_count": 109
+    },
+    {
+      "voice_seed": "exusiai",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 90
+    },
+    {
+      "voice_seed": "exusiai",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 12
+    },
+    {
+      "voice_seed": "red",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0644,
+      "failure_count": 31,
+      "sample_count": 481
+    },
+    {
+      "voice_seed": "xingzhu",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 73
+    },
+    {
+      "voice_seed": "xingzhu",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0333,
+      "failure_count": 2,
+      "sample_count": 60
+    },
+    {
+      "voice_seed": "perfumer",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0125,
+      "failure_count": 1,
+      "sample_count": 80
+    },
+    {
+      "voice_seed": "perfumer",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 119
+    },
+    {
+      "voice_seed": "perfumer",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 38
+    },
+    {
+      "voice_seed": "yela",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 38
+    },
+    {
+      "voice_seed": "wenmi",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0171,
+      "failure_count": 5,
+      "sample_count": 293
+    },
+    {
+      "voice_seed": "wenmi",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 171
+    },
+    {
+      "voice_seed": "wenmi",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 4
+    },
+    {
+      "voice_seed": "luwuguan",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 106
+    },
+    {
+      "voice_seed": "ling",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 116
+    },
+    {
+      "voice_seed": "luwuguan",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 68
+    },
+    {
+      "voice_seed": "ling",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 112
+    },
+    {
+      "voice_seed": "red",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 96
+    },
+    {
+      "voice_seed": "shihuaiya",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0114,
+      "failure_count": 4,
+      "sample_count": 350
+    },
+    {
+      "voice_seed": "shihuaiya",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 122
+    },
+    {
+      "voice_seed": "shihuaiya",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 13
+    },
+    {
+      "voice_seed": "logos",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 69
+    },
+    {
+      "voice_seed": "logos",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0211,
+      "failure_count": 2,
+      "sample_count": 95
+    },
+    {
+      "voice_seed": "miu",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 27
+    },
+    {
+      "voice_seed": "liuming",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 28
+    },
+    {
+      "voice_seed": "shenxun",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 52
+    },
+    {
+      "voice_seed": "liuming",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 52
+    },
+    {
+      "voice_seed": "shenxun",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 65
+    },
+    {
+      "voice_seed": "shenxun",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 4
+    },
+    {
+      "voice_seed": "red",
+      "text_length_bucket": "long",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 6
+    },
+    {
+      "voice_seed": "red",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 10
+    },
+    {
+      "voice_seed": "red",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 3
+    },
+    {
+      "voice_seed": "red",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 20
+    },
+    {
+      "voice_seed": "luwuguan",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 6
+    },
+    {
+      "voice_seed": "wenmi",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 36
+    },
+    {
+      "voice_seed": "wenmi",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 10
+    },
+    {
+      "voice_seed": "raidian",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0192,
+      "failure_count": 2,
+      "sample_count": 104
+    },
+    {
+      "voice_seed": "raidian",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 56
+    },
+    {
+      "voice_seed": "wenmi",
+      "text_length_bucket": "long",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 12
+    },
+    {
+      "voice_seed": "xingzhu",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 19
+    },
+    {
+      "voice_seed": "anjielina",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 61
+    },
+    {
+      "voice_seed": "anjielina",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 27
+    },
+    {
+      "voice_seed": "cangtai",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 15
+    },
+    {
+      "voice_seed": "ling",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 5
+    },
+    {
+      "voice_seed": "exusiai",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 5
+    },
+    {
+      "voice_seed": "exusiai",
+      "text_length_bucket": "long",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 2
+    },
+    {
+      "voice_seed": "perfumer",
+      "text_length_bucket": "long",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 8
+    },
+    {
+      "voice_seed": "perfumer",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 12
+    },
+    {
+      "voice_seed": "perfumer",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 9
+    },
+    {
+      "voice_seed": "logos",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 2
+    },
+    {
+      "voice_seed": "miu",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": false,
+      "failure_rate": 0.1667,
+      "failure_count": 1,
+      "sample_count": 6
+    },
+    {
+      "voice_seed": "miu",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "zhijian",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 6
+    },
+    {
+      "voice_seed": "miu",
+      "text_length_bucket": "long",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "cangtai",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 13
+    },
+    {
+      "voice_seed": "wanqing",
+      "text_length_bucket": "long",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 519
+    },
+    {
+      "voice_seed": "wanqing",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1449
+    },
+    {
+      "voice_seed": "wanqing",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0006,
+      "failure_count": 1,
+      "sample_count": 1540
+    },
+    {
+      "voice_seed": "wanqing",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1023
+    },
+    {
+      "voice_seed": "wanqing",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 502
+    },
+    {
+      "voice_seed": "wanqing",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0192,
+      "failure_count": 10,
+      "sample_count": 520
+    },
+    {
+      "voice_seed": "haruka",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 338
+    },
+    {
+      "voice_seed": "haruka",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0078,
+      "failure_count": 4,
+      "sample_count": 515
+    },
+    {
+      "voice_seed": "haruka",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 41
+    },
+    {
+      "voice_seed": "tianhuo",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 28
+    },
+    {
+      "voice_seed": "tianhuo",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0213,
+      "failure_count": 1,
+      "sample_count": 47
+    },
+    {
+      "voice_seed": "cangtai",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "haruka",
+      "text_length_bucket": "long",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 11
+    },
+    {
+      "voice_seed": "raidian",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 10
+    },
+    {
+      "voice_seed": "haruka",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 4
+    },
+    {
+      "voice_seed": "tianhuo",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "liuming",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "shihuaiya",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "yela",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "dibi",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0274,
+      "failure_count": 6,
+      "sample_count": 219
+    },
+    {
+      "voice_seed": "dibi",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 108
+    },
+    {
+      "voice_seed": "maenna",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 3
+    },
+    {
+      "voice_seed": "maenna",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 16
+    },
+    {
+      "voice_seed": "dibi",
+      "text_length_bucket": "long",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 8
+    },
+    {
+      "voice_seed": "haruka",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 2
+    },
+    {
+      "voice_seed": "heijiaoS",
+      "text_length_bucket": "medium",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "heijiaoS",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    },
+    {
+      "voice_seed": "yu",
+      "text_length_bucket": "short",
+      "has_special_punctuation": true,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 3
+    },
+    {
+      "voice_seed": "yela",
+      "text_length_bucket": "short",
+      "has_special_punctuation": false,
+      "failure_rate": 0.0,
+      "failure_count": 0,
+      "sample_count": 1
+    }
+  ],
+  "aggregated_files": [
+    "a5d9e0057c869e1118c7d0095803238c",
+    "8e044628594109f76f8240e5cff6aeb3",
+    "2aefcc335768311d03531979a36d4cc2",
+    "50cad8df53c5b2df5a9237c0922b6195",
+    "6f20dc23105c76fcdd3225f862a07bdf",
+    "03a042a1bfbe3e683c1fe836a93d8391"
+  ]
+}

@@ -1,0 +1,173 @@
+[
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "第一人称叙述者，文艺部的新任部长，性格温和但有时显得迟钝。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部的一年级部员，被青梅竹马甩了的败犬女主，性格活泼、话多，喜欢吃软糖，经常抱怨无聊。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部的副部长，身材娇小、内心胆小，但有时显得厚脸皮，容易受惊，喜欢躲藏。"
+  },
+  {
+    "name": "小拔小夜",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部的顾问，保健老师，穿着白大褂，性格随性，喜欢逗弄小鞠，年龄27岁。"
+  },
+  {
+    "name": "月之木古都",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部的前副部长，三年级学生，备考压力大，写了BL同人志被学生会没收，性格麻烦制造者。"
+  },
+  {
+    "name": "马剃天爱星",
+    "gender": "female",
+    "voice_archetype": "女-傲娇",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中学生会副会长，严肃、不悦，负责检查随身物品，针对文艺部没收书籍。"
+  },
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会书记，二年级学生，僵尸系辣妹学姐，行动迟缓，喜欢在冷天晒太阳，显得冷漠。"
+  },
+  {
+    "name": "樱井弘人",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会会计，身材娇小、五官端正带有中性气息的男生，举止温雅，性格略显疲惫和内向，不擅长面对别人，没参加过部长会议。"
+  },
+  {
+    "name": "放虎原阳叶里",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会会长，二年级学生，身材高挑，外表魄力十足但天性令人感到疑点重重，做事笨拙（如泡茶时打翻东西、弄坏茶具）。"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "一年级学生，田径部兼文艺部部员，晒黑的脸上常带笑容，声音明亮如夏天太阳，性格开朗但学业不佳（全科不及格），坐电车上下学，因补习被暂时禁止参加社团活动。"
+  },
+  {
+    "name": "绫野光希",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中的学生，期末考试年级第6名，是朝云千早的男朋友，性格开朗，乐于助人。"
+  },
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中的学生，期末考试年级第1名，是绫野光希的女朋友，性格可爱，学习能力强。"
+  },
+  {
+    "name": "甘夏老师",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水班级的班主任，态度严厉，在班会上讲述个人经历并警告学生。"
+  },
+  {
+    "name": "姬宫华恋",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "正宫女主角，轻松追到袴田草介，长发飘飘，笑容灿烂，邀请温水参加圣诞派对。"
+  },
+  {
+    "name": "袴田草介",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "清爽帅哥，姬宫华恋的男友，与温水同班，邀请温水参加圣诞派对。"
+  },
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水的妹妹，黑发小个子少女，坚定拒绝男生告白，极度崇拜哥哥温水。"
+  },
+  {
+    "name": "权藤亚咲美",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "佳树的朋友，昵称小权，强行带走佳树并劝她果断拒绝告白。"
+  },
+  {
+    "name": "玉木慎太郎",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "前文艺部部长，月之木古都的男朋友，正在备考理科大学，性格温和，关心他人。"
+  },
+  {
+    "name": "马剃贵司",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "马剃天爱星的弟弟，初中2年级学生，刚洗完澡出来，身穿运动衬衫，与天爱星对话。"
+  }
+]

@@ -170,6 +170,10 @@ class QAPipeline:
         for c in characters:
             char_to_tag[c.get("name", "")] = c.get("voice_archetype", "")
 
+        configure_voices = getattr(self.tts_engine, "configure_voices", None)
+        if callable(configure_voices):
+            configure_voices(speaker_to_voice, characters)
+
         # Separate auto-pass lines and TTS-needing lines
         for idx, line in jobs:
             text = line.get("text", "")

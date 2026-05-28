@@ -1,0 +1,200 @@
+[
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "本书主角，第一人称视角叙述者。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，烧盐的朋友，性格活泼，爱吃"
+  },
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的妹妹，对哥哥有强烈依恋，善于观察和推理，行动力强。"
+  },
+  {
+    "name": "月之木古都",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "前文艺部副部长，性格开朗，有些冒失，刚考上大学。"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "田径部成员，性格活泼直率，与主角约会，有烦恼。"
+  },
+  {
+    "name": "甘夏老师",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "班主任，喜欢在班会上讲自己的私事，性格有点郁闷。"
+  },
+  {
+    "name": "姬宫华恋",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "八奈见的好朋友，性格开朗活泼，喜欢管闲事。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，性格内向，用手机交流，关心烧盐和温水。"
+  },
+  {
+    "name": "仓田",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "女子田径部部长，二年级，关心烧盐，性格直率。"
+  },
+  {
+    "name": "马剃天爱星",
+    "gender": "female",
+    "voice_archetype": "女-傲娇",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会成员，性格有点古怪，喜欢拍照和BL。"
+  },
+  {
+    "name": "玉木慎太郎",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "三年级学长，文艺部前部长，月之木古都的男朋友，性格温和，备考后考上大学。"
+  },
+  {
+    "name": "放虎原阳叶里",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "在校生代表，在毕业典礼上发表祝词，声音严肃。"
+  },
+  {
+    "name": "绔田草芥",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "八奈见的发小，姬宫华恋的男朋友，性格爽朗。"
+  },
+  {
+    "name": "寺井桃",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "前女子田径部部长，月之木古都的朋友，性格亲切。"
+  },
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "女生，与月之木古都有过往因缘，说话缓慢，行为亲密。"
+  },
+  {
+    "name": "绫野光希",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中高一学生，烧盐柠檬的青梅竹马，性格温和，有女朋友朝云千早。"
+  },
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "绫野光希的女朋友，性格开朗，可能暗中关注绫野。"
+  },
+  {
+    "name": "樱井君",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会会计，协助测量时间，存在感较低。"
+  },
+  {
+    "name": "烧盐妈妈",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "烧盐柠檬的母亲，外表年轻漂亮，性格热情开朗，对女儿关心。"
+  },
+  {
+    "name": "烧盐凪",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "烧盐柠檬的妹妹，小学六年级，性格冷静我行我素。"
+  },
+  {
+    "name": "权藤亚咲美",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水佳树的朋友，称呼佳树为小温。"
+  },
+  {
+    "name": "小拔老师",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中的老师，在比赛时帮忙"
+  }
+]

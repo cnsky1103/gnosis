@@ -1,0 +1,182 @@
+[
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": "wenmi",
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的妹妹，初中二年级学生，正在为情人节试做巧克力，似乎有喜欢的男生。"
+  },
+  {
+    "name": "马剃天爱星",
+    "gender": "female",
+    "voice_archetype": "女-傲娇",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会副会长，经常找主角补习，性格傲娇，与志喜屋梦子有亲密互动。"
+  },
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会书记，行为神秘，喜欢解开天爱星的胸罩扣子，语气平淡。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，性格活泼，喜欢美食，与主角一起跟踪妹妹。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，性格内向，说话结巴，与主角一起讨论妹妹的事。"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，运动能力超强，性格开朗，帮助主角调查妹妹的男朋友。"
+  },
+  {
+    "name": "放虎原阳叶里",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会会长，性格沉稳，对下属的闹剧持宽容态度。"
+  },
+  {
+    "name": "樱井弘人",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会会计，唯一男性干部，性格温和，擅长泡茶。"
+  },
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "第一人称主角，桃园中学毕业生，现为石蕗高中学生，文艺部成员，性格内向但关心妹妹。"
+  },
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "烧盐柠檬的朋友，才女，擅长记忆和推理，喜欢恶作剧，与温水一起潜入桃园中学。"
+  },
+  {
+    "name": "橘聪",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "桃园中学2年4班学生，园艺部成员，性格温和，与温水佳树有联系。"
+  },
+  {
+    "name": "小权",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "桃园中学学生，温水佳树的朋友，高个子女生。"
+  },
+  {
+    "name": "太宰",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "身着和服的男子，异世界角色，擅长分析伎俩，性格慎重。"
+  },
+  {
+    "name": "中也",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "头戴黑色软帽，身披黑色斗篷，个头矮小，异世界角色，拥有伎俩「狂醉」。"
+  },
+  {
+    "name": "三岛",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "身着军装的男子，异世界角色，使用伎俩「信念」，对太宰忠诚。"
+  },
+  {
+    "name": "甘夏",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水班级的班主任，性格散漫，常抱怨工作。"
+  },
+  {
+    "name": "袴田草介",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水的同学，性格爽朗，常与温水交谈。"
+  },
+  {
+    "name": "权藤亚咲美",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "桃园中学园艺部成员，小权，与橘聪和温水佳树是朋友。"
+  },
+  {
+    "name": "小拔小夜",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部顾问，保健老师，性格随和。"
+  },
+  {
+    "name": "姬宫华恋",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "袴田草介的女友，八奈见的情敌，性格开朗，喜欢八卦。"
+  }
+]

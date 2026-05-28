@@ -1,0 +1,210 @@
+[
+  {
+    "name": "马剃天爱星",
+    "gender": "female",
+    "voice_archetype": "女-傲娇",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会副会长，盘发，认真但有些古怪，想请温水当会长选举推荐人。"
+  },
+  {
+    "name": "樱井",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会成员，擅长烹饪，与温水关系好，照顾会长。"
+  },
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会书记，浅茶色波浪长发，白色瞳孔，面无表情，喜欢捉弄人。"
+  },
+  {
+    "name": "道重阿姨",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "体态优雅的邻家阿姨，说话轻浮，爱开玩笑，误以为温水与天爱星是情侣。"
+  },
+  {
+    "name": "马剃贵司",
+    "gender": "male",
+    "voice_archetype": "男-正太",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "天爱星的弟弟，与佳树年纪相仿，性格礼貌，撞见姐姐戴猫耳后冷静离开。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部副部长，胆小内向，喜欢看书，经常躲在温水背后。"
+  },
+  {
+    "name": "甘夏古奈美",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "二年级C班班主任，28岁，情绪化，常抱怨结婚话题，行为夸张。"
+  },
+
+  {
+    "name": "绫野光希",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水同学，戴眼镜，喜欢八卦，误以为温水有喜欢的人。"
+  },
+  {
+    "name": "小鞠阳奈",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小鞠的妹妹，四岁，可爱害羞，喜欢玩偶，想要三层床模型。"
+  },
+  {
+    "name": "小鞠进",
+    "gender": "male",
+    "voice_archetype": "男-正太",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "小鞠的弟弟，小学四年级，性格老实，关心妹妹，偷偷买下三层床模型。"
+  },
+  {
+    "name": "月之木古都",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部学姐，玉木学长的女友，性格开朗，喜欢开玩笑。"
+  },
+  {
+    "name": "玉木",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "前文艺部部长，大学生，与月之木学姐交往，喜欢动画和轻小说。"
+  },
+  {
+    "name": "白玉莉子",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部新社员，性格活泼，对温水很热情。"
+  },
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "绫野光希的女友，性格激动，为烧盐的胜利而兴奋。"
+  },
+  {
+    "name": "报社女生",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "负责选举海报拍摄的报社学生，职业微笑，催促天爱星拍照。"
+  },
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "第一人称主角，被马剃天爱星邀请担任助选演讲人，性格内敛但关键时刻能挺身而出。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "樱井弘人的助选演讲人，性格活泼开朗，喜欢用食物比喻，与温水关系微妙。"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "田径部成员，性格直率，曾与绫野有感情纠葛，现在专注于跑步。"
+  },
+  {
+    "name": "放虎原阳叶里",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "现任学生会会长，沉稳有领导力，在选举中担任主持人。"
+  },
+  {
+    "name": "温水佳树",
+    "gender": "male",
+    "voice_archetype": "男-正太",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "温水的弟弟，关心哥哥，对哥哥的事情无所不知。"
+  },
+  {
+    "name": "姬宫华恋",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "啦啦队队员，胸部丰满，性格开朗主动，邀请小鞠参加啦啦队比赛。"
+  },
+  {
+    "name": "小拔老师",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "身穿白衣的老师，在急救帐篷中处理伤口，语气调侃。"
+  },
+  {
+    "name": "田中老师",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "老师，询问温水与白玉的关系，对白玉的小说感兴趣。"
+  }
+]

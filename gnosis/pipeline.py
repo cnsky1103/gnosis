@@ -12,7 +12,7 @@ import json
 import hashlib
 from typing import Dict, List, Optional, Tuple
 
-API_KEY = os.environ.get("API_KEY")
+API_KEY = os.environ.get("DS_API_KEY")
 BASE_URL = "https://api.deepseek.com"
 # BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
@@ -114,6 +114,7 @@ def _get_raw_response(
         model=model,
         messages=messages,
         temperature=0.3,
+        max_tokens=81920,
         response_format=response_format,
     )
     raw_content = response.choices[0].message.content or ""

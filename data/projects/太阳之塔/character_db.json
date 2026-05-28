@@ -1,0 +1,119 @@
+[
+  {
+    "name": "我",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": ""
+  },
+  {
+    "name": "植村大小姐",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的前社团成员，被主角私下称为'邪眼'，眼神锐利，能看穿主角的心思，在书店与主角对话并讨论忘年会安排。"
+  },
+  {
+    "name": "水尾小姐",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的女友，体育社团的新进社员，知性可爱、天马行空，但似乎对主角冷淡，是主角研究的对象。"
+  },
+  {
+    "name": "未知男人",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "在停车场警告主角不要跟踪水尾小姐的男人，可能是法学部学生，威胁要报警，但器量狭小，被主角拍照后愤怒不安。"
+  },
+  {
+    "name": "饰磨大辉",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的战友，法学部学生，曾一起参与体育社团，现在因司法考试失败而情绪低落，与主角共同打开梦想球并计划调查侮辱主角的男人。"
+  },
+  {
+    "name": "汤岛",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的学弟，社团会计，幽灵般的存在，常来讨债并谈论幻觉。"
+  },
+  {
+    "name": "熊田",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的社团学长，理学部实验室的研究生，曾创下低学分记录。"
+  },
+  {
+    "name": "海老塚",
+    "gender": "male",
+    "voice_archetype": "男-大叔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的社团学长，热血男性美学主义者，崇拜坂本龙马，与主角有争执。"
+  },
+  {
+    "name": "井户",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "社团成员，常被海老塚学长注意到，躲酒时把自己关在厕所。"
+  },
+  {
+    "name": "远藤正",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "大三生，与水尾小姐隶属同一个法学部的课题小组，拍摄独立制作的电影，跟踪主角和水尾小姐。"
+  },
+  {
+    "name": "三田村小姐",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "在肯德基打工的女性，饰磨对她感兴趣，被主角和饰磨讨论其虚构的悲惨生活。"
+  },
+  {
+    "name": "高薮智尚",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角在社团时代的朋友，工学部的研究生，在研究室举行《快杰杰巴特》放映会。"
+  },
+  {
+    "name": "老板娘",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "寿司店的老板娘，询问主角圣诞节活动"
+  }
+]
