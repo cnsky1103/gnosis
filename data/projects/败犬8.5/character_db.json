@@ -1,0 +1,254 @@
+[
+  {
+    "name": "朝云千早",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗调查顾问，额头闪闪发光，喜欢用科技手段解决问题，性格主动，有点神秘。"
+  },
+  {
+    "name": "甘夏古奈美",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中教师，温水的班主任，性格随和，有点怕麻烦，但关键时刻会帮忙。"
+  },
+  {
+    "name": "新菜早苗",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "桐木高中戏剧部副部长，八奈见的朋友，昵称妮娜，喜欢和八奈见一起美食寻访，性格直爽。"
+  },
+  {
+    "name": "小拔小夜",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中保健老师，甘夏的朋友，性格温柔体贴，会照顾人。"
+  },
+  {
+    "name": "温水佳树",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "主角的妹妹，15岁，生日当天被主角准备蛋糕惊喜，性格活泼可爱，与哥哥关系亲密。"
+  },
+  {
+    "name": "权藤亚咲美",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "佳树的朋友，称呼佳树为小温，擅长做饭，送佳树发饰作为生日礼物。"
+  },
+  {
+    "name": "烧盐柠檬",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "田径部成员，性格开朗活泼，邀请主角到家里做蛋糕，曾背小鞠跑步，与志喜屋梦子相遇。"
+  },
+  {
+    "name": "烧盐凪",
+    "gender": "female",
+    "voice_archetype": "女-萝莉",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "烧盐柠檬的妹妹，12岁，戴眼镜，性格冷静，对姐姐的行为感到无奈。"
+  },
+  {
+    "name": "志喜屋梦子",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "高三学生，曾与月之木学姐吵架，中暑后被烧盐柠檬救助，言行有些怪异。"
+  },
+  {
+    "name": "白玉莉子",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，主角的假女朋友，性格温柔可爱，邀请主角到家里扮演男友。"
+  },
+  {
+    "name": "田中实",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "白玉莉子的姐姐，已改姓田中，对主角与妹妹的关系持怀疑态度。"
+  },
+  {
+    "name": "放虎原阳叶里",
+    "gender": "female",
+    "voice_archetype": "女-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "前学生会长，性格老好人，在旧校舍遇到朝云千早，对电路知识有了解。"
+  },
+  {
+    "name": "袴田草介",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "八奈见杏菜的青梅竹马，石蕗高中学生，性格温和但优柔寡断。"
+  },
+  {
+    "name": "姬宫华恋",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中学生，袴田草介的女朋友，性格开朗活泼，住在公寓顶楼。"
+  },
+  {
+    "name": "小鞠知花",
+    "gender": "female",
+    "voice_archetype": "女-三无",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中文艺部副部长，性格内向害羞，说话结巴，常通过手机打字交流。"
+  },
+  {
+    "name": "吴羽澄",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "八奈见杏菜的朋友，有男朋友。"
+  },
+  {
+    "name": "根岸加南子",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "八奈见杏菜的朋友，刚交到男朋友。"
+  },
+  {
+    "name": "袴田美琴",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "袴田草介的姐姐，大学生，身材纤细，性格随和。"
+  },
+  {
+    "name": "月之木古都",
+    "gender": "female",
+    "voice_archetype": "女-御姐",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部前学姐，大学生，性格开朗，喜欢BL。"
+  },
+  {
+    "name": "玉木慎太郎",
+    "gender": "male",
+    "voice_archetype": "男-温柔",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部前学长，大学生，月之木古都的男朋友，性格温和。"
+  },
+  {
+    "name": "绫野光希",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中学生，学生会成员，性格迟钝但观察力敏锐。"
+  },
+  {
+    "name": "樱井弘人",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "石蕗高中学生会成员，有女朋友，性格稳重。"
+  },
+  {
+    "name": "橘聪",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "初中生，园艺部部长，喜欢植物，性格认真。"
+  },
+  {
+    "name": "恋川筑紫",
+    "gender": "female",
+    "voice_archetype": "女-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "报社二年级学生，前观鸟会成员，独自运营报社，擅长偷拍和报道，性格狡猾但被朝云和佳树抓住把柄。"
+  },
+  {
+    "name": "温水和彦",
+    "gender": "male",
+    "voice_archetype": "男-普通",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "第一人称主角，文艺部部长，被妹妹和女生们围绕的普通男生。"
+  },
+  {
+    "name": "八奈见杏菜",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "文艺部成员，活泼开朗，喜欢吃东西，常与温水互动。"
+  },
+  {
+    "name": "马剃天爱星",
+    "gender": "female",
+    "voice_archetype": "女-傲娇",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "学生会长，与温水有秘密关系，性格认真但易害羞。"
+  },
+  {
+    "name": "仓田律子",
+    "gender": "female",
+    "voice_archetype": "女-元气",
+    "voice": null,
+    "ref_audio_path": null,
+    "ref_audio_text": null,
+    "description": "女子田径部部长，保护烧盐柠檬。"
+  }
+]
