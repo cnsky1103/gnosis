@@ -272,6 +272,8 @@ def run_pass2(
                     previous_chunk_context_str=previous_context_map[chunk.index],
                     chunk_index=chunk.index,
                     total_chunks=len(chunks),
+                    chapter_title=getattr(chunk, "chapter_title", None) or "未提供",
+                    pov_speaker=getattr(chunk, "pov_speaker", None) or "未提供",
                     project_pass2_prompt=_normalize_custom_prompt(pass2_custom_prompt),
                 ),
             },
