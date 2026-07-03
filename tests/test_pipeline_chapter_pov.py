@@ -359,6 +359,114 @@ def test_run_pass2_partial_chapter_pov_match_falls_back_to_missing_metadata(
     assert f"第一人称视角：{first_speaker}" not in captured_prompts[0]
 
 
+def test_run_pass2_malformed_chapter_pov_list_falls_back_to_missing_metadata(
+    tmp_path, monkeypatch, capsys
+):
+    first_title = "第一章 浅村悠太"
+    first_speaker = "浅村悠太"
+    malformed_title = "第二章 绫濑沙季"
+    chapter_pov_path = tmp_path / "chapter_pov.json"
+    chapter_pov_path.write_text(
+        json.dumps(
+            [
+                {
+                    "chapter_title": first_title,
+                    "pov_speaker": first_speaker,
+                    "evidence": "人工审核",
+                },
+                {
+                    "chapter_title": malformed_title,
+                    "evidence": "缺少 pov_speaker",
+                },
+            ],
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    manager = CharacterManager(db_path=str(tmp_path / "character_db.json"))
+    manager.add_character(
+        CharacterProfile(
+            name=first_speaker,
+            gender="male",
+            voice_archetype="男-普通",
+            description="章节视角角色",
+        )
+    )
+    captured_prompts = []
+
+    def fake_get_raw_response(*, messages, **_kwargs):
+        captured_prompts.append(messages[0]["content"])
+        return '{"script":[]}', str(tmp_path / "pass2.json"), False
+
+    monkeypatch.setattr(pipeline, "_get_raw_response", fake_get_raw_response)
+
+    pipeline.run_pass2(
+        f"{first_title}\n\n我走进教室。\n\n{malformed_title}\n\n我来到走廊。",
+        manager,
+        ChunkingConfig(target_chars=1000, min_chars=1, max_chars=1200),
+        cache_dir=str(tmp_path / "cache"),
+        pass2_workers=1,
+        chapter_pov_path=str(chapter_pov_path),
+    )
+
+    output = capsys.readouterr().out
+    assert "⚠️ invalid chapter_pov entry at index 1:" in output
+    assert captured_prompts
+    assert "章节标题：未提供" in captured_prompts[0]
+    assert "第一人称视角：未提供" in captured_prompts[0]
+    assert f"章节标题：{first_title}" not in captured_prompts[0]
+    assert f"第一人称视角：{first_speaker}" not in captured_prompts[0]
+
+
+def test_run_pass2_unknown_chapter_pov_speaker_falls_back_to_missing_metadata(
+    tmp_path, monkeypatch, capsys
+):
+    title = "第一章 神秘旁白"
+    unknown_speaker = "神秘旁白"
+    chapter_pov_path = tmp_path / "chapter_pov.json"
+    chapter_pov_path.write_text(
+        json.dumps(
+            [
+                {
+                    "chapter_title": title,
+                    "pov_speaker": unknown_speaker,
+                    "evidence": "人工审核",
+                }
+            ],
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    manager = CharacterManager(db_path=str(tmp_path / "character_db.json"))
+    captured_prompts = []
+
+    def fake_get_raw_response(*, messages, **_kwargs):
+        captured_prompts.append(messages[0]["content"])
+        return '{"script":[]}', str(tmp_path / "pass2.json"), False
+
+    monkeypatch.setattr(pipeline, "_get_raw_response", fake_get_raw_response)
+
+    pipeline.run_pass2(
+        f"{title}\n\n我走进教室。",
+        manager,
+        ChunkingConfig(target_chars=1000, min_chars=1, max_chars=1200),
+        cache_dir=str(tmp_path / "cache"),
+        pass2_workers=1,
+        chapter_pov_path=str(chapter_pov_path),
+    )
+
+    output = capsys.readouterr().out
+    assert (
+        "⚠️ chapter POV speaker not in character_db.json: "
+        f"{unknown_speaker} ({title})"
+    ) in output
+    assert captured_prompts
+    assert "章节标题：未提供" in captured_prompts[0]
+    assert "第一人称视角：未提供" in captured_prompts[0]
+    assert f"章节标题：{title}" not in captured_prompts[0]
+    assert f"第一人称视角：{unknown_speaker}" not in captured_prompts[0]
+
+
 def test_run_pass2_missing_chapter_pov_path_warns_and_uses_missing_metadata(
     tmp_path, monkeypatch, capsys
 ):

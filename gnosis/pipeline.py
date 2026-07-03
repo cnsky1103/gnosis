@@ -167,6 +167,11 @@ def _build_pass2_chunks(
 
     entries, load_warnings = load_chapter_pov_entries(chapter_pov_path)
     _print_chapter_pov_warnings(load_warnings)
+    if any(
+        not warning.startswith("chapter_pov.json missing:")
+        for warning in load_warnings
+    ):
+        return split_text_into_chunks(text_segment, chunking_config)
     if not entries:
         return split_text_into_chunks(text_segment, chunking_config)
 
@@ -174,6 +179,8 @@ def _build_pass2_chunks(
         entries, set(known_character_names or [])
     )
     _print_chapter_pov_warnings(validation_warnings)
+    if validation_warnings:
+        return split_text_into_chunks(text_segment, chunking_config)
 
     matches, match_warnings = find_chapter_title_matches(text_segment, entries)
     _print_chapter_pov_warnings(match_warnings)
