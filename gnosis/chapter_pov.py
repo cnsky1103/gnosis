@@ -129,22 +129,26 @@ def find_chapter_title_matches(
             warnings.append("chapter entry missing chapter_title")
             continue
 
-        first_start = normalized_text.find(title)
-        start = normalized_text.find(title, search_start)
+        starts: List[int] = []
+        start = normalized_text.find(title)
+        while start != -1:
+            starts.append(start)
+            start = normalized_text.find(title, start + len(title))
 
-        if start == -1:
-            if first_start != -1 and first_start < search_start:
-                warnings.append(f"chapter title out of order: {entry.chapter_title}")
-            else:
-                warnings.append(f"chapter title not found: {entry.chapter_title}")
+        if not starts:
+            warnings.append(f"chapter title not found: {entry.chapter_title}")
             continue
 
-        duplicate_start = normalized_text.find(title, start + len(title))
-        if duplicate_start != -1:
+        if len(starts) > 1:
             warnings.append(f"chapter title matched more than once: {entry.chapter_title}")
 
-        matches.append(ChapterTitleMatch(entry=entry, start=start))
-        search_start = start + len(title)
+        first_start = starts[0]
+        if first_start < search_start:
+            warnings.append(f"chapter title out of order: {entry.chapter_title}")
+            continue
+
+        matches.append(ChapterTitleMatch(entry=entry, start=first_start))
+        search_start = first_start + len(title)
 
     return matches, warnings
 

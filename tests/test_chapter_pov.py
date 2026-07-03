@@ -175,6 +175,42 @@ def test_out_of_order_chapter_title_warns_and_is_skipped():
     assert "chapter title out of order: 第四卷 9月3日（星期四）浅村悠太" in warnings
 
 
+def test_duplicate_title_warns_when_duplicate_appears_before_selected_match():
+    text = (
+        "重复章节\n旧正文\n\n"
+        "下一章\n正文一\n\n"
+        "重复章节\n新正文"
+    )
+    entries = [
+        ChapterPovEntry(chapter_title="下一章", pov_speaker="浅村悠太"),
+        ChapterPovEntry(chapter_title="重复章节", pov_speaker="绫濑沙季"),
+    ]
+
+    matches, warnings = find_chapter_title_matches(text, entries)
+
+    assert [match.entry.chapter_title for match in matches] == ["下一章"]
+    assert "chapter title matched more than once: 重复章节" in warnings
+    assert "chapter title out of order: 重复章节" in warnings
+
+
+def test_out_of_order_title_with_later_duplicate_warns_and_is_skipped():
+    text = (
+        "第一章\n旧正文\n\n"
+        "第二章\n正文二\n\n"
+        "第一章\n重复正文"
+    )
+    entries = [
+        ChapterPovEntry(chapter_title="第二章", pov_speaker="绫濑沙季"),
+        ChapterPovEntry(chapter_title="第一章", pov_speaker="浅村悠太"),
+    ]
+
+    matches, warnings = find_chapter_title_matches(text, entries)
+
+    assert [match.entry.chapter_title for match in matches] == ["第二章"]
+    assert "chapter title matched more than once: 第一章" in warnings
+    assert "chapter title out of order: 第一章" in warnings
+
+
 def test_text_before_first_match_becomes_no_pov_segment():
     text = "序章内容\n\n第四卷 9月3日（星期四）浅村悠太\n正文一"
     entries = [
