@@ -1,7 +1,11 @@
 import argparse
 import asyncio
+from contextlib import contextmanager
 import json
 import os
+import shutil
+import subprocess
+import sys
 from gnosis.srt import generate_srt_subtitles_precise
 from gnosis.state_manager import CharacterManager
 from gnosis.chunking import ChunkingConfig
@@ -17,6 +21,71 @@ DEFAULT_MIN_RATIO = 1200 / 1800
 DEFAULT_MAX_RATIO = 2600 / 1800
 
 DEFAULT_TTS_ENGINE = "cosyvoice"
+
+
+def normalize_tts_engine(engine):
+    if engine == "gpt-sovits":
+        return "sovits"
+    return engine
+
+
+def format_eta(seconds):
+    if seconds is None:
+        return "?:??"
+    seconds = max(0, int(seconds))
+    hours, remainder = divmod(seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    if hours:
+        return f"{hours:d}:{minutes:02d}:{seconds:02d}"
+    return f"{minutes:02d}:{seconds:02d}"
+
+
+def format_rate(rate):
+    return f"{rate:.1f}"
+
+
+def _start_sleep_prevention():
+    if sys.platform != "darwin":
+        return None
+
+    caffeinate_path = shutil.which("caffeinate")
+    if caffeinate_path is None:
+        print("⚠️ 未找到 caffeinate，无法自动防止系统睡眠")
+        return None
+
+    try:
+        process = subprocess.Popen(
+            [caffeinate_path, "-ims", "-w", str(os.getpid())],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+    except OSError as exc:
+        print(f"⚠️ 启动 caffeinate 失败: {exc}")
+        return None
+
+    print("☕ 已启用 macOS 防睡眠：TTS 期间系统不会自动休眠")
+    return process
+
+
+def _stop_sleep_prevention(process):
+    if process is None or process.poll() is not None:
+        return
+    process.terminate()
+    try:
+        process.wait(timeout=2)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait()
+
+
+@contextmanager
+def prevent_system_sleep_during_tts():
+    process = _start_sleep_prevention()
+    try:
+        yield
+    finally:
+        _stop_sleep_prevention(process)
+
 
 def load_text(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -86,13 +155,13 @@ async def main():
     parser.add_argument(
         "--pass2-chunk-size",
         type=int,
-        default=1800,
+        default=5000,
         help="pass2 分段目标字数（按空行边界切分）",
     )
     parser.add_argument(
         "--pass1-chunk-size",
         type=int,
-        default=None,
+        default=20000,
         help="pass1 分段目标字数；默认等于 pass2 的 5 倍",
     )
     parser.add_argument(
@@ -124,21 +193,28 @@ async def main():
         help="GPT-SoVITS HTTP 地址",
     )
     parser.add_argument(
+        "--engine",
         "--tts-engine",
+        dest="tts_engine",
         default=DEFAULT_TTS_ENGINE,
-        choices=["cosyvoice", "gpt-sovits"],
-        help="TTS 引擎选择：默认 cosyvoice，可切换为 gpt-sovits",
+        choices=["cosyvoice", "sovits", "gpt-sovits"],
+        help="TTS 引擎选择：默认 cosyvoice，可切换为 sovits（兼容旧值 gpt-sovits）",
     )
     parser.add_argument(
         "--tts-workers",
         type=int,
         default=8,
-        help="TTS 并发线程数（仅 cosyvoice 生效，最小值 1）",
+        help="TTS 并发线程数（最小值 1；sovits 会在引擎内部串行化 HTTP 推理以避免权重切换竞争）",
     )
     parser.add_argument(
         "--char",
         default="",
         help="TTS 仅生成指定角色名的台词（按 script.speaker 精确匹配）",
+    )
+    parser.add_argument(
+        "--try-char",
+        default="",
+        help="TTS 试听指定角色名的前 30 句台词（按 script.speaker 精确匹配）",
     )
     parser.add_argument(
         "--delete-char-audio",
@@ -167,8 +243,13 @@ async def main():
         parser.error("--web-port 必须在 1..65535 之间")
     if args.char.strip() and args.step not in ["tts", "full"]:
         parser.error("--char 仅支持在 tts / full 步骤中使用")
+    if args.try_char.strip() and args.step not in ["tts", "full"]:
+        parser.error("--try-char 仅支持在 tts / full 步骤中使用")
+    if args.char.strip() and args.try_char.strip():
+        parser.error("--char 和 --try-char 不能同时使用")
     if args.delete_char_audio.strip() and args.step not in ["tts", "full"]:
         parser.error("--delete-char-audio 仅支持在 tts / full 步骤中使用")
+    args.tts_engine = normalize_tts_engine(args.tts_engine)
 
     project_name = args.project
 
@@ -297,6 +378,8 @@ async def main():
             tts_engine = create_cosyvoice_engine(tts_workers=args.tts_workers)
         elif args.tts_engine == "sovits":
             tts_engine = create_sovits_engine(args.sovits_url)
+        else:
+            parser.error(f"未知 TTS 引擎: {args.tts_engine}")
 
         os.makedirs(audio_dir, exist_ok=True)
 
@@ -309,11 +392,21 @@ async def main():
             voice = char_info.get("voice") or default_voice
             speaker_to_voice[name] = voice
 
-        # Filter by --char
-        jobs, _speakers = filter_script_jobs_by_character(script_list, args.char.strip())
+        tts_character = args.try_char.strip() or args.char.strip()
+        tts_limit = 30 if args.try_char.strip() else None
+        jobs, _speakers = filter_script_jobs_by_character(
+            script_list,
+            tts_character,
+            limit=tts_limit,
+        )
         if not jobs:
             print("⚠️ 未命中任何角色，跳过 TTS")
         else:
+            if args.try_char.strip():
+                print(
+                    "🎧 试听模式:"
+                    f" {args.try_char.strip()}，生成前 {len(jobs)} 句台词"
+                )
             from gnosis.qa import QAPipeline
             try:
                 from rich.progress import Progress, BarColumn, TextColumn, TimeElapsedColumn
@@ -321,42 +414,89 @@ async def main():
                     TextColumn("[bold blue]{task.description}"),
                     BarColumn(),
                     TextColumn("{task.completed}/{task.total}"),
-                    TextColumn("pass={task.fields[passed]} retry={task.fields[retried]} review={task.fields[review]}"),
+                    TextColumn(
+                        "pass={task.fields[passed]} retry={task.fields[retried]} "
+                        "review={task.fields[review]} gen={task.fields[generated]}"
+                    ),
+                    TextColumn("gen10m={task.fields[rate_10m]}条/min eta={task.fields[eta]}"),
                     TimeElapsedColumn(),
                 )
                 task_id = None
 
-                def rich_progress_callback(completed, total, passed, retried, human_review):
+                def rich_progress_callback(
+                    completed,
+                    total,
+                    passed,
+                    retried,
+                    human_review,
+                    generated=0,
+                    rate_10m=0.0,
+                    eta_seconds=None,
+                ):
                     nonlocal task_id
                     if task_id is None:
-                        task_id = progress.add_task("TTS+QA", total=total, passed=0, retried=0, review=0)
-                    progress.update(task_id, completed=completed, passed=passed, retried=retried, review=human_review)
+                        task_id = progress.add_task(
+                            "TTS+QA",
+                            total=total,
+                            passed=0,
+                            retried=0,
+                            review=0,
+                            generated=0,
+                            rate_10m="0.0",
+                            eta="?:??",
+                        )
+                    progress.update(
+                        task_id,
+                        total=total,
+                        completed=completed,
+                        passed=passed,
+                        retried=retried,
+                        review=human_review,
+                        generated=generated,
+                        rate_10m=format_rate(rate_10m),
+                        eta=format_eta(eta_seconds),
+                    )
 
-                with progress:
+                with prevent_system_sleep_during_tts():
+                    with progress:
+                        pipeline = QAPipeline(
+                            tts_engine=engine,
+                            audio_dir=audio_dir,
+                            num_workers=args.tts_workers,
+                            progress_callback=rich_progress_callback,
+                        )
+                        qa_report = await pipeline.run(jobs, speaker_to_voice, characters)
+            except ImportError:
+                # Fallback: no rich, use simple print progress
+                def simple_progress(
+                    completed,
+                    total,
+                    passed,
+                    retried,
+                    human_review,
+                    generated=0,
+                    rate_10m=0.0,
+                    eta_seconds=None,
+                ):
+                    line = (
+                        f"   TTS+QA {completed}/{total} "
+                        f"pass={passed} retry={retried} review={human_review} gen={generated} "
+                        f"gen10m={format_rate(rate_10m)}条/min eta={format_eta(eta_seconds)}"
+                    )
+                    print(line, end="\n" if completed == total else "\r", flush=True)
+
+                with prevent_system_sleep_during_tts():
                     pipeline = QAPipeline(
                         tts_engine=engine,
                         audio_dir=audio_dir,
                         num_workers=args.tts_workers,
-                        progress_callback=rich_progress_callback,
+                        progress_callback=simple_progress,
                     )
                     qa_report = await pipeline.run(jobs, speaker_to_voice, characters)
-            except ImportError:
-                # Fallback: no rich, use simple print progress
-                def simple_progress(completed, total, passed, retried, human_review):
-                    if completed % 50 == 0 or completed == total:
-                        print(f"   进度: {completed}/{total} pass={passed} retry={retried} review={human_review}")
 
-                pipeline = QAPipeline(
-                    tts_engine=engine,
-                    audio_dir=audio_dir,
-                    num_workers=args.tts_workers,
-                    progress_callback=simple_progress,
-                )
-                qa_report = await pipeline.run(jobs, speaker_to_voice, characters)
-
-            # Write qa.json (merge mode: preserve other characters' QA data when --char is used)
+            # Write qa.json (scoped mode: preserve lines outside the current TTS run)
             qa_path = os.path.join(project_root, "qa.json")
-            if args.char.strip() and os.path.exists(qa_path):
+            if tts_character and os.path.exists(qa_path):
                 with open(qa_path, "r", encoding="utf-8") as f:
                     existing_qa = json.load(f)
                 # Build index set of lines we just processed

@@ -6,7 +6,7 @@ PUNCTUATION_ONLY_SILENCE_MS = 400
 DEFAULT_AUDIO_SAMPLE_RATE = 24000
 DEFAULT_SOVITS_URL = "http://127.0.0.1:9880"
 
-def filter_script_jobs_by_character(script_lines, character_name):
+def filter_script_jobs_by_character(script_lines, character_name, limit=None):
     target_character = (character_name or "").strip()
     jobs = []
     available_speakers = set()
@@ -16,6 +16,8 @@ def filter_script_jobs_by_character(script_lines, character_name):
             available_speakers.add(speaker)
         if not target_character or speaker == target_character:
             jobs.append((i, line))
+            if limit is not None and len(jobs) >= limit:
+                break
     return jobs, available_speakers
 
 def write_silence_wav(output_path, duration_ms, sample_rate=DEFAULT_AUDIO_SAMPLE_RATE):
