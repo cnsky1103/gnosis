@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 from gnosis import pipeline
 from gnosis.chunking import ChunkingConfig
@@ -12,6 +13,12 @@ class FakeCharacterManager:
 
     def get_known_names_and_gender(self):
         return "旁白 (unknown)"
+
+
+def test_main_wires_chapter_pov_path_to_passes():
+    source = Path("main.py").read_text(encoding="utf-8")
+    assert 'chapter_pov_path = os.path.join(project_root, "chapter_pov.json")' in source
+    assert source.count("chapter_pov_path=chapter_pov_path") >= 2
 
 
 def test_pass1_prompt_requests_chapter_pov_output():
