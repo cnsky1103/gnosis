@@ -1,6 +1,8 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 import re
+
+from .chapter_pov import ChapterSegment
 
 
 @dataclass(frozen=True)
@@ -17,6 +19,8 @@ class TextChunk:
     index: int
     text: str
     paragraphs: List[str]
+    chapter_title: Optional[str] = None
+    pov_speaker: Optional[str] = None
 
 
 def _normalize_text(text: str) -> str:
@@ -111,6 +115,27 @@ def split_text_into_chunks(text: str, config: ChunkingConfig) -> List[TextChunk]
     chunks: List[TextChunk] = []
     for idx, chunk in enumerate(chunk_paragraphs, start=1):
         chunks.append(TextChunk(index=idx, paragraphs=chunk, text="\n\n".join(chunk)))
+    return chunks
+
+
+def split_chapter_segments_into_chunks(
+    segments: List[ChapterSegment], config: ChunkingConfig
+) -> List[TextChunk]:
+    chunks: List[TextChunk] = []
+
+    for segment in segments:
+        segment_chunks = split_text_into_chunks(segment.text, config)
+        for chunk in segment_chunks:
+            chunks.append(
+                TextChunk(
+                    index=len(chunks) + 1,
+                    text=chunk.text,
+                    paragraphs=chunk.paragraphs,
+                    chapter_title=segment.chapter_title,
+                    pov_speaker=segment.pov_speaker,
+                )
+            )
+
     return chunks
 
 
