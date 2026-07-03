@@ -1,5 +1,9 @@
 from gnosis.chapter_pov import ChapterSegment
-from gnosis.chunking import ChunkingConfig, split_chapter_segments_into_chunks
+from gnosis.chunking import (
+    ChunkingConfig,
+    split_chapter_segments_into_chunks,
+    split_text_into_chunks,
+)
 
 
 def test_chapter_segment_chunking_never_combines_chapter_titles():
@@ -48,6 +52,9 @@ def test_chapter_segment_chunks_carry_pov_speaker_metadata():
 
     assert first_chapter_chunks
     assert second_chapter_chunks
+    assert [chunk.index for chunk in chunks] == list(range(1, len(chunks) + 1))
+    assert {chunk.chapter_title for chunk in first_chapter_chunks} == {"第一章 浅村悠太"}
+    assert {chunk.chapter_title for chunk in second_chapter_chunks} == {"第二章 绫濑沙季"}
     assert {chunk.pov_speaker for chunk in first_chapter_chunks} == {"浅村悠太"}
     assert {chunk.pov_speaker for chunk in second_chapter_chunks} == {"绫濑沙季"}
 
@@ -61,3 +68,14 @@ def test_no_pov_segment_preserves_empty_chapter_metadata():
     assert len(chunks) == 1
     assert chunks[0].chapter_title is None
     assert chunks[0].pov_speaker is None
+
+
+def test_split_text_into_chunks_returns_chunks_without_chapter_metadata():
+    config = ChunkingConfig(target_chars=40, min_chars=0, max_chars=80)
+    text = "普通正文第一段。\n\n普通正文第二段。"
+
+    chunks = split_text_into_chunks(text, config)
+
+    assert chunks
+    assert all(chunk.chapter_title is None for chunk in chunks)
+    assert all(chunk.pov_speaker is None for chunk in chunks)
