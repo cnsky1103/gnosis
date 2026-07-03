@@ -1,5 +1,9 @@
+import json
+
 from gnosis import pipeline
+from gnosis.chunking import ChunkingConfig
 from gnosis.llm_director import PASS1_PROMPT_TEMPLATE, PASS2_PROMPT_TEMPLATE
+from gnosis.state_manager import CharacterManager
 
 
 class FakeCharacterManager:
@@ -22,6 +26,57 @@ def test_pass1_prompt_requests_chapter_pov_output():
     assert "章节" in prompt
     assert '{"new_characters":' in prompt
     assert '],"chapters":' in prompt
+
+
+def test_run_pass1_persists_extracted_chapter_pov(tmp_path, monkeypatch):
+    character_db_path = tmp_path / "character_db.json"
+    chapter_pov_path = tmp_path / "chapter_pov.json"
+    manager = CharacterManager(db_path=str(character_db_path))
+
+    def fake_get_raw_response(**_kwargs):
+        return (
+            json.dumps(
+                {
+                    "new_characters": [
+                        {
+                            "name": "绫濑沙季",
+                            "gender": "female",
+                            "voice_archetype": "女-普通",
+                            "description": "第一人称视角角色",
+                        }
+                    ],
+                    "chapters": [
+                        {
+                            "chapter_title": "第四卷 9月3日（星期四）绫濑沙季",
+                            "pov_speaker": "绫濑沙季",
+                            "evidence": "标题末尾出现绫濑沙季",
+                        }
+                    ],
+                },
+                ensure_ascii=False,
+            ),
+            str(tmp_path / "pass1.json"),
+            False,
+        )
+
+    monkeypatch.setattr(pipeline, "_get_raw_response", fake_get_raw_response)
+
+    pipeline.run_pass1(
+        "第四卷 9月3日（星期四）绫濑沙季\n\n我走进教室。",
+        manager,
+        ChunkingConfig(target_chars=1000, min_chars=1, max_chars=1200),
+        cache_dir=str(tmp_path / "cache"),
+        chapter_pov_path=str(chapter_pov_path),
+    )
+
+    payload = json.loads(chapter_pov_path.read_text(encoding="utf-8"))
+    assert payload == [
+        {
+            "chapter_title": "第四卷 9月3日（星期四）绫濑沙季",
+            "pov_speaker": "绫濑沙季",
+            "evidence": "标题末尾出现绫濑沙季",
+        }
+    ]
 
 
 def test_pass2_prompt_includes_current_chapter_pov_context():
