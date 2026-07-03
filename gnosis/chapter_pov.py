@@ -103,7 +103,7 @@ class ChapterPovStore:
     ) -> List[ChapterPovEntry]:
         existing_entries, warnings = self.load()
         for warning in warnings:
-            if "missing" not in warning:
+            if not warning.startswith("chapter_pov.json missing:"):
                 print(f"⚠️ {warning}")
 
         if _has_unmergeable_load_warning(warnings):
@@ -114,9 +114,20 @@ class ChapterPovStore:
             normalize_chapter_title(entry.chapter_title) for entry in existing_entries
         }
 
-        for entry in extracted_entries:
+        for index, entry in enumerate(extracted_entries):
             normalized_title = normalize_chapter_title(entry.chapter_title)
-            if not normalized_title or normalized_title in seen_titles:
+            if not normalized_title:
+                self.last_warnings.append(
+                    f"extracted chapter_pov entry missing chapter_title at index {index}"
+                )
+                continue
+            if not entry.pov_speaker.strip():
+                self.last_warnings.append(
+                    f"extracted chapter_pov entry missing pov_speaker at index {index}: "
+                    f"{entry.chapter_title}"
+                )
+                continue
+            if normalized_title in seen_titles:
                 continue
             merged.append(entry)
             seen_titles.add(normalized_title)
@@ -137,6 +148,12 @@ def _has_unmergeable_load_warning(warnings: Sequence[str]) -> bool:
 def find_chapter_title_matches(
     text: str, entries: Sequence[ChapterPovEntry]
 ) -> Tuple[List[ChapterTitleMatch], List[str]]:
+    """Find titles in normalized text.
+
+    Match offsets are coordinates in text after line-ending normalization. Duplicate
+    title occurrences warn. If a title's first occurrence is before the current
+    ordered search position, that entry warns and is skipped as out of order.
+    """
     normalized_text = normalize_text_line_endings(text)
     matches: List[ChapterTitleMatch] = []
     warnings: List[str] = []

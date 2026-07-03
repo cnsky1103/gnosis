@@ -109,6 +109,81 @@ def test_chapter_pov_store_deduplicates_collapsed_whitespace(tmp_path):
     assert entries[0].pov_speaker == "绫濑沙季"
 
 
+def test_chapter_pov_store_skips_extracted_entry_missing_pov_speaker(tmp_path):
+    path = tmp_path / "chapter_pov.json"
+    store = ChapterPovStore(str(path))
+
+    entries = store.merge_extracted(
+        [
+            ChapterPovEntry(
+                chapter_title="第四卷 9月3日（星期四）浅村悠太",
+                pov_speaker="",
+            ),
+            ChapterPovEntry(
+                chapter_title="第四卷 9月3日（星期四）绫濑沙季",
+                pov_speaker="绫濑沙季",
+            ),
+        ]
+    )
+
+    assert entries == [
+        ChapterPovEntry(
+            chapter_title="第四卷 9月3日（星期四）绫濑沙季",
+            pov_speaker="绫濑沙季",
+        )
+    ]
+    assert (
+        "extracted chapter_pov entry missing pov_speaker at index 0: "
+        "第四卷 9月3日（星期四）浅村悠太"
+    ) in store.last_warnings
+    assert load_chapter_pov_entries(str(path)) == (entries, [])
+
+
+def test_chapter_pov_store_warning_printing_for_missing_and_malformed(
+    tmp_path, capsys
+):
+    missing_path = tmp_path / "missing_chapter_pov.json"
+    missing_store = ChapterPovStore(str(missing_path))
+    missing_store.merge_extracted(
+        [
+            ChapterPovEntry(
+                chapter_title="第四卷 9月3日（星期四）浅村悠太",
+                pov_speaker="浅村悠太",
+            )
+        ]
+    )
+
+    missing_output = capsys.readouterr().out
+    assert "chapter_pov.json missing:" not in missing_output
+
+    malformed_path = tmp_path / "malformed_chapter_pov.json"
+    malformed_path.write_text(
+        json.dumps(
+            [
+                {
+                    "chapter_title": "第四卷 9月3日（星期四）浅村悠太",
+                    "pov_speaker": "浅村悠太",
+                },
+                {
+                    "chapter_title": "第四卷 9月3日（星期四）绫濑沙季",
+                    "pov_speaker": "",
+                },
+            ],
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    malformed_store = ChapterPovStore(str(malformed_path))
+
+    malformed_store.merge_extracted([])
+
+    malformed_output = capsys.readouterr().out
+    assert (
+        "⚠️ chapter_pov entry missing pov_speaker at index 1"
+        in malformed_output
+    )
+
+
 def test_chapter_pov_store_does_not_overwrite_invalid_json(tmp_path):
     path = tmp_path / "chapter_pov.json"
     invalid_content = "{not json"
