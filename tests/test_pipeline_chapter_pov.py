@@ -1,3 +1,4 @@
+import ast
 import json
 from pathlib import Path
 
@@ -16,9 +17,62 @@ class FakeCharacterManager:
 
 
 def test_main_wires_chapter_pov_path_to_passes():
-    source = Path("main.py").read_text(encoding="utf-8")
-    assert 'chapter_pov_path = os.path.join(project_root, "chapter_pov.json")' in source
-    assert source.count("chapter_pov_path=chapter_pov_path") >= 2
+    tree = ast.parse(Path("main.py").read_text(encoding="utf-8"))
+
+    assert any(
+        _is_chapter_pov_path_assignment(node) for node in ast.walk(tree)
+    )
+    assert _call_has_chapter_pov_path_keyword(tree, "run_pass1")
+    assert _call_has_chapter_pov_path_keyword(tree, "run_pass2")
+
+
+def _is_chapter_pov_path_assignment(node):
+    if not isinstance(node, ast.Assign):
+        return False
+    if not any(
+        isinstance(target, ast.Name) and target.id == "chapter_pov_path"
+        for target in node.targets
+    ):
+        return False
+    return _is_chapter_pov_join(node.value)
+
+
+def _is_chapter_pov_join(node):
+    return (
+        isinstance(node, ast.Call)
+        and isinstance(node.func, ast.Attribute)
+        and node.func.attr == "join"
+        and isinstance(node.func.value, ast.Attribute)
+        and node.func.value.attr == "path"
+        and isinstance(node.func.value.value, ast.Name)
+        and node.func.value.value.id == "os"
+        and len(node.args) == 2
+        and isinstance(node.args[0], ast.Name)
+        and node.args[0].id == "project_root"
+        and isinstance(node.args[1], ast.Constant)
+        and node.args[1].value == "chapter_pov.json"
+    )
+
+
+def _call_has_chapter_pov_path_keyword(tree, call_name):
+    return any(
+        _is_named_call(node, call_name)
+        and any(
+            keyword.arg == "chapter_pov_path"
+            and isinstance(keyword.value, ast.Name)
+            and keyword.value.id == "chapter_pov_path"
+            for keyword in node.keywords
+        )
+        for node in ast.walk(tree)
+    )
+
+
+def _is_named_call(node, call_name):
+    return (
+        isinstance(node, ast.Call)
+        and isinstance(node.func, ast.Name)
+        and node.func.id == call_name
+    )
 
 
 def test_pass1_prompt_requests_chapter_pov_output():
