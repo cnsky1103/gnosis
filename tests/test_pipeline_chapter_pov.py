@@ -61,4 +61,5 @@ def test_run_pass2_formats_old_style_chunks_with_missing_chapter_pov(monkeypatch
 
     assert result == {"characters": [], "script": []}
     assert captured_prompts
+    assert "章节标题：未提供" in captured_prompts[0]
     assert "第一人称视角：未提供" in captured_prompts[0]
