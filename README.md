@@ -10,7 +10,7 @@ Gnosis takes a novel text file and produces a finished audiobook with synchroniz
 
 ```
 Novel text  →  Character extraction (LLM)  →  Script generation (LLM)
-    →  TTS audio (CosyVoice)  →  QA verification (ASR)  →  Audio merge  →  SRT subtitles
+    →  TTS audio (CosyVoice or GPT-SoVITS)  →  QA verification (ASR)  →  Audio merge  →  SRT subtitles
 ```
 
 Each step is a CLI command. Run them individually or `full` for end-to-end.
@@ -70,12 +70,36 @@ This catches CosyVoice's occasional sentence-dropping bug without slowing down t
 |-------|---------|-------------|
 | Extract | `python main.py extract --project X` | LLM identifies characters from the novel text |
 | Script | `python main.py script --project X` | LLM generates structured dialogue with speaker attribution |
-| TTS + QA | `python main.py tts --project X` | CosyVoice generates audio, ASR verifies, auto-retries failures |
+| TTS + QA | `python main.py tts --project X` | Selected TTS engine generates audio, ASR verifies, auto-retries failures |
 | Verify | `python main.py verify --project X` | Re-verify existing audio without regenerating |
 | Merge | `python main.py merge --project X` | Sample-precise audio concatenation + normalization |
 | Proofread | `python main.py proofread --project X` | Web UI for manual review with QA highlighting |
 | QA Report | `python main.py qa-report --project X` | Formatted quality summary |
 | QA Export | `python main.py qa-export --project X` | Markdown quality report |
+
+## TTS engine selection
+
+CosyVoice remains the default engine:
+
+```bash
+python main.py tts --project X --engine cosyvoice
+```
+
+GPT-SoVITS can be selected from the same entrypoint:
+
+```bash
+python main.py tts --project X --engine sovits --sovits-url http://127.0.0.1:9880
+```
+
+Voice references are loaded from `voice/ref/<voice_id>.ref`. The standard GPT-SoVITS
+reference format is:
+
+```text
+/path/to/gpt.ckpt
+/path/to/sovits.pth
+/path/to/reference.wav
+参考音频对应文本
+```
 
 ## QA system
 
@@ -160,6 +184,7 @@ gnosis/
 ├── pipeline.py        # LLM orchestration (Pass 1 + Pass 2)
 ├── tts/
 │   ├── cosy_voice_engine.py  # CosyVoice TTS integration
+│   ├── sovits_engine.py      # GPT-SoVITS HTTP API integration
 │   ├── tts_engine.py         # Base TTS interface
 │   └── tts_utils.py          # Audio utilities
 ├── merge_audio.py     # Sample-precise concatenation

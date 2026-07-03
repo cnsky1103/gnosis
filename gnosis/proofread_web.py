@@ -56,18 +56,9 @@ def _normalize_script_lines(script_lines: list[Any]) -> list[dict[str, Any]]:
     return normalized
 
 
-def _extract_character_list(raw: Any) -> list[dict[str, Any]]:
-    if isinstance(raw, list):
-        return [item for item in raw if isinstance(item, dict)]
-    if isinstance(raw, dict) and isinstance(raw.get("characters"), list):
-        return [item for item in raw["characters"] if isinstance(item, dict)]
-    return []
-
-
 @dataclass
 class CachedProject:
     project_name: str
-    project_root: Path
     script_path: Path
     payload: Any
     characters_from_script: list[dict[str, Any]]
@@ -178,7 +169,6 @@ class ScriptStore:
 
         cached_project = CachedProject(
             project_name=valid_name,
-            project_root=project_root,
             script_path=script_path,
             payload=payload,
             characters_from_script=characters_from_script,
@@ -189,24 +179,11 @@ class ScriptStore:
         return cached_project
 
     def _load_characters_unlocked(self, project: CachedProject) -> list[dict[str, Any]]:
-        character_candidates: list[dict[str, Any]] = []
-        for file_name in ("characters.json", "character_db.json"):
-            candidate_path = project.project_root / file_name
-            if not candidate_path.is_file():
-                continue
-            try:
-                with candidate_path.open("r", encoding="utf-8") as f:
-                    raw = json.load(f)
-                character_candidates.extend(_extract_character_list(raw))
-            except json.JSONDecodeError:
-                continue
-
-        if not character_candidates:
-            character_candidates.extend(project.characters_from_script)
-
         deduped: list[dict[str, Any]] = []
         seen_names: set[str] = set()
-        for item in character_candidates:
+        for item in project.characters_from_script:
+            if not isinstance(item, dict):
+                continue
             name = str(item.get("name", "")).strip()
             if not name or name in seen_names:
                 continue

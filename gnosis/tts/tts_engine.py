@@ -2,12 +2,15 @@ from gnosis.utils import parse_script_payload
 import json
 
 
-SUPPORTED_TTS_ENGINES = ("cosyvoice", "gpt-sovits")
+SUPPORTED_TTS_ENGINES = ("cosyvoice", "sovits", "gpt-sovits")
 
 class BaseTTSEngine:
     name = "base"
 
     def init(self):
+        pass
+
+    def configure_voices(self, speaker_to_voice, characters):
         pass
 
     async def generate_line(
@@ -49,14 +52,13 @@ class TTSEngineProxy:
         self._engine = engine
 
     def init(self):
-        pass
+        return self._engine.init()
+
+    def configure_voices(self, speaker_to_voice, characters):
+        return self._engine.configure_voices(speaker_to_voice, characters)
 
     async def generate_script_tts(self, script_path, audio_dir, char = None, **kargs):
-        if self._type == 'cosyvoice':
-            return await self._engine.generate_script_tts(script_path, audio_dir, char=char)
+        return await self._engine.generate_script_tts(script_path, audio_dir, char=char, **kargs)
 
-    def generate_line(self, text, output_path, **kargs):
-        if self._type == 'cosyvoice':
-            return self._engine.generate_line(text, output_path)
-        else:
-            pass
+    async def generate_line(self, text, output_path, **kargs):
+        return await self._engine.generate_line(text, output_path, **kargs)
