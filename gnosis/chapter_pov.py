@@ -78,9 +78,12 @@ def load_chapter_pov_entries(path: str) -> Tuple[List[ChapterPovEntry], List[str
 class ChapterPovStore:
     def __init__(self, path: str):
         self.path = path
+        self.last_warnings: List[str] = []
 
     def load(self) -> Tuple[List[ChapterPovEntry], List[str]]:
-        return load_chapter_pov_entries(self.path)
+        entries, warnings = load_chapter_pov_entries(self.path)
+        self.last_warnings = warnings
+        return entries, warnings
 
     def save(self, entries: Sequence[ChapterPovEntry]) -> None:
         directory = os.path.dirname(self.path)
@@ -98,7 +101,14 @@ class ChapterPovStore:
     def merge_extracted(
         self, extracted_entries: Iterable[ChapterPovEntry]
     ) -> List[ChapterPovEntry]:
-        existing_entries, _warnings = self.load()
+        existing_entries, warnings = self.load()
+        for warning in warnings:
+            if "missing" not in warning:
+                print(f"⚠️ {warning}")
+
+        if _has_unmergeable_load_warning(warnings):
+            return existing_entries
+
         merged: List[ChapterPovEntry] = list(existing_entries)
         seen_titles = {
             normalize_chapter_title(entry.chapter_title) for entry in existing_entries
@@ -113,6 +123,15 @@ class ChapterPovStore:
 
         self.save(merged)
         return merged
+
+
+def _has_unmergeable_load_warning(warnings: Sequence[str]) -> bool:
+    return any(
+        warning.startswith("chapter_pov.json invalid JSON:")
+        or warning.startswith("chapter_pov.json root must be an array:")
+        or warning.startswith("chapter_pov.json could not be read:")
+        for warning in warnings
+    )
 
 
 def find_chapter_title_matches(
