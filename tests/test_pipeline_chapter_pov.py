@@ -3,6 +3,7 @@ import json
 from gnosis import pipeline
 from gnosis.chunking import ChunkingConfig
 from gnosis.llm_director import PASS1_PROMPT_TEMPLATE, PASS2_PROMPT_TEMPLATE
+from gnosis.models import CharacterProfile
 from gnosis.state_manager import CharacterManager
 
 
@@ -174,6 +175,88 @@ def test_run_pass2_formats_old_style_chunks_with_missing_chapter_pov(monkeypatch
     )
 
     assert result == {"characters": [], "script": []}
+    assert captured_prompts
+    assert "章节标题：未提供" in captured_prompts[0]
+    assert "第一人称视角：未提供" in captured_prompts[0]
+
+
+def test_run_pass2_uses_reviewed_chapter_pov_metadata_in_prompt(
+    tmp_path, monkeypatch
+):
+    title = "第四卷 9月3日（星期四）绫濑沙季"
+    speaker = "绫濑沙季"
+    chapter_pov_path = tmp_path / "chapter_pov.json"
+    chapter_pov_path.write_text(
+        json.dumps(
+            [
+                {
+                    "chapter_title": title,
+                    "pov_speaker": speaker,
+                    "evidence": "人工审核",
+                }
+            ],
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    manager = CharacterManager(db_path=str(tmp_path / "character_db.json"))
+    manager.add_character(
+        CharacterProfile(
+            name=speaker,
+            gender="female",
+            voice_archetype="女-普通",
+            description="第一人称视角角色",
+        )
+    )
+    captured_prompts = []
+
+    def fake_get_raw_response(*, messages, **_kwargs):
+        captured_prompts.append(messages[0]["content"])
+        return '{"script":[]}', str(tmp_path / "pass2.json"), False
+
+    monkeypatch.setattr(pipeline, "_get_raw_response", fake_get_raw_response)
+
+    result = pipeline.run_pass2(
+        f"{title}\n\n我走进教室。\n\n「早上好。」",
+        manager,
+        ChunkingConfig(target_chars=1000, min_chars=1, max_chars=1200),
+        cache_dir=str(tmp_path / "cache"),
+        pass2_workers=1,
+        chapter_pov_path=str(chapter_pov_path),
+    )
+
+    assert result == {
+        "characters": [manager.characters[speaker].model_dump()],
+        "script": [],
+    }
+    assert any(f"章节标题：{title}" in prompt for prompt in captured_prompts)
+    assert any(f"第一人称视角：{speaker}" in prompt for prompt in captured_prompts)
+
+
+def test_run_pass2_missing_chapter_pov_path_warns_and_uses_missing_metadata(
+    tmp_path, monkeypatch, capsys
+):
+    missing_chapter_pov_path = tmp_path / "missing" / "chapter_pov.json"
+    captured_prompts = []
+
+    def fake_get_raw_response(*, messages, **_kwargs):
+        captured_prompts.append(messages[0]["content"])
+        return '{"script":[]}', str(tmp_path / "pass2.json"), False
+
+    monkeypatch.setattr(pipeline, "_get_raw_response", fake_get_raw_response)
+
+    result = pipeline.run_pass2(
+        "我走进教室。\n\n「早上好。」",
+        FakeCharacterManager(),
+        ChunkingConfig(target_chars=1000, min_chars=1, max_chars=1200),
+        cache_dir=str(tmp_path / "cache"),
+        pass2_workers=1,
+        chapter_pov_path=str(missing_chapter_pov_path),
+    )
+
+    output = capsys.readouterr().out
+    assert result == {"characters": [], "script": []}
+    assert f"⚠️ chapter_pov.json missing: {missing_chapter_pov_path}" in output
     assert captured_prompts
     assert "章节标题：未提供" in captured_prompts[0]
     assert "第一人称视角：未提供" in captured_prompts[0]
