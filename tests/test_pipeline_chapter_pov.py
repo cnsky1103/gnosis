@@ -233,6 +233,71 @@ def test_run_pass2_uses_reviewed_chapter_pov_metadata_in_prompt(
     assert any(f"第一人称视角：{speaker}" in prompt for prompt in captured_prompts)
 
 
+def test_run_pass2_partial_chapter_pov_match_falls_back_to_missing_metadata(
+    tmp_path, monkeypatch, capsys
+):
+    first_title = "第一章 浅村悠太"
+    first_speaker = "浅村悠太"
+    missing_title = "第二章 绫濑沙季"
+    second_speaker = "绫濑沙季"
+    chapter_pov_path = tmp_path / "chapter_pov.json"
+    chapter_pov_path.write_text(
+        json.dumps(
+            [
+                {
+                    "chapter_title": first_title,
+                    "pov_speaker": first_speaker,
+                    "evidence": "人工审核",
+                },
+                {
+                    "chapter_title": missing_title,
+                    "pov_speaker": second_speaker,
+                    "evidence": "人工审核",
+                },
+            ],
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    manager = CharacterManager(db_path=str(tmp_path / "character_db.json"))
+    for name, gender, archetype in [
+        (first_speaker, "male", "男-普通"),
+        (second_speaker, "female", "女-普通"),
+    ]:
+        manager.add_character(
+            CharacterProfile(
+                name=name,
+                gender=gender,
+                voice_archetype=archetype,
+                description="章节视角角色",
+            )
+        )
+    captured_prompts = []
+
+    def fake_get_raw_response(*, messages, **_kwargs):
+        captured_prompts.append(messages[0]["content"])
+        return '{"script":[]}', str(tmp_path / "pass2.json"), False
+
+    monkeypatch.setattr(pipeline, "_get_raw_response", fake_get_raw_response)
+
+    pipeline.run_pass2(
+        f"{first_title}\n\n我走进教室。\n\n下一章正文没有可匹配标题。",
+        manager,
+        ChunkingConfig(target_chars=1000, min_chars=1, max_chars=1200),
+        cache_dir=str(tmp_path / "cache"),
+        pass2_workers=1,
+        chapter_pov_path=str(chapter_pov_path),
+    )
+
+    output = capsys.readouterr().out
+    assert f"⚠️ chapter title not found: {missing_title}" in output
+    assert captured_prompts
+    assert "章节标题：未提供" in captured_prompts[0]
+    assert "第一人称视角：未提供" in captured_prompts[0]
+    assert f"章节标题：{first_title}" not in captured_prompts[0]
+    assert f"第一人称视角：{first_speaker}" not in captured_prompts[0]
+
+
 def test_run_pass2_missing_chapter_pov_path_warns_and_uses_missing_metadata(
     tmp_path, monkeypatch, capsys
 ):

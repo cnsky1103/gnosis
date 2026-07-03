@@ -177,7 +177,7 @@ def _build_pass2_chunks(
 
     matches, match_warnings = find_chapter_title_matches(text_segment, entries)
     _print_chapter_pov_warnings(match_warnings)
-    if not matches:
+    if len(matches) != len(entries):
         return split_text_into_chunks(text_segment, chunking_config)
 
     segments = build_chapter_segments(text_segment, matches)
