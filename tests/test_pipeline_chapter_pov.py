@@ -79,6 +79,65 @@ def test_run_pass1_persists_extracted_chapter_pov(tmp_path, monkeypatch):
     ]
 
 
+def test_run_pass1_accumulates_chapter_pov_across_chunks_in_order(
+    tmp_path, monkeypatch
+):
+    character_db_path = tmp_path / "character_db.json"
+    chapter_pov_path = tmp_path / "chapter_pov.json"
+    manager = CharacterManager(db_path=str(character_db_path))
+    seen_chunk_indexes = []
+
+    chapter_by_chunk = {
+        1: {
+            "chapter_title": "第一章 浅村悠太",
+            "pov_speaker": "浅村悠太",
+            "evidence": "第一段标题",
+        },
+        2: {
+            "chapter_title": "第二章 绫濑沙季",
+            "pov_speaker": "绫濑沙季",
+            "evidence": "第二段标题",
+        },
+        3: {
+            "chapter_title": "第三章 浅村悠太",
+            "pov_speaker": "浅村悠太",
+            "evidence": "第三段标题",
+        },
+    }
+
+    def fake_get_raw_response(**kwargs):
+        chunk_index = kwargs["chunk_index"]
+        seen_chunk_indexes.append(chunk_index)
+        return (
+            json.dumps(
+                {
+                    "new_characters": [],
+                    "chapters": [chapter_by_chunk[chunk_index]],
+                },
+                ensure_ascii=False,
+            ),
+            str(tmp_path / f"pass1-{chunk_index}.json"),
+            False,
+        )
+
+    monkeypatch.setattr(pipeline, "_get_raw_response", fake_get_raw_response)
+
+    pipeline.run_pass1(
+        "第一章 浅村悠太\n\n第二章 绫濑沙季\n\n第三章 浅村悠太",
+        manager,
+        ChunkingConfig(target_chars=1, min_chars=1, max_chars=20),
+        cache_dir=str(tmp_path / "cache"),
+        chapter_pov_path=str(chapter_pov_path),
+    )
+
+    assert seen_chunk_indexes == [1, 2, 3]
+    assert json.loads(chapter_pov_path.read_text(encoding="utf-8")) == [
+        chapter_by_chunk[1],
+        chapter_by_chunk[2],
+        chapter_by_chunk[3],
+    ]
+
+
 def test_pass2_prompt_includes_current_chapter_pov_context():
     prompt = PASS2_PROMPT_TEMPLATE.format(
         available_characters_str="浅村悠太 (male)\n绫濑沙季 (female)",
