@@ -205,6 +205,70 @@ class TestEmptyLines:
             pass_lines = [l for l in report["lines"] if l["status"] == "pass"]
             assert len(pass_lines) >= 2  # at least the 2 punctuation lines
 
+    async def test_punctuation_only_updates_pass_progress(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            progress_events = []
+            engine = MockTTSEngine()
+            pipeline = QAPipeline(
+                tts_engine=engine,
+                audio_dir=tmpdir,
+                num_workers=1,
+                progress_callback=lambda **event: progress_events.append(event),
+            )
+            pipeline._whisper_available = False
+
+            jobs = _make_jobs(["……", "——。"])
+            await pipeline.run(jobs, _speaker_map(), _make_characters())
+
+            assert progress_events[-1]["completed"] == 2
+            assert progress_events[-1]["total"] == 2
+            assert progress_events[-1]["passed"] == 2
+
+
+@pytest.mark.asyncio
+class TestProgressStats:
+    async def test_initial_progress_uses_full_total(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            progress_events = []
+            engine = MockTTSEngine()
+            pipeline = QAPipeline(
+                tts_engine=engine,
+                audio_dir=tmpdir,
+                num_workers=1,
+                progress_callback=lambda **event: progress_events.append(event),
+            )
+            pipeline._whisper_available = False
+
+            jobs = _make_jobs(["正常文本", "另一个正常文本", "第三句"])
+            await pipeline.run(jobs, _speaker_map(), _make_characters())
+
+            assert progress_events[0]["completed"] == 0
+            assert progress_events[0]["total"] == 3
+            assert "generated" in progress_events[-1]
+            assert "rate_10m" in progress_events[-1]
+            assert "eta_seconds" in progress_events[-1]
+
+    async def test_legacy_progress_callback_still_works(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            progress_events = []
+            engine = MockTTSEngine()
+
+            def progress_callback(completed, total, passed, retried, human_review):
+                progress_events.append((completed, total, passed, retried, human_review))
+
+            pipeline = QAPipeline(
+                tts_engine=engine,
+                audio_dir=tmpdir,
+                num_workers=1,
+                progress_callback=progress_callback,
+            )
+            pipeline._whisper_available = False
+
+            await pipeline.run(_make_jobs(["正常文本"]), _speaker_map(), _make_characters())
+
+            assert progress_events[0] == (0, 1, 0, 0, 0)
+            assert progress_events[-1] == (1, 1, 0, 0, 1)
+
 
 @pytest.mark.asyncio
 class TestWorkerCrashRecovery:

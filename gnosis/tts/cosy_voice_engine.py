@@ -1,10 +1,20 @@
 import os
+import logging
 import requests
 
 from gnosis.tts.tts_utils import DEFAULT_AUDIO_SAMPLE_RATE, PUNCTUATION_ONLY_SILENCE_MS, filter_script_jobs_by_character, write_silence_wav
 from gnosis.utils import is_punctuation_only_text
+
+
+def _quiet_tqdm(iterable=None, *args, **kwargs):
+    return iterable if iterable is not None else ()
+
+
 try:
+    import cosyvoice.cli.cosyvoice as cosyvoice_cli
     from cosyvoice.cli.cosyvoice import AutoModel
+    cosyvoice_cli.tqdm = _quiet_tqdm
+    logging.getLogger().setLevel(logging.WARNING)
 except ModuleNotFoundError:
     AutoModel = None  # type: ignore[assignment]
 

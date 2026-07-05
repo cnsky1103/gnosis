@@ -14,10 +14,12 @@ Termination: in-flight counter (+1 enqueue, -1 on PASS or HUMAN_REVIEW)
 """
 
 import asyncio
+import inspect
 import json
 import os
 import re
 import time
+from collections import deque
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -112,6 +114,7 @@ class QAPipeline:
         self.num_workers = num_workers
         self.whisper_model_size = whisper_model_size
         self.progress_callback = progress_callback
+        self._progress_callback_accepts_extra = self._callback_accepts_extra(progress_callback)
 
         self.tts_queue: asyncio.Queue = asyncio.Queue()
         self.verify_queue: asyncio.Queue = asyncio.Queue()
@@ -125,9 +128,29 @@ class QAPipeline:
         self.retry_count = 0
         self.human_review_count = 0
         self.completed_count = 0
+        self.generated_count = 0
+        self.started_at = time.monotonic()
+        self._completion_events = deque()
+        self._generated_events = deque()
 
         self._whisper_model = None
         self._whisper_available = True
+
+    @staticmethod
+    def _callback_accepts_extra(callback) -> bool:
+        if callback is None:
+            return False
+        try:
+            signature = inspect.signature(callback)
+        except (TypeError, ValueError):
+            return True
+
+        parameters = signature.parameters.values()
+        if any(param.kind == inspect.Parameter.VAR_KEYWORD for param in parameters):
+            return True
+
+        parameter_names = set(signature.parameters)
+        return {"generated", "rate_10m", "eta_seconds"}.issubset(parameter_names)
 
     def _load_whisper(self):
         if self._whisper_model is not None:
@@ -174,6 +197,9 @@ class QAPipeline:
         if callable(configure_voices):
             configure_voices(speaker_to_voice, characters)
 
+        self.total_jobs = len(jobs)
+        self._notify_progress()
+
         # Separate auto-pass lines and TTS-needing lines
         for idx, line in jobs:
             text = line.get("text", "")
@@ -192,9 +218,8 @@ class QAPipeline:
                 result.status = "pass"
                 result.script_char_len = 0
                 self.results.append(result)
-                self.total_jobs += 1
-                self.completed_count += 1
-                self._notify_progress()
+                self.pass_count += 1
+                self._mark_completed()
                 continue
 
             if os.path.exists(audio_path):
@@ -215,7 +240,6 @@ class QAPipeline:
             }
             self.tts_queue.put_nowait(job)
             self.in_flight += 1
-            self.total_jobs += 1
 
         if self.in_flight == 0:
             self.done_event.set()
@@ -241,7 +265,6 @@ class QAPipeline:
     def _enqueue_verify_only(self, result: QAResult):
         """For existing WAV files: enqueue directly to verify queue."""
         self.in_flight += 1
-        self.total_jobs += 1
         self.verify_queue.put_nowait({
             "result": result,
             "verify_only": True,
@@ -303,6 +326,9 @@ class QAPipeline:
             if os.path.exists(audio_path):
                 os.remove(audio_path)
 
+        if ok:
+            self._mark_generated()
+
         self.verify_queue.put_nowait({
             "result": result,
             "ok": ok,
@@ -326,8 +352,7 @@ class QAPipeline:
                     result.retry_reasons.append(f"verify_crash: {exc}")
                     self.results.append(result)
                     self.human_review_count += 1
-                    self.completed_count += 1
-                    self._notify_progress()
+                    self._mark_completed()
                     self.in_flight -= 1
                     if self.in_flight == 0:
                         self.done_event.set()
@@ -350,8 +375,7 @@ class QAPipeline:
             result.retry_reasons.append(f"tts_error: {error}")
             self.results.append(result)
             self.human_review_count += 1
-            self.completed_count += 1
-            self._notify_progress()
+            self._mark_completed()
             self.in_flight -= 1
             if self.in_flight == 0:
                 self.done_event.set()
@@ -367,8 +391,7 @@ class QAPipeline:
             result.retry_reasons.append("tts_returned_false")
             self.results.append(result)
             self.human_review_count += 1
-            self.completed_count += 1
-            self._notify_progress()
+            self._mark_completed()
             self.in_flight -= 1
             if self.in_flight == 0:
                 self.done_event.set()
@@ -382,8 +405,7 @@ class QAPipeline:
                 result.retry_reasons.append("audio_missing")
                 self.results.append(result)
                 self.human_review_count += 1
-                self.completed_count += 1
-                self._notify_progress()
+                self._mark_completed()
                 self.in_flight -= 1
                 if self.in_flight == 0:
                     self.done_event.set()
@@ -396,8 +418,7 @@ class QAPipeline:
             result.retry_reasons.append("audio_not_written")
             self.results.append(result)
             self.human_review_count += 1
-            self.completed_count += 1
-            self._notify_progress()
+            self._mark_completed()
             self.in_flight -= 1
             if self.in_flight == 0:
                 self.done_event.set()
@@ -408,8 +429,7 @@ class QAPipeline:
             result.retry_reasons.append("asr_unavailable")
             self.results.append(result)
             self.human_review_count += 1
-            self.completed_count += 1
-            self._notify_progress()
+            self._mark_completed()
             self.in_flight -= 1
             if self.in_flight == 0:
                 self.done_event.set()
@@ -438,8 +458,7 @@ class QAPipeline:
                 self.pass_count += 1
             result.retries = attempt
             self.results.append(result)
-            self.completed_count += 1
-            self._notify_progress()
+            self._mark_completed()
             self.in_flight -= 1
             if self.in_flight == 0:
                 self.done_event.set()
@@ -457,8 +476,7 @@ class QAPipeline:
             result.retry_reasons.append(reason)
             self.results.append(result)
             self.human_review_count += 1
-            self.completed_count += 1
-            self._notify_progress()
+            self._mark_completed()
             self.in_flight -= 1
             if self.in_flight == 0:
                 self.done_event.set()
@@ -485,15 +503,61 @@ class QAPipeline:
         self.tts_queue.put_nowait(job)
         # in_flight stays the same (not decremented, not incremented)
 
+    def _mark_completed(self):
+        self.completed_count += 1
+        now = time.monotonic()
+        self._append_progress_event(self._completion_events, now)
+
+        self._notify_progress()
+
+    def _mark_generated(self):
+        self.generated_count += 1
+        self._append_progress_event(self._generated_events, time.monotonic())
+        self._notify_progress()
+
+    @staticmethod
+    def _append_progress_event(events, now):
+        events.append(now)
+        cutoff = now - 600
+        while events and events[0] < cutoff:
+            events.popleft()
+
+    def _progress_stats(self) -> Dict[str, Optional[float]]:
+        now = time.monotonic()
+        generated_rate = self._rate_per_second(self._generated_events, now)
+        completion_rate = self._rate_per_second(self._completion_events, now)
+        eta_rate = completion_rate or generated_rate
+        remaining = max(0, self.total_jobs - self.completed_count)
+        eta_seconds = remaining / eta_rate if eta_rate > 0 else None
+
+        return {
+            "rate_10m": generated_rate * 60.0,
+            "eta_seconds": eta_seconds,
+        }
+
+    def _rate_per_second(self, events, now: float) -> float:
+        if not events:
+            return 0.0
+        window_seconds = min(600.0, max(now - self.started_at, 1.0))
+        return len(events) / window_seconds
+
     def _notify_progress(self):
         if self.progress_callback:
-            self.progress_callback(
-                completed=self.completed_count,
-                total=self.total_jobs,
-                passed=self.pass_count,
-                retried=self.retry_count,
-                human_review=self.human_review_count,
-            )
+            stats = self._progress_stats()
+            progress = {
+                "completed": self.completed_count,
+                "total": self.total_jobs,
+                "passed": self.pass_count,
+                "retried": self.retry_count,
+                "human_review": self.human_review_count,
+            }
+            if self._progress_callback_accepts_extra:
+                progress.update(
+                    generated=self.generated_count,
+                    rate_10m=stats["rate_10m"],
+                    eta_seconds=stats["eta_seconds"],
+                )
+            self.progress_callback(**progress)
 
     def _build_qa_report(self) -> Dict:
         sorted_results = sorted(self.results, key=lambda r: r.index)

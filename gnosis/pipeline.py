@@ -116,6 +116,7 @@ def _get_raw_response(
         temperature=0.3,
         max_tokens=81920,
         response_format=response_format,
+        extra_body={"thinking": {"type": "disabled"}}
     )
     raw_content = response.choices[0].message.content or ""
     _save_raw_response(
