@@ -271,6 +271,7 @@ async def main():
     script_path = os.path.join(project_root, "script.json")
     audio_dir = os.path.join(project_root, "output_audio")
     character_db_path = os.path.join(project_root, "character_db.json")
+    chapter_pov_path = os.path.join(project_root, "chapter_pov.json")
     llm_cache_dir = resolve_project_path(project_root, args.llm_cache_dir)
     project_input_path = os.path.join(project_root, "input.txt")
     final_file = os.path.join(project_root, "final_audiobook.wav")
@@ -322,6 +323,7 @@ async def main():
             pass1_chunking_config,
             cache_dir=llm_cache_dir,
             pass1_custom_prompt=project_prompts.pass1_prompt,
+            chapter_pov_path=chapter_pov_path,
         )  # 内部会自动 save_db
         print(f"✅ 角色库已更新: {len(char_manager.characters)} 个角色")
 
@@ -337,6 +339,7 @@ async def main():
             cache_dir=llm_cache_dir,
             pass2_workers=args.pass2_workers,
             pass2_custom_prompt=project_prompts.pass2_prompt,
+            chapter_pov_path=chapter_pov_path,
         )
         with open(script_path, "w", encoding="utf-8") as f:
             json.dump(script_data, f, ensure_ascii=False, indent=2)

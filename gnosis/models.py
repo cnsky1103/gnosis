@@ -1,5 +1,6 @@
-from pydantic import BaseModel
 from typing import List, Literal, Optional
+
+from pydantic import BaseModel, Field
 
 
 class CharacterProfile(BaseModel):
@@ -19,8 +20,19 @@ class ScriptLine(BaseModel):
     #emotion: str = "neutral"
 
 
+class ChapterPovEntry(BaseModel):
+    chapter_title: str
+    pov_speaker: str
+    evidence: Optional[str] = None
+
+
+class ChapterPovExtraction(BaseModel):
+    chapters: List[ChapterPovEntry] = Field(default_factory=list)
+
+
 class CharacterExtraction(BaseModel):
     new_characters: List[CharacterProfile]
+    chapters: List[ChapterPovEntry] = Field(default_factory=list)
 
 
 class ScriptResult(BaseModel):
