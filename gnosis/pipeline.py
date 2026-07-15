@@ -1,8 +1,20 @@
 from openai import OpenAI
 from .llm_director import PASS1_PROMPT_TEMPLATE, PASS2_PROMPT_TEMPLATE
 from .config import ALLOWED_CHARACTER_TAGS, DEFAULT_LLM_MODEL
-from .models import CharacterExtraction, ScriptResult
-from .chunking import ChunkingConfig, build_rolling_context, split_text_into_chunks
+from .models import CharacterExtraction, ChapterPovEntry, ScriptResult
+from .chunking import (
+    ChunkingConfig,
+    build_rolling_context,
+    split_chapter_segments_into_chunks,
+    split_text_into_chunks,
+)
+from .chapter_pov import (
+    ChapterPovStore,
+    build_chapter_segments,
+    find_chapter_title_matches,
+    load_chapter_pov_entries,
+    validate_chapter_pov_entries,
+)
 from .utils import remove_code_fences_regex
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -139,6 +151,52 @@ def _normalize_custom_prompt(custom_prompt: str) -> str:
     return "无（使用通用规则）"
 
 
+def _print_chapter_pov_warnings(warnings: List[str]) -> None:
+    for warning in warnings:
+        print(f"⚠️ {warning}")
+
+
+def _build_pass2_chunks(
+    text_segment,
+    chunking_config: ChunkingConfig,
+    chapter_pov_path: Optional[str],
+    known_character_names,
+):
+    if not chapter_pov_path:
+        return split_text_into_chunks(text_segment, chunking_config)
+
+    entries, load_warnings = load_chapter_pov_entries(chapter_pov_path)
+    _print_chapter_pov_warnings(load_warnings)
+    if any(
+        not warning.startswith("chapter_pov.json missing:")
+        for warning in load_warnings
+    ):
+        return split_text_into_chunks(text_segment, chunking_config)
+    if not entries:
+        return split_text_into_chunks(text_segment, chunking_config)
+
+    validation_warnings = validate_chapter_pov_entries(
+        entries, set(known_character_names or [])
+    )
+    _print_chapter_pov_warnings(validation_warnings)
+    if validation_warnings:
+        return split_text_into_chunks(text_segment, chunking_config)
+
+    matches, match_warnings = find_chapter_title_matches(text_segment, entries)
+    _print_chapter_pov_warnings(match_warnings)
+    if len(matches) != len(entries):
+        return split_text_into_chunks(text_segment, chunking_config)
+
+    segments = build_chapter_segments(text_segment, matches)
+    no_pov_warnings = [
+        f"chapter segment has no POV metadata at index {index}"
+        for index, segment in enumerate(segments, start=1)
+        if not segment.chapter_title or not segment.pov_speaker
+    ]
+    _print_chapter_pov_warnings(no_pov_warnings)
+    return split_chapter_segments_into_chunks(segments, chunking_config)
+
+
 def _merge_consecutive_script_lines(
     script_lines: List[dict], max_text_chars: int = MAX_MERGED_SCRIPT_TEXT_CHARS
 ) -> List[dict]:
@@ -189,6 +247,7 @@ def run_pass1(
     chunking_config: ChunkingConfig = None,
     cache_dir: str = "data/llm_cache",
     pass1_custom_prompt: str = "",
+    chapter_pov_path: Optional[str] = None,
 ):
     # Pass 1: 选角（按 chunk 迭代）
     chunking_config = chunking_config or ChunkingConfig()
@@ -196,6 +255,7 @@ def run_pass1(
     if not chunks:
         return
 
+    extracted_chapters: List[ChapterPovEntry] = []
     for chunk in chunks:
         known_str = char_manager.get_known_names()
         print(known_str)
@@ -229,10 +289,17 @@ def run_pass1(
         extraction = CharacterExtraction.model_validate(extraction_payload)
         for char in extraction.new_characters:
             char_manager.add_character(char)
+        extracted_chapters.extend(extraction.chapters)
 
     # 先把 pass1 角色结果持久化，再读取后进行声线分配，最后再次持久化
     char_manager.save_db()
     char_manager.load_db()
+    if chapter_pov_path:
+        chapter_store = ChapterPovStore(chapter_pov_path)
+        merged_chapters = chapter_store.merge_extracted(extracted_chapters)
+        print(f"✅ 章节 POV 已更新: {len(merged_chapters)} 条")
+        if not extracted_chapters:
+            print("⚠️ pass1 未提取到章节 POV；如果本书有多 POV 章节，请检查 pass1 缓存或 prompt")
     #char_manager.assign_voices()
     #char_manager.save_db()
 
@@ -244,10 +311,16 @@ def run_pass2(
     cache_dir: str = "data/llm_cache",
     pass2_workers: int = 4,
     pass2_custom_prompt: str = "",
+    chapter_pov_path: Optional[str] = None,
 ):
     # Pass 2: 剧本（按 chunk 迭代 + 滚动上下文）
     chunking_config = chunking_config or ChunkingConfig()
-    chunks = split_text_into_chunks(text_segment, chunking_config)
+    chunks = _build_pass2_chunks(
+        text_segment,
+        chunking_config,
+        chapter_pov_path,
+        char_manager.characters.keys(),
+    )
     characters_payload = [
         c.model_dump() for c in char_manager.characters.values()
     ]
@@ -272,6 +345,8 @@ def run_pass2(
                     previous_chunk_context_str=previous_context_map[chunk.index],
                     chunk_index=chunk.index,
                     total_chunks=len(chunks),
+                    chapter_title=getattr(chunk, "chapter_title", None) or "未提供",
+                    pov_speaker=getattr(chunk, "pov_speaker", None) or "未提供",
                     project_pass2_prompt=_normalize_custom_prompt(pass2_custom_prompt),
                 ),
             },
